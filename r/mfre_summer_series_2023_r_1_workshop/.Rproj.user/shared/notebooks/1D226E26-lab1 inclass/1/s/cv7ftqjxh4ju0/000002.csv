@@ -1,0 +1,7 @@
+"0","```r
+diesel <- diesel_raw %>%
+  rename(p_diesel = weekly_u_s_no_2_diesel_retail_prices_dollars_per_gallon) %>%
+  filter(!is.na(p_diesel) & date > \"2012-06-01\") %>%
+  mutate(date = ymd(date))
+
+```"

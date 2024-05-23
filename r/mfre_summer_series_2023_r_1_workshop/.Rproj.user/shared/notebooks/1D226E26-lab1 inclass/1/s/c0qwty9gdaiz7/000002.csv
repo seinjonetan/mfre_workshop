@@ -1,0 +1,7 @@
+"0","```r
+
+soydiesel <- xts(merge[c(\"p_soy\", \"p_diesel\")], order.by = merge$date)
+head(soydiesel)
+
+class(soydiesel)
+```"

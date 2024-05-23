@@ -1,0 +1,880 @@
+---
+title: "MFRE Summer Session: R Workshop 1"
+output: html_notebook
+---
+
+# R Workshop 1
+
+```{r}
+pacman::p_load(tidyverse)
+```
+
+## Today's Topics:
+
+### 1. Review data structures and manipulation
+
+> #### 1.1. Data structures in R (Vectors, matrices, list)
+>
+> #### 1.2. Control Flow (If statements, loops, user-defined functions)
+
+### 2. Best practices for R programming
+
+> #### 2.1 Indentation and line spacing
+>
+> #### 2.2 Naming variables and functions
+>
+> #### 2.3 Commenting code
+>
+> #### 2.4 Calling libraries, data import at start of worksheet
+>
+> #### 2.5 Projects and `here()`
+>
+> #### 2.6 Headers in Markdown
+>
+> #### 2.7 Code cells
+
+
+## 1. Review Data Structures and Manipulation
+
+We're going to begin with a gentle revision of some topics you've done already in the online courses. This will let you get your coding juices flowing and recall how this works.
+
+Then, we'll discuss some good methods to keep in mind when scripting in R, which will make your lives - and importantly, mine - easier.
+
+In the next workshop, I'll introduce you to the Tidyverse, a library of R packages designed for data science. They are considered the standard for most data work in R, and are so widely used that many other developers build their own packages off of Tidyverse methods.
+
+But first, let's go over some things we've already seen.
+
+
+### 1.1 Data Structures in R
+
+#### Basic Data Types 
+
+```{r}
+our_char <- "Harry talks about boring stuff"
+our_int <- 13L
+our_double <- 13.13
+our_log <- TRUE
+
+```
+
+These are our real basic data types. So basic, in fact, that most more advanced types of R data are simply built out of these.
+
+1.  `our_char` is a Character data type: these contain letters and text. They're just like Strings in Python.
+
+2.  `our_int` is an integer: these are whole numbers without any decimal places whatsoever. You have to add an `L` after the numeric value to define it as an integer.
+
+3.  `our_double` is a Double data type: these are general form numbers, which may or may not include decimal points. The values of 13 and 13.0 are effectively the same for mathematical purposes unless there's a specific whole-number interpretation needed for your data. Most of the time you'll work with these rather than integers.
+
+> Typically having decimal points, doubles can be seen as analogous to Python's "Float" data type, except Floats must always have decimals while doubles just usually do.
+
+4.  `our_log` is a Logical data type. These are TRUE/FALSE values that are extremely useful for stating if certain conditions or states are met. One quirk: TRUE is considered as equal to 1, and FALSE is equal to 0. This will be useful when working with dataframes.
+
+Since you've done some basic Python, we could relate R data types to Python (near) equivalents.
+
+R Character \~ Python String 
+
+R Integer \~ Python Int 
+
+R Double \~\~\~ Python Float
+
+R Logical \~ Python Bool
+
+In most cases, these will be fairly similar. However, there may be deviations in functionality; keep this in mind.
+
+#### Operators
+
+All of your basic mathematical operators are present here too.
+
+Numeric data typess can be added (+), subtracted (-), multiplied (\*), divided (/) and put to exponential powers (\^).
+
+```{r}
+# addition
+our_int + our_double
+
+# subtraction
+our_int - our_double
+
+# multiplication
+our_int*our_double
+
+# subtraction
+our_int / our_double
+
+# exponentiation
+our_int ^ our_double
+
+# modulo
+our_int %% our_double
+
+```
+
+They can also be compared: (\>, \<, ==, \>=, \<=)
+
+```{r}
+# greater than
+our_int > our_double
+
+# less than
+our_int < our_double
+
+# equal to
+our_int == our_double
+
+# greater than or equal to
+our_int >= our_double
+
+# less than or equal to
+our_int <= our_double
+```
+
+####  Basic Data/Manipulation Exercise
+
+1.  Is TRUE greater than FALSE?
+2.  Is TRUE equal to 1?
+3.  Write a mathematical expression using an exponential.
+
+```{r}
+
+
+
+```
+
+#### Compound Data Structures
+
+We'll start with Vectors:
+
+```{r}
+char_vect <- c("A", "B", "C", "D", "E")
+
+int_vect <- c(1L, 2L, 3L, 4L, 5L)
+
+doub_vect <- c(1, 2.0, 3.1, 4, 5)
+
+logi_vect <- c(TRUE, TRUE, FALSE, FALSE)
+```
+
+Vectors are a list of ordered values of one common type. You create one with the assignment operator `<-`, then wrapping a series of values inside of `c()`, separated by commas `,`.
+
+You can access the items inside of a vector by "indexing" like in a Python list. However, here the elements are numbered starting from 1 rather than 0. You can also "slice" to take a series of elements by putting two numbers (k and j) in the square brackets: you'll get all elements from k to j, inclusive.
+
+```{r}
+# first element of char_vect
+
+char_vect[1]
+
+# first and second elements of char_vect
+
+char_vect[1:2]
+
+# first to fourth elements of char_vect
+
+char_vect[1:4]
+
+# second to fifth elements of char_vect
+
+char_vect[2:5]
+```
+
+#### Exercise (Vectors)
+
+1.  Get the last element of `logi_vect`
+2.  Get the second and third elements of `char_vect`
+3.  Get all but the last elements of `char_vect`
+
+```{r}
+
+
+
+
+```
+
+The next step up in complexity brings us to Matrices and Arrays.
+
+Unlike vectors, which are one-dimensional, these have two dimensions (matrices) or n-many dimensions (arrays). When you create a matrix with the `matrix()` function, you'll specify how the elements within fit into it with the `nrow` and `ncol` arguments.
+
+```{r}
+matrix(c(1, 2, 3, 4, 5, 6), nrow = 3, ncol = 2)
+
+matrix(c(1, 2, 3, 4, 5, 6), nrow = 6, ncol = 1)
+
+matrix(c(1, 2, 3, 4, 5, 6), nrow = 6, ncol = 1)
+
+
+```
+
+Arrays are formed with the `array()` function, and their shape defined with the `dim` argument
+
+```{r}
+# create 2D array
+array_2d <- array(1:12, dim = c(3,4))
+print(array_2d)
+```
+
+```{r}
+# create 2D array just like matrix 1
+array_matrix <- array(1:6, dim=c(3,2))
+print(array_matrix)
+```
+
+```{r}
+# create 3D array
+array_3d <- array(1:24, dim = c(2,3,4))
+print(array_3d)
+```
+
+As you can see, you pass in a range of some sort (we use a X:Y number slice) and a dimension vector. What shape should the dimension vector be?
+
+Here's a trick: the values should multiply to the same length as your range. 1:24 has 24 elements; 2*3*4 = 24. So this fits!
+
+I doubt you'll be using high-dimensional arrays much; it's just good to know what's out there.
+
+#### Exercise (Matrices)
+
+```{r}
+# create a 2x2 matrix with the values 6, 7, 8, 9
+
+
+
+# create a 4x4 matrix with the values 1:16
+
+
+
+# create a 3x3x3 array with the values 1:27
+
+
+
+```
+
+### 1.2 Basic Control Flow in R
+
+In the context of R programming, control flow refers to the ordering of statements and instructions, and their execution in a program. It determines how the program flows and which parts of the code are executed based on specific conditions. Control flow is essential for decision-making, repetition, and branching within a program.
+
+The most common elements of control flow are:
+
+1.  **If statements**
+
+-   These allow code to take specific actions depending on which conditions are or are not met.
+
+2.  **Loops**
+
+-   These enable repetitive execution of a block of code (possibly with slight modifications).
+
+3.  **Functions**
+
+-   These come in three forms: basic R-defined functions [like `print()`, `sum()`, `length()`], functions from user-made libraries [like `ggplot()`, `filter()`, and `ymd()`], and functions you define yourself while using R
+
+#### If statements
+
+`if` statements can be thought of like a flow chart. If a condition is met, take an action.
+
+```{r}
+# Example 1: Check if a number is positive
+
+num <- 5
+
+if (num > 0) {
+  print("The number is positive!")
+}
+
+```
+
+As you see, they are formatted starting with `if`, then followed by a condition, and then in {} brackets, an action to take if the condition is True
+
+You can set up multiple conditions, to handle `if` one condition is true, and what to do if `else`
+
+```{r}
+# Example 2: Check if a number is positive or negative
+num <- -3
+
+if (num > 0) {
+  print("The number is positive.")
+} else {
+  print("The number is negative.")
+}
+
+```
+
+There is also the `else if` syntax. Comparable to Python's `elif` condition, this lets you name a few paths for specific conditions and one generic one for if none are true.
+
+```{r}
+# Example 3: Check if number is positive, negative, or zero
+num <- 0
+
+if (num > 0) {
+  print("The number is positive.")
+} else if (num < 0) {
+  print("The number is negative")
+} else {
+  print("The number is zero.")
+}
+```
+
+#### For loops
+
+A `for` loop tells R to repeatedly take an action, possibly with changing inputs, `for` some defined number of times.
+
+```{r}
+# Example 1: Print numbers from 1 to 5
+for (i in 1:5) {
+  print(i)
+}
+```
+
+You can combine `if` statements with `for` loops!
+
+```{r}
+# Example 2:
+
+for (i in 1:5) {
+  if (i %% 2 == 0) {
+    print(paste(i, " is an even number!"))
+  }
+  else {
+    print(paste(i, " is an odd number!"))
+  }
+}
+
+```
+
+(I initially had a remark about how you'll never use the modulo operator, but then here it is! I had to go back and take it out!)
+
+```{r}
+# modulo example
+4 %% 2
+3 %% 2
+```
+
+Modulo gives the remainder after dividing the first number by the second.
+
+Any even integer will have modulo 0 after dividing by 2, and all odd numbers will not, so we can use this to test for even/oddness.
+
+You can also modify variables with each iteration of a `for` loop.
+
+```{r}
+# Example 3:
+
+sum <- 0
+
+for (i in 1:25) {
+  sum <- sum + i
+  print(sum)
+}
+```
+
+#### Exercises (Control Flow)
+
+Exercise 1:
+
+Print all numbers from 1 to 20.
+
+```{r}
+# Answer
+
+
+
+```
+
+Exercise 2:
+
+Now, print all *even* numbers from 1 to 20
+
+```{r}
+
+
+```
+
+Exercise 3:
+
+Create `sum`, equal to 0. Take the numbers from 1 to 20. For each odd number from 1 to 20, add it to `sum`, and multiply sum by every even number.
+
+```{r}
+
+
+```
+
+#### User-defined Functions
+
+Functions are a vital part of R programming. We've seen plenty already, some from base R, some from community libraries (collections of functions with themed functionality). In short, functions take some set of inputs and perform an action or create an output based on them.
+
+You'll sometimes want to create your own customized functions. These are useful for several reasons, but the main one for our purposes is code reusability. By assigning a process to a given function, we can quickly repeat it at a later point, saving space and keeping our code readable.
+
+The basic syntax for writing a function is to pick a name, write `function()` containing any arguments (i.e. inputs), then the process to be carried out in curly brackets {} like in `if` statements and `for` loops.
+
+```{r}
+# Example 1: A function without arguments
+
+mfre_welcome <- function() {
+  print("Welcome to MFRE!")
+}
+
+# Calling your function
+
+mfre_welcome()
+```
+
+More useful functions usually include space for inputs, which allows a much broader set of actions to be done. You can use the `return()` statement to have the function directly output some value.
+
+```{r}
+# Example 2: Compare specific square of 2 function with general case square function
+
+
+# narrow case function
+square_of_2 <- function() {
+  return(2^2)
+}
+
+# general use function with argument
+square <- function(x) {
+  return(x^2)
+}
+
+# sample function calls
+
+square_of_2()
+square(2)
+square(4)
+square(square(2))
+```
+
+Functions can also have default arguments, which are used when no specific value is given.
+
+```{r}
+# Example 3: Functions with default inputs
+
+power <- function(x, exponent = 2) {
+  return(x^exponent)
+}
+
+# sample function calls
+
+square(2)
+power(2)
+power(2, 2)
+
+# `power(2)` is the same as `power(2,2)`
+
+power(2) == power(2,2)
+
+```
+
+You can have more complicated processed inside of functions, including loops and `if` statements!
+
+```{r}
+# Example 4: Function with other control flow
+
+sum_numbers <- function(numbers) {
+  sum <- 0
+  
+  for (num in numbers) {
+    sum <- sum + num
+  }
+  
+  return(sum)
+}
+
+# sample function calls
+
+sum_numbers(c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+
+sum_numbers(c(1,-1,2,-2,3,-3))
+
+```
+
+#### Exercise (User-Defined Functions)
+
+Write a function that takes a number, and returns TRUE if it's even, and FALSE if not. Test it on the values 1, 0, 30, and 47.
+
+Tip: Check the code from earlier!
+
+```{r}
+
+
+# sample function calls
+is_even(1)
+is_even(0)
+is_even(30)
+is_even(47)
+```
+
+Write a function that takes a `length` and a `width` of a rectangle, and returns the total area. Test it on the pairs of values 1 and 2, 3.5 and 7.2, 10.1 and 0.1
+
+```{r}
+
+
+
+# sample function calls
+rectangle_area(1,2)
+rectangle_area(3.5, 7.2)
+rectangle_area(10.1, 0.1)
+```
+
+## 2. Best Practices for R Coding
+
+There's plenty of code you can write, which runs and gets you the result you need, but is still *bad*.
+
+When I say "bad", what do I mean?
+
+1.  It's unclear
+2.  It's complex
+3.  It's inefficient
+
+All of these will make your experience (and that of anyone trying to work with you) much harder than necessary.
+
+A solid guiding principle for your code is **clarity**. If somebody new to your code can easily read and understand it, then you'll have a much easier time working with it yourself!
+
+There are a handful of focus areas to keep in mind. When I'm being lazy, I find these are easy things to skip over, and it feels like I'm saving time. But when I have to go back through my work, I've got no idea what it's doing. I end up wasting hours going through incomprehensible code.
+
+Don't be like me!
+
+### 2.1. Indentation and line spacing
+
+```{r}
+# Inconsistent formatting
+result_bad<- function(x,y){
+z<-x^2+y
+return(z)}
+
+# Consistent formatting
+result_good <- function(x, y) {
+  z <- x^2 + y
+  return(z)
+}
+
+result_bad(2, 1) == result_good(2, 1)
+```
+
+As we can see, `result_bad()` and `result_good()` give us the same answer. But which one is a better program?
+
+The names give it away, but why?
+
+Spacing and indentation, in short. By indenting the function's code body, `result_good()` makes it perfectly clear where the body of the function starts and ends. `return(z)` is clearly the final step, and it ends with the } on the next line.
+
+RStudio automatically indents by the correct amounts when creating loops and functions; generally, follow its guide. Use `tab` rather than an equivalent number of spaces.
+
+
+### Exercise (Indentation and Spacing)
+
+Take the following function, `calculate_average()`, and adjust its spacing to be more readable.
+
+```{r}
+# start: bad function
+calculate_average <-function(numbers){
+total<-sum(numbers)
+count<-length(numbers)
+average<-total/count
+return(average)}
+
+
+# finish: good function
+
+
+
+```
+
+### 2.2 Naming variables and functions
+
+Giving good names to objects you create, like variables and functions, seems like a no-brainer.
+
+But what is a good name? Girls named "Khaleesi" and their parents might disagree, but when it comes to naming R variables there are some easy guidelines to follow.
+
+```{r}
+s <- c(78, 85, 92, 76, 80)
+
+fn1 <- function(x) {
+  sum <- 0
+  count <- 0
+  for (i in 1:length(x)) {
+    sum <- sum + x[i]
+    count <- count + 1
+  }
+  avg <- sum / count
+  return(avg)
+}
+
+fn2 <- function(x) {
+  sum_sq <- 0
+  count <- 0
+  for (i in 1:length(x)) {
+    sum_sq <- sum_sq + (x[i] - fn1(x))^2
+    count <- count + 1
+  }
+  sd <- sqrt(sum_sq / count)
+  return(sd)
+}
+
+fn1(s)
+
+fn2(s)
+```
+
+Well! These are certainly doing, uh, something!
+
+They both involve a sum and a count. `fn1()` iterates through the `x` variable, sums them up, and then divides by the total count. `fn2()` also iterates through the `x` variable, but instead sums the squared differences of the current value and the output of `fn1`.
+
+What's going on here? Let's look at these with different names...
+
+```{r}
+# Better variable names
+test_scores <- c(78, 85, 92, 76, 80)
+
+# Better function names
+calculate_average <- function(scores) {
+  sum <- 0
+  count <- 0
+  for (i in 1:length(scores)) {
+    sum <- sum + scores[i]
+    count <- count + 1
+  }
+  avg <- sum / count
+  return(avg)
+}
+
+
+calculate_standard_deviation <- function(scores) {
+  sum_sq <- 0
+  count <- 0
+  for (i in 1:length(scores)) {
+    sum_sq <- sum_sq + (scores[i] - fn1(scores))^2
+    count <- count + 1
+  }
+  sd <- sqrt(sum_sq / count)
+  return(sd)
+}
+
+# Same results!
+calculate_average(test_scores)
+calculate_standard_deviation(test_scores)
+```
+
+Ah! So we've got some test scores. We then calculate the average, then the standard deviation. With some knowledge of stats formulas and a minute or two, we could probably figure this out with a minute or two of thinking. 
+
+But with good variable names, it'll take us about one second, let alone for more complicated cases. 
+
+### Exercise
+
+Now, an exercise for you. The following function takes two lists of numbers, and calculates the correlation between them.
+
+Rename all of the alphabetized variables (`var_a`, `var_b`, etc) to describe what the values actually represent.
+
+```{r}
+# change names on this function
+calculate_correlation <- function(x, y) {
+  n <- length(x)
+  var_a <- sum(x) / n
+  var_b <- sum(y) / n
+  
+  var_c <- sum((x - var_a)^2) / n
+  var_d <- sum((y - var_b)^2) / n
+  
+  var_e <- sum((x - var_a) * (y - var_b)) / n
+  
+  var_f <- var_e / sqrt(var_c * var_d)
+  
+  return(var_f)
+}
+
+# tests
+calculate_correlation(c(1, 2, 3, 4, 5), c(-1, -2, -3, -4, -5))
+calculate_correlation(c(1, 2, 3, 4, 5), c(-1203, 0.12, 2123, 211, 5))
+```
+
+#### Answer
+
+```{r}
+
+
+# tests
+correlation(c(1, 2, 3, 4, 5), c(-1, -2, -3, -4, -5))
+correlation(c(1, 2, 3, 4, 5), c(-1203, 0.12, 2123, 211, 5))
+```
+
+### 2.3 Commenting code
+
+Our lovely \# markers turn code to text inside R cells. Why do we bother with this?
+
+For clarity, essentially. It costs us very little to explain what's doing what while we're writing our code. It comes with a substantial benefit of *forcing you to explain what your code is doing, while you are writing it*.
+
+This helps not just for later review, but even clarifies to your future self what you're trying to accomplish!
+
+A computer science professor once told me about the "rubber duckie" approach to debugging. Simply, you take a rubber duckie at your desk, and explain to it, step by step, what you are doing. Almost magically, a substantial amount of the time you'll figure out what your problem is. Commenting as you go lets you gain some of this benefit.
+
+```{r}
+calculate_correlation <- function(x, y) {
+  # function takes two lists of numbers, then calculates and returns their correlation coefficient
+  
+  # first gets sample size; both lists must have same length or else result will be wrong
+  n <- length(x)
+  
+  # calculates mean values of each dataset
+  mean_x <- sum(x) / (n)
+  mean_y <- sum(y) / (n)
+  
+  # then calculates variances
+  var_x <- sum((x - mean_x)^2) / (n-1)
+  var_y <- sum((y - mean_y)^2) / (n-1)
+  
+  # calculates covariance between lists
+  cov <- sum((x - mean_x) * (y - mean_y)) / (n-1)
+  
+  # then divides for correlation, and returns it
+  corr <- cov / sqrt(var_x * var_y)
+  return(corr)
+}
+
+
+# tests
+
+calculate_correlation(c(1, 2, 3, 4, 5), c(-1, -2, -3, -4, -5))
+calculate_correlation(c(1, 2, 3, 4, 5), c(-1203, 0.12, 2123, 211, 5))
+```
+
+
+This is a much more sensible way to write the above correlation function, with each step explained along the way.
+
+### 2.4 Calling libraries, data import at start of worksheet
+
+This is a short point.
+
+You'll typically begin a R Markdown script with a big statement calling in a variety of packages and libraries. From our own FRE 530, here's what we bring in for one lab:
+
+```{r}
+# pacman::p_load(here, readxl, dplyr, janitor, Quandl, xts, lubridate, urca, forecast, tidyverse,
+# vars, modelsummary)
+```
+
+Without comments, of course.
+
+You'll want to put this at the top of your R Markdown sheet. While it's tempting to call libraries as you need them, this makes life hard for someone else using your code later. Since you need to install packages, then load them, they might be running a different R version, and have different packages loaded. It's best to get all the package loading done in one go, rather than get halfway through and then realize you need to restart and run installations.
+
+### 2.5 Projects and `here()`
+
+These are two very helpful features which, put together, make loading files and data into a non-nightmarish process.
+
+**a)  R Projects:**
+
+-   When you create an R Project, it makes a project-specific working directory (i.e. folder) where R looks for files by default
+-   It provides a dedicated workspace for your project and lets you organize your code, data, outputs, and other files in a specific directory.
+
+**b)  The `here()` function:**
+
+-   The `here()` function is part of the `here` package, which is designed to make it easier to work with file paths within R Projects.
+-   The `here()` function automatically constructs file paths relative to the current R Project's directory, regardless of the operating system.
+-   **It eliminates the need to manually specify long and error-prone paths by providing a simple and flexible way to refer to files and directories within your project.**
+
+Once you've stumbled through writing one of these massive file paths a few times, you'll appreciate any feature that lets you skip it. As part of your R workflow, whenever you start a new distinct task - an assignment, a paper, etc - create a new folder and an R Project in it.
+
+When we load in data, we'll be using both of these. You should use them for all of your R work, in general. 
+
+### 2.6 Headers in Markdown
+
+As you can see, this document is divided up into sections by heading titles. R Notebooks follow a Markdown style format, where headings are noted with \# symbols.
+
+# One gives you a big heading
+
+## Two gives you a slightly smaller one
+
+### Three gives you a yet smaller one
+
+#### And so does four
+
+##### Etcetera
+
+You can use these to show sections (with larger text) and subsections (with smaller text).
+
+For example, I've used the following format for this Notebook:
+
+
+> (One \# mark on title)
+
+> (Two \## marks on Topics section)
+
+> (Three \### marks on subsections)
+
+> (Four \#### marks to show individual topics and exercises)
+
+
+
+
+Exactly how you decide to format your section headers is up to you. But make sure they're clear and, most importantly, **consistent.**
+
+------------------------------------------------------------------------
+
+### 2.7  Code cells
+
+How do you know when to stop adding to one code cell and start a new one?
+
+This is an open question. The code contained in one cell should have some clear relationship binding it all together. But not *all* related code should be in once cell!
+
+Cells should generally just have one output, or two if they're closely related (e.g. two versions of one graph). As well, when one distinct stage of code is done, you should end the current cell and create a new one below, with each labelled for what you're doing. This enhances code readability by letting a viewer see the clear step being taken in each block.
+
+#### Exercise
+
+Say that we're creating some number ranges, plotting them, then running a regression. Is this a good layout of our code?
+
+```{r}
+number_range_a <- seq(1, 50, by = 1)
+number_range_b <- seq(2, 100, by = 2)
+number_range_c <- seq(1, 50)^2
+
+plot(number_range_a, number_range_b)
+plot(number_range_b, number_range_c)
+plot(number_range_c, number_range_a)
+
+
+lm_a_b <- lm(number_range_a ~ number_range_b)
+summary(lm_a_b)
+
+lm_b_c <- lm(number_range_b ~ number_range_c)
+summary(lm_b_c)
+
+lm_c_a <- lm(number_range_c ~ number_range_a)
+summary(lm_c_a)
+
+
+```
+
+#### Answer
+
+```{r}
+
+```
+
+
+
+
+
+
+
+## Conclusion
+
+Today we've revisited some old topics, and introduced some new ones. 
+
+In Section 1, we reviewed our main data structures (**1.1**) and methods for control flow in R programming (**1.2**). 
+
+In Section 2, we discussed ways to make sure our code is easy to understand (**2.1**, **2.3**, **2.6**) and work with (**2.2**, **2.4**), and some ways to just make everyone's life easier (**2.5**). Do your best to follow these, and you'll have an easier time in the long run, and anyone else reading your code (cough cough, the Course Assistants marking it!) will have a much happier time. 
+
+Next time, we'll move on and introduce some new industry-standard packages for really getting our hands dirty and working with data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

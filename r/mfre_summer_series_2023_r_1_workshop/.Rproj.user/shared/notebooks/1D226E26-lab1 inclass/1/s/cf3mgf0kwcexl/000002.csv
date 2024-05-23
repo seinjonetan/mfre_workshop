@@ -1,0 +1,7 @@
+"0","```r
+diesel_raw <- read_excel(here(\"Data\", \"diesel_weekly.xlsx\"), sheet = \"Data 1\") %>%
+  clean_names()
+
+```"
+"1","Error: `path` does not exist: ‘C:/Users/jizatt/Data/diesel_weekly.xlsx’
+"

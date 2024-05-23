@@ -1,0 +1,882 @@
+---
+title: "R Workshop 2"
+output: html_notebook
+---
+
+
+# R Workshop 2
+
+
+## Review: Workshop 1 Topics:
+
+### 1. Review data structures and manipulation 
+> ####  a. Data Structures 
+> ####  b. Control Flow 
+
+### 2. Best Practices for R Coding
+> ####  2.1 Indentation and line spacing
+> ####  2.2 Naming variables and functions
+> ####  2.3 Commenting code
+> ####  2.4 Libraries and data import
+> ####  2.5 Projects and `here()`
+> ####  2.6 Headers in Markdown
+  
+
+  
+Today, we'll be continuing our dive into R skills. More specifically, we'll be moving from general ideas (base R work, approaches to coding) to specific software packages we're importing from others. Specifically, this will be a look into using the `Tidyverse` library's `dplyr` and `ggplot2` packages. 
+  
+### 3. Introduction to Data Cleaning: `dplyr`
+> ####  3.1 What is the Tidyverse?
+> ####  3.2 5+1 functions
+> ####  3.3 `filter()`
+> ####  3.4 `arrange()`
+> ####  3.5 `select()`
+> ####  3.6 Pipes
+> ####  3.7 `mutate()` 
+> ####  3.8 `summarise()`
+> ####  3.9 `group_by()`
+
+### 4. Introduction to Data Visualization: `ggplot2`
+> ####  4.1 Basics of `ggplot2` 
+> ####  4.2 Line Charts
+> ####  4.3 Scatter Plots
+
+Today, we'll be continuing our dive into R skills. 
+
+
+
+
+
+
+
+## 3. Introduction to Data Cleaning: Dplyr and the Tidyverse
+
+### 3.1 What is the Tidyverse?
+
+```{r}
+pacman::p_load(tidyverse, here)
+```
+
+The "Tidyverse" is a collection of R packages designed to work together seamlessly and follow a consistent set of principles for data manipulation and analysis. It provides a cohesive and powerful toolkit for data cleaning, transformation, visualization, and modeling, and is the "industry standard" for many data operations in R.
+
+`Dplyr` is one of the core packages within the Tidyverse. It offers a simple, consistent approach to doing all your basic data tidying operations.
+
+### 3.2 5+1 functions
+
+The "80/20" rule applies in many contexts; that 80% of effects come from 20% of causes.
+
+Example: 80% of my productivity comes from 20% of my working time!
+
+In Dplyr, there's a similar dynamic with the following functions, perhaps even more extreme: 90% of your data cleaning can be covered by the following 5+1 functions:
+
+-   `select()`
+-   `mutate()`
+-   `filter()`
+-   `arrange()`
+-   `summarise()`
+
+and,
+
+-   `group_by()`
+
+The first five do various operations, such as subsetting and altering your data. `group_by()` is separated, because while it's almost never used alone, it augments the other functions and adds a whole new dimension of use.
+
+Before we get to the commands themselves, we need to import our data. I'll set this up in one cell; a few of these commands will be seen again later.
+
+```{r}
+# read csv file in as data
+cpi <- read_csv(here("food_cpi.csv"))
+
+# transpose 
+cpi_t <- t(cpi)
+
+# assign first row as column names
+colnames(cpi_t) <- as.character(cpi_t[1, ])
+
+# remove first row from dataframe
+cpi_t <- cpi_t[-1, ]
+
+# get index as year column
+year_col <- row.names(cpi_t)
+
+# turn cpi_t to tibble datatype
+cpi_t <- as_tibble(cpi_t)
+
+# replace years
+cpi_t <- cpi_t %>%
+  mutate(Year = year_col)
+
+# rename columns
+cpi_t <- rename(cpi_t, "Energy" = "Energy 7", "Food" = "Food 5", "Goods" = "Goods 8", "Shelter" = "Shelter 6", "Services" = "Services 9", 
+                "All_items" = "All-items",
+                "Household_operations_furniture_equipment" = "Household operations, furnishings and equipment",
+                "All_items_but_food_energy" = "All-items excluding food and energy 7",
+                "All_items_excluding_energy" = "All-items excluding energy 7",
+                "Alcohol_tobacco_cannabis" = "Alcoholic beverages, tobacco products and recreational cannabis",
+                "Recreation_education_books" = "Recreation, education and reading",
+                "Clothing_and_footwear" = "Clothing and footwear",
+                "Health_personal_care" = "Health and personal care")
+
+colnames(cpi_t)
+
+cpi_t <- cpi_t %>% 
+  mutate_all(as.numeric)
+
+cpi_t
+```
+
+### 3.3 `select()`
+
+`select()` is conceptually the simplest, and a good place to start for our data cleaning. It is also probably the simplest: you pass in a dataframe, and name the columns you want to keep. It returns just those columns.
+
+As you can see, `cpi_t` has a lot of non-food columns. We don't want those. We'll select just `"Year"`, `"Food 5"`, and `"All-items excluding food and energy"`, leaving out the others, calling this `food_cpi`
+
+The generic R function `colnames()` is useful here, in case we need to alter our selection.
+
+```{r}
+colnames(cpi_t)
+```
+
+```{r}
+food_cpi <- select(cpi_t, "Year", "Food", "All_items_but_food_energy")
+
+food_cpi
+```
+
+#### Exercise (`select()`)
+
+Create new dataframes as I did above, each including the `"Year"` column and a selection of others:
+
+
+-   `consumables_cpi`, including any goods which are consumed quickly (like food, energy, etc)
+-   `durables_cpi`, including any goods which *aren't* consumed quickly (like clothing, transport, etc)
+-   `services_cpi`, including any items which are primarily services performed by a person
+
+```{r}
+
+
+```
+
+Now try something new. If you call `everything()` inside of a `select()` statement, it'll return all columns specified up to that point, then all remaining columns after it.
+
+Move `Year` to the left of the dataset by using `select()` with `Year` and `everything()`
+
+```{r}
+# answer
+
+
+```
+
+Now move all non-compound CPI types to the left: `"Food"`, `"Shelter"`, `"Transportation"`, `"Gasoline"`, `"Energy"`, `"Goods"`, and `"Services"`.
+
+```{r}
+# answer
+
+
+```
+
+Select just the `"Food"` column. Does it become a vector, or stay as a tibble?
+
+```{r}
+
+```
+
+
+
+
+### 3.4 `mutate()`
+
+The `mutate()` function is a tool for performing calculations or transformations on data within a dataframe. You can create new columns based on existing data or modify existing columns, enabling you to process your data for further analysis.
+
+Our datasets contain the Consumer Price Indices for various types of goods. To transform these into inflation percentages, we'll need to subtract the previous year's value, then divide by it.
+
+The `lag()` function is used with a data column: you input this column, and it moves each entry "down" one row. Our data goes from 2000 onwards, so the 2000 value is moved to 2001, 2001 to 2002, etc. The first year doesn't have a prior value, so this is filled with an `NA`.
+
+```{r}
+food_cpi_mutate <- mutate(food_cpi, 
+                          # create change of Food CPI versus lagged period's CPI: difference since last year
+                          food_change = Food - lag(Food), 
+                          
+                          # create percentage Food CPI change: subtract previous CPI then divide by it
+                          food_change_percent = 100*(food_change)/lag(Food),
+                          
+                          
+                          # then do change and change percent values for All_items_but_food_energy variable
+                          All_items_change = All_items_but_food_energy - lag(All_items_but_food_energy),
+                          All_items_change_percent = 100*(All_items_change)/lag(All_items_but_food_energy))
+
+food_cpi_mutate
+```
+
+As you can see, `mutate()` creates new variable columns. You specify a new column name, like we did with `food_change`, and make it equal to a number, value, or calculation. This can include arithmetic operations, like addition (+), subtraction (-), multiplication (\*) and division (/). You can also take exponents, and do a whole range of other operations for other data types.
+
+Sticking to just numeric data as we are, the arithmetic operations give us a solid base to work with.
+
+##### Note:
+
+The variables we created involving a `lag()` all start with a `NA` value - for the first period of observation, we don't have a prior period's value to pull! As a result, it fetches a `NA`, and we don't get `_change` or `_change_percent` values for the first row.
+
+In some analyses, you'd drop the first row to have a consistent dataset with full coverage. Since we're still interested 2000's CPI values, we're going to leave it. However, when we do operations involving these columns, we'll have to use a special method to tell R to ignore these values.
+
+We'll cross that bridge when we come to it.
+
+#### Exercise (`mutate()`)
+
+Working with `consumables_cpi`, calculate the yearly change in `Gasoline`, `Energy`, and `Alcohol_tobacco_cannabis` CPI values, and then the percentage changes, as we did above with `food_cpi`
+
+```{r}
+
+```
+
+
+You can use the `transmute()` function to create new variables, and keep only these. Create a new dataframe, `real_cpis` using transmute. Create the following real price indices:
+- `real_food` equal to `Food` divided by `All-items`
+- `real_gas` equal to `Gasoline` divided by `All-items`
+- `real_shelter` equal to `Shelter` divided by `All-items`
+- `real_energy` equal to `Energy` divided by `All-items`
+
+Also include the `Year` column!
+
+```{r}
+
+
+
+```
+
+
+
+### 3.5 `filter()`
+
+The filter() function in dplyr lets you extract subsets of data based on specific conditions, allowing you to easily filter rows from a dataframe based on your requirements.
+
+You feed in a dataframe, and a condition to apply to one or more columns. It returns only the rows which meet said requirement. Hence, it's a `filter()`.
+
+`select()` has a similar effect, just focused on columns. However, most datasets will have more (sometimes many, many more) rows than columns; naming them individually will rapidly become impractical. Instead, we'll create "boolean conditions", logical statements returning `TRUE` or `FALSE`. `filter()` will keep only rows for which this value comes up as `TRUE`.
+
+```{r}
+food_cpi_mutate
+```
+
+```{r}
+food_cpi_mutate$food_change
+```
+
+Let's get just the years with a really high increase in food prices, like 4% or more.
+
+```{r}
+
+high_inflation <- filter(food_cpi_mutate, food_change_percent > 4.0)
+high_inflation
+
+```
+
+As you can see, `filter()` works by us passing in a dataframe (`food_cpi_mutate`), and then naming a column (`food_change`) as part of a boolean condition. In our case, `food_change > 4.0` returns TRUE for all rows where we have a greater than 4% inflation in food prices; `filter()` then creates a dataframe with just these values in it.
+
+#### Exercise (`filter()`)
+
+```{r}
+food_cpi_mutate
+```
+
+```{r}
+# create a DataFrame from `food_cpi_mutate` with just the rows where Food is greater than 100.0
+
+
+```
+
+```{r}
+# create a DataFrame from `food_cpi_mutate` with just the rows where Food is greater than All_items_but_food_energy
+
+
+```
+
+```{r}
+# create a DataFrame from `food_cpi_mutate` with just the rows where food_change is less than All_items_change
+
+
+
+# now create a DataFrame from `food_cpi_mutate` with just the rows where food_change is greater than 1
+
+
+# now create a DataFrame where food_change is less than All_items change, AND food_change is greater than 1
+
+# hint! you can input multiple conditions separated by commas
+
+
+```
+
+Now you've learned how to filter with multiple conditions. By default, `filter(df, condition_1, condition_2)` returns rows where *all* conditions are met. So, the conditions all have to evaluate to TRUE.
+
+You can also join conditions with `|`, meaning *OR*. As long as one of these evaluates as TRUE, the overall statement will evaluate as TRUE, and you'll return the row.
+
+```{r}
+# create the last dataframe again, but using an explicit & symbol between conditions rather than a comma
+
+# hint! Wrap each condition in brackets () to make it easier to read and check
+
+
+
+
+# create a dataframe with the same conditions stated, but joined with | instead
+
+
+```
+
+
+You *can* link a large number of conditions together. If this was a Mathematical Proof class, I might have you figure out something like `"Condition_A | Condition_B & (Condition_C & Condition_D) | Condition_E"` where A, B, and E are TRUE while C and D are FALSE.
+
+
+
+But this isn't a Proofs class, so we can enjoy ourselves instead, and move onto the `arrange()` function. 
+
+
+
+
+### 3.6 a) `arrange()`
+
+`arrange()` is a fairly simple function for reordering a dataset. You feed it a dataframe and one or more columns:
+
+```{r}
+arrange(food_cpi_mutate, food_change_percent)
+```
+
+It returns your dataframe, ordered by the specified column. By default, in Ascending order (lowest to greatest).
+
+By wrapping the column in `desc()`, you can get Descending order (greatest to lowest).
+
+```{r}
+arrange(food_cpi_mutate, desc(food_change_percent))
+```
+
+You can also arrange by multiple columns; it prioritizes by column order. So, `arrange(df, col1, col2)` will be arranged first in ascending order of `col1`, but wherever rows have the same `col1` value, ties are broken by `col2`
+
+```{r}
+arrange(food_cpi_mutate, food_change_percent, food_change)
+```
+
+With continuous data such as ours, there are very rarely ties to be broken, so arranging by `food_change_percent` and `food_change` works out the same as just arranging by `food_change_percent`.
+
+
+### 3.6 b) Ceci n'est pas une pipe
+
+`arrange()` combos nicely with `slice()`. First, arrange a dataframe, then get the top X number of rows by using `slice(df, 1:X)`.
+
+Or better yet, start using `%>%`, also known as "pipes". Pipes are a tool that lets you easily chain multiple steps, passing the output of one function to the next step for further analysis. 
+
+Pipes do not come in basic R, but are imported with the TidyVerse.
+
+```{r}
+# good syntax
+
+food_cpi_mutate %>%                         # takes food_cpi_mutate and passes it forward:
+  arrange(desc(food_change_percent)) %>%    # arranges in descending order by food_change_percent and passes it forward
+  slice(1:5)                                # slices to first five results
+```
+
+As you see, this starts with a dataframe, then "pipes" it into `arrange(desc(food_change_percent))`, and then pipes that result into `slice(1:5)`
+
+Compare it with
+
+```{r}
+# bad syntax
+
+slice(arrange(food_cpi_mutate, desc(food_change_percent)), 1:5)
+```
+
+Both of these get the same result. But our "good" syntax has a much clearer flow to it, almost like a sentence:
+
+"Take `food_cpi_mutate` and arrange it in descending order by `food_change_percent`, and then slice the result from 1 to 5"
+
+Indeed, a major part of why Pipes are useful is that they "read" from top down, left to right. In contrast, wrapping functions reads right-to-left, inside to outside. Imagine pseudocode in either of two cases:
+
+`
+`dataframe %>%`
+  `function_1(argument_a) %>%`
+  `function_2(argument_b, argument_c) %>%`
+  `function_3(argument_d)`
+`
+
+Compare this to:
+
+`
+`function_3(function_2(function_1(dataframe, argument_a), argument_b, argument_c), argument_d)`
+`
+
+The second statement is *far* more difficult to read, particularly with the function arguments added. 
+
+#### Exercise (`arrange()`, `%>%`)
+
+```{r}
+# arrange food_cpi_mutate by Year in descending order
+
+```
+
+```{r}
+# arrange food_cpi_mutate by All_items_change_percent in descending order
+
+```
+
+```{r}
+# arrange food_mutate_cpi by All_items_change_percent, then slice from 1-10 to get the 10 lowest years
+
+# do this using pipes %>% as shown above
+
+
+```
+
+```{r}
+# arrange real_cpis by `real_energy` in descending order, then slice from 1-5 to get the highest 5 years of energy prices
+
+
+```
+
+
+
+
+### 3.7 `summarise()`
+
+`summarise()` is used for making bespoke summary statistics.
+
+You can get a generic set of summary statistics by passing your dataframe into the `summary()` function, as shown:
+
+```{r}
+summary(food_cpi_mutate)
+```
+
+However, you'll often want to get more specific stats. `summary()` gives us measures of the values themselves - Min/Max, quantiles, Mean - but nothing related to variance. It's also just raw data over the whole dataset without grouping. 
+
+As we'll see, `summarise()` offers us a lot more control over what statistics we calculate. 
+
+To use `summarise()`, you first feed in a dataframe. Then, you tell it how to make the variables you want, and these are returned as a new dataframe. To illustrate:
+
+```{r}
+food_cpi_mutate %>% 
+  summarise(mean_Food = mean(Food),
+            mean_food_change = mean(food_change),
+            sd_Food = sd(Food),
+            sd_food_change = sd(food_change))
+
+
+```
+
+(Notice the `NA` values in the `mean_food_change` and `sd_food_change` columns!)
+
+There's a whole range of functions you can use here.
+
+There are your more basic, standard statistical measures, some of which turn up in `summary()`:
+
+-   `sum()`: Calculates the sum of values in a column.
+-   `min()`: Returns the minimum value in a column.
+-   `max()`: Returns the maximum value in a column.
+-   `median()`: Calculates the median of values in a column.
+-   `sd()`: Computes the standard deviation of values in a column.
+-   `var()`: Computes the variance of values in a column.
+
+Then there are the ones more related to the structure and elements of your data:
+
+-   `n()`: Returns the count or number of rows in a group or the entire dataset.
+-   `first()`: Returns the first value in a column.
+-   `last()`: Returns the last value in a column.
+-   `n_distinct()`: Counts the number of distinct or unique values in a column.
+-   `quantile()`: Calculates specified quantiles of values in a column.
+-   `length()`: Returns the length of a vector or the number of elements in a column.
+
+Let's run a bunch of these.
+
+#### NA Note
+
+I mentioned how our `mutate()` function involved taking lags, resulting in our first row having `NA` values in several variables. When we feed these into summary statistic functions, we get problems.
+
+Thankfully, we can tell the functions to ignore these rows, and calculate as though they didn't exist, with the argument `NA.rm = TRUE`. We do this for all the functions except `first()` and `last()`; these two are about what's literally in the data column, so it makes sense we don't want to ignore the value!
+
+```{r}
+# Assuming food_cpi_mutate is your dataframe
+food_cpi_mutate
+
+food_cpi_mutate %>% 
+  summarise(mean_inflation = mean(food_change_percent, na.rm = TRUE),
+            max_inflation = max(food_change_percent, na.rm = TRUE),
+            min_inflation = min(food_change_percent, na.rm = TRUE),
+            sd_inflation = sd(food_change_percent, na.rm = TRUE),
+            var_inflation = var(food_change_percent, na.rm = TRUE),
+            first_inflation = first(food_change_percent),
+            last_inflation = last(food_change_percent),
+            inflation_25 = quantile(food_change_percent, 0.25, na.rm = TRUE),
+            inflation_50 = quantile(food_change_percent, 0.5, na.rm = TRUE),
+            inflation_75 = quantile(food_change_percent, 0.75, na.rm = TRUE))
+
+```
+
+There won't be an exercise for this section, because we're going to join `summarise()` with a function that adds a lot more power. 
+
+
+
+### 3.8 `group_by()`
+
+`group_by()` divides a DataFrame into "groups" based on having shared values in one or more columns. You can then run summary statistics across these to extract information about how they differ.
+
+Unfortunately for us, the `Year` changes every year. All our other variables are continuous, making them highly unlikely to share common values. There's also not much meaningful information conveyed by two years both having a `food_change_percent` value of, say, 4.92653414.
+
+So, we'll quickly create some new variables which *do* split the data into groups.
+
+```{r}
+# Create 'even_years' column
+food_cpi_mutate <- food_cpi_mutate %>%
+  mutate(even_years = ifelse(Year %% 2 == 0, 1, 0))
+
+# Create 'decade' column
+food_cpi_mutate <- food_cpi_mutate %>%
+  mutate(decade = case_when(
+    Year >= 2000 & Year <= 2009 ~ "00s",
+    Year >= 2010 & Year <= 2019 ~ "10s",
+    Year >= 2020 ~ "20s",
+    TRUE ~ "Unknown"
+  ))
+```
+
+Now we can see if our stats varied systematically between even and odd years, and by decade.
+
+```{r}
+
+# Calculate summary statistics ignoring NA values
+food_cpi_mutate %>%
+  group_by(even_years) %>%
+  summarise(
+    avg_Food = mean(Food),
+    avg_food_change = mean(food_change, na.rm = TRUE),
+    avg_food_change_percent = mean(food_change_percent, na.rm = TRUE)
+)
+
+
+```
+
+#### Exercise (`summarise()`, `group_by()`)
+
+Calculate three summary statistics for `food_cpi_mutate`, and grouping by `decade`.
+
+Only use `na.rm = TRUE` if you have to!
+
+```{r}
+
+
+
+```
+
+Now calculate three more summary statistics for `food_cpi_mutate`, grouping by `decade` and `even_years`
+
+```{r}
+
+
+```
+
+
+
+## 4. Introduction to Data Visualization: `ggplot2`
+
+
+### 4.1 Basics of `ggplot2`
+
+1. Background
+
+`ggplot2` follows the "grammar of graphics" approach to data visualization, breaking graphs down into their separate fundamental parts.  These components - your geometric objects, scales, scales, etc - are added or modified *individually* and directly with GGplot functions. 
+
+This creates a sequential process to building visualizations, where sophisticated plots can be created with simple components. 
+
+
+
+2. Components of `ggplot2`
+
+- `ggplot()`
+
+This is the function you call to initialize a plot in your R code chunk. You feed in a dataframe or tibble as your `data` argument, upon which your plot will be based. 
+
+- Geometric Objects: `geoms`
+
+These are what you're likely most familiar with in data visualization: the lines, bars, points, etc, which actually display your data in visual format. In `ggplot2`, these are all referred to as `geom_` first. Some examples are:
+
+-- `geom_line()`: line plot
+
+-- `geom_scatter()`: scatter plot
+
+-- `geom_bar()`: bar plot
+
+-- `geom_smooth()`: best fit regression line plot
+
+Geometric objects are added on after your `ggplot()` call after a `+` sign. These can be layered on top of one another to get more intricate plots. If you're plotting a relationship between an `x` and a `Y` variable, you could call both `geom_scatter()` to show all data points, and then a `geom_line()` to show their best-fit linear relationship.
+
+Some geoms function as direct mappings of a data point's value into a visual field. For example, `geom_scatter()` and `geom_line()` use these values as coordinates on the X and Y axes. Other geoms run some sort of statistical transformation or calculation and display an object based off of this result. `geom_smooth()` is an example of this case, where the best-fit line between your X and Y variables is calculated, and then drawn over your dataset.
+
+
+
+- Aesthetic Mapping: `aes()`
+
+"Aesthetic Mapping" refers to the "mapping", or relation of variables in the data to visual properties (i.e. Aesthetics) in the graph, such as position, colors, shapes, size, etc. They are defined through the `aes()` function, which can be assigned globally (to the whole plot) if passed into the initializing `ggplot()` function, or individually by passing this into the `geom_` functions. 
+
+To map an aesthetic to a variable, assign the aesthetic (several are listed below) as equal to the variable inside your `aes()` statement. R will assign Levels (i.e. distinct values of the shape/size/color) to your data points based on their values in the given variable. Some of the core visual effects you can alter with `aes()` arguments are:
+
+- `shape` (to change the appearance of scatter plot points)
+
+- `size` (setting the size of your visual objects)
+
+- `color` and `fill` (altering color of the outline and interior of objects respectively)
+
+All of these work with discrete variables; `size` and `color` are also compatible with continuous variables. 
+
+For example, consider a grocery store's sales data, which has data on `item_category`, `price`, and `date`. We might build a `geom_scatter()` plot, with `date` on the x-axis, `price` on the y-axis, and an `aes()` statement with `shape`, `size`, or `color` equal to `item_category` to also describe item types. 
+
+Some aesthetics can be set manually. In your `geom_X()` function, but outside of the `aes()` statement, you might pass `color = "blue`, to make a line or scatter points a specific color. 
+
+We'll see examples of all of these below!
+
+
+### 4.2 Line Charts
+
+```{r}
+ggplot(food_cpi_mutate, mapping = aes(x = Year, y = Food)) +
+  geom_line() +
+  labs(x = "Year", y = "Food Price CPI", title = "Fig. 1: Changes in Food Prices over Time")
+```
+
+This is a fairly basic, serviceable line chart. Everybody gets what it means; no professor will fail you over it. But we can do more with it, customizing color and adding more lines to show a broad range of data.
+
+```{r}
+ggplot(food_cpi_mutate, mapping = aes(x = Year, y = Food)) +
+  geom_smooth(method = "lm", se=FALSE) +
+  geom_point() +
+  labs(x = "Year", y = "Food Price CPI", title = "Fig 2: Scatter+Regplot of Food Prices over Time")
+```
+
+Instead of a lineplot, this visualization shows the individual data points with a `geom_scatter` object, and a linear best fit line with `geom_smooth`. It very starkly shows how food prices jump far off their long-run trend in the final time period, as COVID-era high inflation kicks in. 
+
+
+
+
+
+```{r}
+ggplot(data = food_cpi_mutate) +
+  geom_line(aes(x = Year, y = All_items_but_food_energy, color = "All_items_but_food_energy")) +
+  geom_line(aes(x = Year, y = Food, color = "Food")) +
+  labs(title = "Fig. 3: CPI Price Comparisons Over Time",
+       x = "Year", y = "Price") +
+  scale_color_manual(values = c("blue", "red"),
+                     labels = c("All-items", "Food"),
+                     name = "Data Series:")
+```
+`All-items` falls behind `Food` starting roughly in 2005, gradually diverging until roughly 2021. Both tick up with much higher inflation than before, but `Food` does so much more sharply. 
+
+Let's take a look at their percentage growths over time. 
+
+```{r}
+ggplot(data = food_cpi_mutate) +
+  geom_line(mapping = aes(x = Year, y = All_items_change_percent, color = "All_items")) +
+  geom_line(mapping = aes(x = Year, y = food_change_percent, color = "Food")) +
+  labs(title = "Fig. 4: CPI Percentage Changes Over Time",
+       x = "Year", y = "Price") +
+  scale_color_manual(values = c("blue", "red"),
+                     labels = c("All_items", "Food"),
+                     name = "Data Series:")
+```
+
+So, `Food` has consistently higher percentage changes over most of the 2004+ period. How big are these? 
+
+We can actually pass in a modified value as the `y` value in our `geom_line` function. If we subtract `All_items_change_percent` from `food_change_percent`, we get the difference in these values (amazing!) which can be plotted directly. Positive values show when food prices are growing faster; negative values show when All Items are growing faster.
+
+```{r}
+
+ggplot(data = food_cpi_mutate) +
+  geom_line(mapping = aes(x = Year, y = food_change_percent - All_items_change_percent), color = "turquoise") +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "black") +
+  labs(title = "Fig 5. Difference in CPI Percentage Change Over Time",
+       x = "Year", y = "Percentage Growth Difference") +
+  scale_color_manual(values = "turquoise")
+```
+
+The differences in their growth rates (Food minus All items) is also consistently positive, meaning Food inflation consistently outpaces normal inflation.
+
+You could say that `Fig. 4` and `Fig. 5` are two ways of showing the same data; `5` is a transformation of the data in `4`. This reduces the information conveyed by `Fig. 5`; in a year with an inflation of difference of 2%, we could have Food/All-items inflations of 4% and 2%, or of 100% and 98%!
+
+Does this make `Fig. 5` a worse plot than `Fig. 4`? Not necessarily. **It all comes down to what you are trying to visualize.** If the important relation is the difference itself, then `Fig. 5` is the way to go. By reducing the information it shows, it focuses attention onto what matters most. 
+
+
+
+
+#### Exercises (`geom_line()`)
+
+
+1. Visualize `"Food"` and `"All_items_but_food_energy"` on the Y axis and `"Year"` on the x-axis. Include a vertical line to show when the COVID period begins.
+
+You can make a vertical line with the `geom_vline()` function. You specify where it goes with the `xintercept` argument; make this equal to whatever year is appropriate. 
+
+```{r}
+
+
+```
+
+2. Use `durables_cpi` to visualize the CPI of the different product types over time. 
+
+
+```{r}
+
+
+```
+
+
+3. Take `services_cpi` and `durables_cpi`. For each, calculate an average of their CPI values using `mutate()`, or any other method of your choice. Create `averaged_cpi` by using the `cbind()` function to retrieve these from their respective Tibbles, along with the `Year` variable from one. Then plot the two series in a line plot, called `"Exercise 3: Durable VS Service CPI"`
+
+**This one is hard. Multiple steps and will require some guidance.**
+
+
+```{r}
+colnames(durables_cpi)
+colnames(services_cpi)
+
+
+# Calculate `avg_durable_cpi` 
+
+
+# Select `Year` and `avg_durable_cpi` as new dataframe in preparation for `bind_cols` later
+
+
+# Calculate `avg_service_cpi` just as with durables case
+
+
+# Select `avg_service_cpi` in prep for `bind_cols`
+
+
+# make `averaged_cpi` tibble for plotting
+
+
+# plotting averaged cpi values
+
+
+```
+
+
+### 4.3 Scatter Plots
+
+
+Another fundamental type of plot is the Scatter Plot, where we establish X and Y axes and represent data points as dots in their respective locations. This allows us to visualize the distribution of our data along chosen dimensions, and can be extended in `GGplot2`, with other variables denoted through the size or shape of our scatter points.
+
+You might actually consider a line chart to be a specialized form of a scatter plot, with the points represented and then consecutive points represented with straight lines. `Fig. 2` also shows the similar option of adding a linear best-fit line to show the overall statistical relationship, rather than the standard line plot approach. We'll try this too.
+
+
+```{r}
+ggplot(food_cpi_mutate, aes(x = All_items_change_percent, y = food_change_percent)) +
+  geom_point() +
+  labs(x = "All Items But Food, Energy", y = "Food Price", title = "Fig 6: Scatterplot of Food vs Non-Food CPI Changes")
+```
+
+About as simply as possible, we get a look at how data points are distributed along the `Food` and `All items but food and energy` CPI types. Outliers are not statistically identified, but we do get some idea from visual inspection; a clumping around "normal" inflation levels, with one extreme value at over twice the average inflation value. 
+
+
+
+```{r}
+ggplot(food_cpi_mutate, aes(x = All_items_change_percent, y = food_change_percent, shape = decade)) +
+  geom_point() +
+  labs(x = "All Items But Food, Energy", y = "Food Price", title = "Fig 7a. Previous with Decade shown via Shape")
+
+ggplot(food_cpi_mutate, aes(x = All_items_change_percent, y = food_change_percent, size = decade)) +
+  geom_point() +
+  labs(x = "All Items But Food, Energy", y = "Food Price", title = "Fig 7b. Previous with Decade shown via Size")
+
+
+ggplot(food_cpi_mutate, aes(x = All_items_change_percent, y = food_change_percent, color = decade)) +
+  geom_point() +
+  labs(x = "All Items But Food, Energy", y = "Food Price", title = "Fig 7c. Previous with Decade shown via Color")
+```
+
+The `aes()` function called in our initializing `ggplot()` function lets us set features for the whole plot. These `aesthetics` can be very useful for conveying more information without using new space, a third dimension, or other complicated features. In `Figs 7a-c`, we see three different ways, using `shape`, `size`, and `color`.
+
+Which of these is the best?
+
+Shape?
+
+Size? 
+
+Color?
+
+
+```{r}
+ggplot(food_cpi_mutate, mapping = aes(x = All_items_change_percent, y = food_change_percent)) +
+  geom_point() +
+  geom_smooth(method = "lm") + 
+  labs(x = "All Items But Food, Energy", y = "Food Price", title = "Fig 8a. Food, All-items CPI with Linear Best-Fit Line")
+```
+
+
+This is the same fundamental relationship as before, but now visualized with a best fit line, provided by `geom_smooth()`. This "best fit" is decided by our familiar linear regression method because we specified `method = "lm"`. Other options are available. `geom_smooth()` defaults to `"auto"`, which uses an internal selection method:
+
+```{r}
+ggplot(food_cpi_mutate, mapping = aes(x = All_items_change_percent, y = food_change_percent)) +
+  geom_point() +
+  geom_smooth(method = "auto") + 
+  labs(x = "All Items But Food, Energy", y = "Food Price", title = "Fig 8b. Food, All-items CPI with Local Regression Best-Fit Line")
+```
+
+It defaults to `"loess"`, or local regression, a more flexible technique that involves multiple polynomials. 
+
+Between Figures `8a` and `8b`, both are clearly imperfect. Our outlier almost certainly has heavy leverage on the final result. In normal circumstances, defaulting to `"lm"` is safe and easily explainable, being the direct correlation between your variables rather than a "black box" model decided by R, and so `"lm"` would be my general recommendation. 
+
+
+#### Exercises (`geom_point()` and `geom_smooth()`)
+
+
+Use `food_cpi_mutate` for the exercises. 
+
+
+4. Make a scatterplot with `Year` on the x-axis, `Food` on the Y-axis, and a linear trendline. Make sure to give it an appropriate `title` in the `labs()` argument!
+
+```{r}
+
+
+```
+
+As we can see, we have a fairly strong fit of our data points to our linear best-fit line; inflation increases prices by a roughly equal amount between most periods. 
+
+Note that with inflation being targeted to 2%, this would suggest over longer periods any linear relation in CPI would break down, as the compounding increases cause bigger and bigger gaps. However, this is not a problem on our ~20 year timeline. 
+
+
+
+5. Make a scatter plot with `food_change_percent` on the Y-axis, Year on the x-axis, and a `geom_smooth()`. For the best fit line, try both `"lm"` and `"loess"` and pick whichever you feel works best.
+
+```{r}
+
+```
+
+Now, plotting our percentage increases directly, we see that their trajectory is largely flat. They're mostly distributed around a constant average of 2.5% with random dispersions. As we've seen many times, 2022 is a major outlier, and by a proportionally greater amount than in `Fig. 4` 
+
+
+
+6. An interesting point of discussion is how these results fit together. `Fig. 4` shows us a roughly constant increase in CPI level; `Fig. 5` shows inflation varies year to year, but has no long-run trend in any particular direction. **Do these results make sense together? Discuss with your partners, then as a group.**
+
+
+
+
+
+
+
+
+
+
+# Conclusion
+
+During Workshop 1, we went over the basics of R programming, and the methods you should always try to keep in mind, regardless of what you're doing. Today, we focused on specifics.
+
+In Section 3, we introduced `dplyr`, a very powerful tool for data cleaning. No matter the project, the data you get will never be fully ready to start running your model. There will always be issues with it, cleaning and transformations that need to be carried out. `dplyr` gives us many different tools, reaching well beyond the methods I taught today, and I expect you'll use most of these on any serious empirical project.
+
+In Section 4, we focused on data visualization using `ggplot2`. Part of the same `tidyverse` library as `dplyr`, it allows us to assemble sophisticated and custom-built plots from simple components. This will be useful both in the initial exploration of your data when starting a project, and when displaying your final results. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
