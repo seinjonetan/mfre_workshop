@@ -210,7 +210,14 @@ Next, let's fit a k-nearest neighbors (KNN) classifier to predict the species of
 
 ```{r}
 # Fit a KNN classifier
-library(class)
+if (!require(class)) {
+    # Install the class package
+    install.packages("class")
+
+    # Load the class package
+    library(class)
+}
+
 model <- knn(train_data[, c("Sepal.Length", "Sepal.Width")], test_data[, c("Sepal.Length", "Sepal.Width")], train_data$Species, k = 3)
 
 # Get the confusion matrix
@@ -225,7 +232,11 @@ KNN stands for k-nearest neighbors, a simple and intuitive machine learning algo
 ```{r}
 # Load the required packages
 library(class)
-library(ggplot2)
+if (!require(ggplot2)) {
+    install.packages("ggplot2")
+
+    library(ggplot2)
+}
 
 # Split the iris dataset into a training set and a test set
 set.seed(123)
