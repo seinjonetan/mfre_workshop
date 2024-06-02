@@ -1,7 +1,5 @@
 # MFRE R Prep Section
 
-Dear **MFRE Students**, 
-
 All of you should have gone through the Python prep seciton by now and should be ready to start the R prep section. This section is designed to help you get familiar with the R programming language.
 
 Many of the concepts you will have learned for Python will be applicable to R, but there are some key differences in syntax and functionality.
@@ -67,6 +65,7 @@ We will go through the following topics in this section:
 6. Variable naming conventions 
 7. The joys of pseudocode and how to write it
 8. Rubber duck debugging
+9. R Resources
 
 ## Data Types
 
@@ -395,6 +394,28 @@ Rubber duck debugging can be a helpful technique when you're stuck on a problem 
 4. **Take a break**: If you're feeling frustrated or stuck, take a break and come back to the problem with fresh eyes.
 5. **Read the error messages**: Pay attention to any error messages or warnings that your code produces, as they can provide valuable information about what's going wrong.
 
+## R Resources
+
+R is a powerful and versatile programming language that is widely used for data analysis, statistical modeling, and visualization. If you're new to R, there are many resources available to help you learn the language and become proficient in using it. Here are some recommended resources for learning R:
+
+1. **R Documentation**: The official R documentation is a comprehensive resource that covers all aspects of the R language, including functions, packages, and data structures. You can access the R documentation [online](https://cran.r-project.org/manuals.html) or within the R console by typing `?function_name` to get help on a specific function.
+
+2. **R for Data Science**: This book by Hadley Wickham and Garrett Grolemund is a popular resource for learning R for data analysis. It covers the basics of R programming, data manipulation, visualization, and modeling using the `tidyverse` package.
+
+3. **Coursera**: Coursera offers a number of courses on R programming, data analysis, and statistics. Some popular courses include "R Programming" and "Data Science and Machine Learning Bootcamp with R".
+
+4. **DataCamp**: DataCamp is an online platform that offers interactive courses on R programming, data analysis, and machine learning. It is a great way to learn R through hands-on exercises and projects.
+
+5. **Stack Overflow**: Stack Overflow is a popular question and answer site for programming-related questions. If you run into problems or have questions about R programming, you can search for answers on Stack Overflow or ask your own question.
+
+6. **RStudio Community**: The RStudio Community is a forum for R users to ask questions, share tips and tricks, and connect with other R programmers. It's a great place to get help and advice on R programming.
+
+7. **GitHub**: GitHub is a code hosting platform where you can find R packages, projects, and resources. You can explore R repositories on GitHub to find useful code snippets, packages, and tutorials.
+
+8. **R Bloggers**: R Bloggers is a blog aggregator that collects posts from R bloggers around the world. It's a great way to stay up to date on the latest news, tutorials, and tips related to R programming.
+
+These are just a few of the many resources available for learning R. Whether you're new to R or an experienced user looking to expand your skills, there are plenty of opportunities to learn and grow as an R programmer.
+
 # Final Notes About R and Rmd
 
 Unlike Jupyter Notebook, Rmd files are not interactive. This means that you can't run a cell and then run another cell that depends on the output of the first cell. Instead, you have to run the entire Rmd file to see the output of all the cells. This can be a bit cumbersome, but it's a small price to pay for the flexibility and power of Rmd files.
@@ -410,34 +431,80 @@ output: html_document
 
 # Assignment
 
-1. Define two variables x and y, and design code which does the following:
-If both x and y are strings, a new variable z is defined, being x concatenated with y. Have the code print z. If one of x or y is a string but the other is not, it converts the one that isn't into a string, prints "String Converted", and then defines z as x concatenated with y and prints it. If neither x nor y is a string, it prints "Neither of these is a string." (Try running it with different kinds of values for x and y.
-
+1. Construct a 2 x 3 matrix which takes in values ranging from 1 to 6 in decending order row wise.
 ```{r}
 # Your code here
+mtx <- matrix(6:1, nrow = 2, ncol = 3, byrow = TRUE)
+print(mtx)
 ```
 
-2. Write a function which takes any string as argument, and returns a new string which is the original string in the reverse order. If something that isn't a string is given, have it print an error. Note: while using return x[::-1] would be easy, that's not the point of this exercise.
+2. Write a function that prints a pyramid using the `*` character. The function should take in a positive integer as an argument, and print a pyramid with that many levels. 
 
 ```{r}
 # Your code here
+print_pyramid <- function(levels) {
+    if (levels <= 0) {
+        cat("Invalid input: levels must be a positive integer\n")
+        return
+    }
+    for (i in 1:levels) {
+        cat(rep(" ", levels - i), rep("*", 2 * i - 1), "\n")
+    }
+}
+
+print_pyramid(5)
 ```
 
-3. Write a function which takes in positive integer, and returns the sum of all of the individual digits. (e.g.: if the function is called digit_sum(), then digit_sum(132) would return 
-, with the computation 
+3. The folowwing function is supposed to return the cumulative sum of numbers from 1 to n. However, there is a bug in the code. Find and fix the bug.
 
 ```{r}
 # Your code here
+cum_sum <- function(n) {
+    sum <- 0
+    for (i in 1:n) {
+        sum <- i
+    }
+    return(sum)
+}
+
+print(cum_sum(5))
 ```
 
-4. For any given positive integer, determine if the number is divisible by 7.
+4. You are given a 16 digit credit card number as a string. Write a function that takes in the credit card number as an argument and returns `TRUE` if the credit card number is valid and `FALSE` if it is not. A credit card number is valid if the sum of the digits is divisible by 10.
 
 ```{r}
 # Your code here
+check_sum <- function(credit_card_number) {
+    if (nchar(credit_card_number) != 16) {
+        cat("Invalid input: credit card number must be 16 digits\n")
+        return(FALSE)
+    }
+    sum <- 0
+    for (i in 1:16) {
+        digit <- as.integer(substr(credit_card_number, i, i))
+        sum <- sum + digit
+    }
+    if (sum %% 10 == 0) {
+        return(TRUE)
+    } else {
+        return(FALSE)
+    }
+}
+
+print(check_sum("1234567890123456"))
 ```
 
-5. Write a function which takes in a number or a string, and determines if the argument is a palindrome (i.e.: it's the same if we reverse the order of the characters). Hint: use question 1.
+5. You are given a 3 x 3 dataframe with the rows representing cities and the columns representing dates. Identify if any of the cities have a temperature above 30 degrees on any of the dates and add a new column to the dataframe with the value `TRUE` if the city has a temperature above 30 degrees and `FALSE` if it does not.
 
 ```{r}
 # Your code here
+df <- data.frame(
+    city = c("City A", "City B", "City C"),
+    date_1 = c(25, 30, 35),
+    date_2 = c(28, 29, 30),
+    date_3 = c(30, 32, 33)
+)
+
+df$above_30 <- df$date_1 > 30 | df$date_2 > 30 | df$date_3 > 30
+print(df)
 ```
