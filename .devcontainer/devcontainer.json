@@ -7,7 +7,7 @@
     "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter",
-        "ikuyadeu.r"
+        "REditorSupport.r"
     ],
     "forwardPorts": [
         8888
