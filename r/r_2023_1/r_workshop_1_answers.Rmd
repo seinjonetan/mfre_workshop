@@ -54,7 +54,6 @@ our_char <- "Harry talks about boring stuff"
 our_int <- 13L
 our_double <- 13.13
 our_log <- TRUE
-
 ```
 
 These are our real basic data types. So basic, in fact, that most more advanced types of R data are simply built out of these.
@@ -95,17 +94,16 @@ our_int + our_double
 our_int - our_double
 
 # multiplication
-our_int*our_double
+our_int * our_double
 
 # subtraction
 our_int / our_double
 
 # exponentiation
-our_int ^ our_double
+our_int^our_double
 
 # modulo
 our_int %% our_double
-
 ```
 
 They can also be compared: (\>, \<, ==, \>=, \<=)
@@ -134,8 +132,6 @@ our_int <= our_double
 3.  Write a mathematical expression using an exponential.
 
 ```{r}
-
-
 
 ```
 
@@ -183,9 +179,6 @@ char_vect[2:5]
 
 ```{r}
 
-
-
-
 ```
 
 The next step up in complexity brings us to Matrices and Arrays.
@@ -198,27 +191,25 @@ matrix(c(1, 2, 3, 4, 5, 6), nrow = 3, ncol = 2)
 matrix(c(1, 2, 3, 4, 5, 6), nrow = 6, ncol = 1)
 
 matrix(c(1, 2, 3, 4, 5, 6), nrow = 6, ncol = 1)
-
-
 ```
 
 Arrays are formed with the `array()` function, and their shape defined with the `dim` argument
 
 ```{r}
 # create 2D array
-array_2d <- array(1:12, dim = c(3,4))
+array_2d <- array(1:12, dim = c(3, 4))
 print(array_2d)
 ```
 
 ```{r}
 # create 2D array just like matrix 1
-array_matrix <- array(1:6, dim=c(3,2))
+array_matrix <- array(1:6, dim = c(3, 2))
 print(array_matrix)
 ```
 
 ```{r}
 # create 3D array
-array_3d <- array(1:24, dim = c(2,3,4))
+array_3d <- array(1:24, dim = c(2, 3, 4))
 print(array_3d)
 ```
 
@@ -238,7 +229,7 @@ matrix(c(6, 7, 8, 9), ncol = 2, nrow = 2)
 matrix(1:16, ncol = 4, nrow = 4)
 
 # create a 3x3x3 array with the values 1:27
-array(1:27, dim = c(3,3,3))
+array(1:27, dim = c(3, 3, 3))
 ```
 
 ### 1.2 Basic Control Flow in R
@@ -271,7 +262,6 @@ num <- 5
 if (num > 0) {
   print("The number is positive!")
 }
-
 ```
 
 As you see, they are formatted starting with `if`, then followed by a condition, and then in {} brackets, an action to take if the condition is True
@@ -287,7 +277,6 @@ if (num > 0) {
 } else {
   print("The number is negative.")
 }
-
 ```
 
 There is also the `else if` syntax. Comparable to Python's `elif` condition, this lets you name a few paths for specific conditions and one generic one for if none are true.
@@ -324,12 +313,10 @@ You can combine `if` statements with `for` loops!
 for (i in 1:5) {
   if (i %% 2 == 0) {
     print(paste(i, " is an even number!"))
-  }
-  else {
+  } else {
     print(paste(i, " is an odd number!"))
   }
 }
-
 ```
 
 (I initially had a remark about how you'll never use the modulo operator, but then here it is! I had to go back and take it out!)
@@ -369,7 +356,6 @@ Print all numbers from 1 to 20.
 for (i in 1:20) {
   print(i)
 }
-
 ```
 
 Exercise 2:
@@ -394,13 +380,11 @@ sum <- 0
 for (i in 1:20) {
   if (i %% 2 != 0) {
     sum <- sum + i
-  }
-  else if (i %% 2 == 0) {
-    sum <- sum*i  
+  } else if (i %% 2 == 0) {
+    sum <- sum * i
   }
   print(sum)
 }
-
 ```
 
 #### User-defined Functions
@@ -464,8 +448,7 @@ power(2, 2)
 
 # `power(2)` is the same as `power(2,2)`
 
-power(2) == power(2,2)
-
+power(2) == power(2, 2)
 ```
 
 You can have more complicated processed inside of functions, including loops and `if` statements!
@@ -475,11 +458,11 @@ You can have more complicated processed inside of functions, including loops and
 
 sum_numbers <- function(numbers) {
   sum <- 0
-  
+
   for (num in numbers) {
     sum <- sum + num
   }
-  
+
   return(sum)
 }
 
@@ -487,8 +470,7 @@ sum_numbers <- function(numbers) {
 
 sum_numbers(c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 
-sum_numbers(c(1,-1,2,-2,3,-3))
-
+sum_numbers(c(1, -1, 2, -2, 3, -3))
 ```
 
 #### Exercise (User-Defined Functions)
@@ -516,14 +498,13 @@ is_even(47)
 Write a function that takes a `length` and a `width` of a rectangle, and returns the total area. Test it on the pairs of values 1 and 2, 3.5 and 7.2, 10.1 and 0.1
 
 ```{r}
-
 rectangle_area <- function(width, length) {
   area <- width * length
   return(area)
 }
 
 # sample function calls
-rectangle_area(1,2)
+rectangle_area(1, 2)
 rectangle_area(3.5, 7.2)
 rectangle_area(10.1, 0.1)
 ```
@@ -550,9 +531,10 @@ Don't be like me!
 
 ```{r}
 # Inconsistent formatting
-result_bad<- function(x,y){
-z<-x^2+y
-return(z)}
+result_bad <- function(x, y) {
+  z <- x^2 + y
+  return(z)
+}
 
 # Consistent formatting
 result_good <- function(x, y) {
@@ -578,22 +560,21 @@ Take the following function, `calculate_average()`, and adjust its spacing to be
 
 ```{r}
 # start: bad function
-calculate_average <-function(numbers){
-total<-sum(numbers)
-count<-length(numbers)
-average<-total/count
-return(average)}
-
-
-# finish: good function
-calculate_average <-function(numbers) {
-  total<-sum(numbers)
-  count<-length(numbers)
-  average<-total/count
+calculate_average <- function(numbers) {
+  total <- sum(numbers)
+  count <- length(numbers)
+  average <- total / count
   return(average)
 }
 
 
+# finish: good function
+calculate_average <- function(numbers) {
+  total <- sum(numbers)
+  count <- length(numbers)
+  average <- total / count
+  return(average)
+}
 ```
 
 ### 2.2 Naming variables and functions
@@ -687,14 +668,14 @@ calculate_correlation <- function(x, y) {
   n <- length(x)
   var_a <- sum(x) / n
   var_b <- sum(y) / n
-  
+
   var_c <- sum((x - var_a)^2) / n
   var_d <- sum((y - var_b)^2) / n
-  
+
   var_e <- sum((x - var_a) * (y - var_b)) / n
-  
+
   var_f <- var_e / sqrt(var_c * var_d)
-  
+
   return(var_f)
 }
 
@@ -735,21 +716,21 @@ A computer science professor once told me about the "rubber duckie" approach to 
 ```{r}
 calculate_correlation <- function(x, y) {
   # function takes two lists of numbers, then calculates and returns their correlation coefficient
-  
+
   # first gets sample size; both lists must have same length or else result will be wrong
   n <- length(x)
-  
+
   # calculates mean values of each dataset
   mean_x <- sum(x) / (n)
   mean_y <- sum(y) / (n)
-  
+
   # then calculates variances
-  var_x <- sum((x - mean_x)^2) / (n-1)
-  var_y <- sum((y - mean_y)^2) / (n-1)
-  
+  var_x <- sum((x - mean_x)^2) / (n - 1)
+  var_y <- sum((y - mean_y)^2) / (n - 1)
+
   # calculates covariance between lists
-  cov <- sum((x - mean_x) * (y - mean_y)) / (n-1)
-  
+  cov <- sum((x - mean_x) * (y - mean_y)) / (n - 1)
+
   # then divides for correlation, and returns it
   corr <- cov / sqrt(var_x * var_y)
   return(corr)
@@ -846,7 +827,6 @@ Cells should generally just have one output, or two if they're closely related (
 Say that we're creating some number ranges, plotting them, then running a regression. Is this a good layout of our code?
 
 ```{r}
-
 number_range_a <- seq(1, 50, by = 1)
 number_range_b <- seq(2, 100, by = 2)
 number_range_c <- seq(1, 50)^2
@@ -864,8 +844,6 @@ summary(lm_b_c)
 
 lm_c_a <- lm(number_range_c ~ number_range_a)
 summary(lm_c_a)
-
-
 ```
 
 #### Answer

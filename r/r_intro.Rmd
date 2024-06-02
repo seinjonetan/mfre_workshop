@@ -2,13 +2,13 @@
 
 Dear **MFRE Students**, 
 
-Many of you should have gone through the Python prep seciton by now and should be ready to start the R prep section. This section is designed to help you get familiar with the R programming language.
+All of you should have gone through the Python prep seciton by now and should be ready to start the R prep section. This section is designed to help you get familiar with the R programming language.
 
-Many of the concepts you will have learnt for Python will be applicable to R, but there are some key differences in syntax and functionality.
+Many of the concepts you will have learned for Python will be applicable to R, but there are some key differences in syntax and functionality.
 
 ## R markdown
 
-While the most basic way to run R code is to use the R console, we will be using R markdown files to run our code. R markdown files are a great way to combine code, output, and text in a single document.
+While the most basic way to run R code is to write in a `.r` file and use the R console, we will be using R markdown files to run our code. R markdown files are a great way to combine code, output, and text in a single document.
 
 Rmd or R markdown files can be edited using your IDE or intergrated development environment of your choice, but it can also be edited using a simple text editor like notepad. The advantage of using Rmd over a simple R script is that you can include text, code, and output in a single document and have it be rendered or knitted into a variety of formats like HTML, PDF, or Word.
 
@@ -59,12 +59,12 @@ print(array_1)
 
 We will go through the following topics in this section:
 
-1. Data types in R
-2. Data structures in R
-3. Basic operations in R
-4. Control flow in R
-5. Functions in R
-6. Variable naming conventions in R
+1. Data types
+2. Data structures 
+3. Basic operations 
+4. Control flow 
+5. Functions 
+6. Variable naming conventions 
 7. The joys of pseudocode and how to write it
 8. Rubber duck debugging
 
@@ -72,7 +72,7 @@ We will go through the following topics in this section:
 
 R has a number of data types, some of which are similar to Python and some of which are unique to R. Here are some of the most common data types in R:
 
-1. **Numeric** - This is the most common data type in R and is used to store numbers. Numeric data types can be integers or floats.
+1. **Numeric** - This is the most common data type in R and is used to store numbers. Numeric data types can be integers (whole numbers) or floats (numebrs with a decimal).
 2. **Character** - This data type is used to store strings.
 3. **Logical** - This data type is used to store boolean values, i.e. `TRUE` or `FALSE`.
 4. **Integer** - This data type is used to store whole numbers.

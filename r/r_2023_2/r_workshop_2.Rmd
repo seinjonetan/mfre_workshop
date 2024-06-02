@@ -84,10 +84,14 @@ The first five do various operations, such as subsetting and altering your data.
 Before we get to the commands themselves, we need to import our data. I'll set this up in one cell; a few of these commands will be seen again later.
 
 ```{r}
-# read csv file in as data
-cpi <- read_csv(here("food_cpi.csv"))
+library(readr)
+library(dplyr)
+library(ggplot2)
 
-# transpose 
+# read csv file in as data
+cpi <- read_csv("food_cpi.csv")
+
+# transpose
 cpi_t <- t(cpi)
 
 # assign first row as column names
@@ -107,19 +111,21 @@ cpi_t <- cpi_t %>%
   mutate(Year = year_col)
 
 # rename columns
-cpi_t <- rename(cpi_t, "Energy" = "Energy 7", "Food" = "Food 5", "Goods" = "Goods 8", "Shelter" = "Shelter 6", "Services" = "Services 9", 
-                "All_items" = "All-items",
-                "Household_operations_furniture_equipment" = "Household operations, furnishings and equipment",
-                "All_items_but_food_energy" = "All-items excluding food and energy 7",
-                "All_items_excluding_energy" = "All-items excluding energy 7",
-                "Alcohol_tobacco_cannabis" = "Alcoholic beverages, tobacco products and recreational cannabis",
-                "Recreation_education_books" = "Recreation, education and reading",
-                "Clothing_and_footwear" = "Clothing and footwear",
-                "Health_personal_care" = "Health and personal care")
+cpi_t <- rename(cpi_t,
+  "Energy" = "Energy 7", "Food" = "Food 5", "Goods" = "Goods 8", "Shelter" = "Shelter 6", "Services" = "Services 9",
+  "All_items" = "All-items",
+  "Household_operations_furniture_equipment" = "Household operations, furnishings and equipment",
+  "All_items_but_food_energy" = "All-items excluding food and energy 7",
+  "All_items_excluding_energy" = "All-items excluding energy 7",
+  "Alcohol_tobacco_cannabis" = "Alcoholic beverages, tobacco products and recreational cannabis",
+  "Recreation_education_books" = "Recreation, education and reading",
+  "Clothing_and_footwear" = "Clothing and footwear",
+  "Health_personal_care" = "Health and personal care"
+)
 
 colnames(cpi_t)
 
-cpi_t <- cpi_t %>% 
+cpi_t <- cpi_t %>%
   mutate_all(as.numeric)
 
 cpi_t
@@ -154,7 +160,6 @@ Create new dataframes as I did above, each including the `"Year"` column and a s
 
 ```{r}
 
-
 ```
 
 Now try something new. If you call `everything()` inside of a `select()` statement, it'll return all columns specified up to that point, then all remaining columns after it.
@@ -163,16 +168,12 @@ Move `Year` to the left of the dataset by using `select()` with `Year` and `ever
 
 ```{r}
 # answer
-
-
 ```
 
 Now move all non-compound CPI types to the left: `"Food"`, `"Shelter"`, `"Transportation"`, `"Gasoline"`, `"Energy"`, `"Goods"`, and `"Services"`.
 
 ```{r}
 # answer
-
-
 ```
 
 Select just the `"Food"` column. Does it become a vector, or stay as a tibble?
@@ -193,17 +194,18 @@ Our datasets contain the Consumer Price Indices for various types of goods. To t
 The `lag()` function is used with a data column: you input this column, and it moves each entry "down" one row. Our data goes from 2000 onwards, so the 2000 value is moved to 2001, 2001 to 2002, etc. The first year doesn't have a prior value, so this is filled with an `NA`.
 
 ```{r}
-food_cpi_mutate <- mutate(food_cpi, 
-                          # create change of Food CPI versus lagged period's CPI: difference since last year
-                          food_change = Food - lag(Food), 
-                          
-                          # create percentage Food CPI change: subtract previous CPI then divide by it
-                          food_change_percent = 100*(food_change)/lag(Food),
-                          
-                          
-                          # then do change and change percent values for All_items_but_food_energy variable
-                          All_items_change = All_items_but_food_energy - lag(All_items_but_food_energy),
-                          All_items_change_percent = 100*(All_items_change)/lag(All_items_but_food_energy))
+food_cpi_mutate <- mutate(food_cpi,
+  # create change of Food CPI versus lagged period's CPI: difference since last year
+  food_change = Food - lag(Food),
+
+  # create percentage Food CPI change: subtract previous CPI then divide by it
+  food_change_percent = 100 * (food_change) / lag(Food),
+
+
+  # then do change and change percent values for All_items_but_food_energy variable
+  All_items_change = All_items_but_food_energy - lag(All_items_but_food_energy),
+  All_items_change_percent = 100 * (All_items_change) / lag(All_items_but_food_energy)
+)
 
 food_cpi_mutate
 ```
@@ -239,8 +241,6 @@ Also include the `Year` column!
 
 ```{r}
 
-
-
 ```
 
 
@@ -264,10 +264,8 @@ food_cpi_mutate$food_change
 Let's get just the years with a really high increase in food prices, like 4% or more.
 
 ```{r}
-
 high_inflation <- filter(food_cpi_mutate, food_change_percent > 4.0)
 high_inflation
-
 ```
 
 As you can see, `filter()` works by us passing in a dataframe (`food_cpi_mutate`), and then naming a column (`food_change`) as part of a boolean condition. In our case, `food_change > 4.0` returns TRUE for all rows where we have a greater than 4% inflation in food prices; `filter()` then creates a dataframe with just these values in it.
@@ -280,14 +278,10 @@ food_cpi_mutate
 
 ```{r}
 # create a DataFrame from `food_cpi_mutate` with just the rows where Food is greater than 100.0
-
-
 ```
 
 ```{r}
 # create a DataFrame from `food_cpi_mutate` with just the rows where Food is greater than All_items_but_food_energy
-
-
 ```
 
 ```{r}
@@ -301,8 +295,6 @@ food_cpi_mutate
 # now create a DataFrame where food_change is less than All_items change, AND food_change is greater than 1
 
 # hint! you can input multiple conditions separated by commas
-
-
 ```
 
 Now you've learned how to filter with multiple conditions. By default, `filter(df, condition_1, condition_2)` returns rows where *all* conditions are met. So, the conditions all have to evaluate to TRUE.
@@ -318,8 +310,6 @@ You can also join conditions with `|`, meaning *OR*. As long as one of these eva
 
 
 # create a dataframe with the same conditions stated, but joined with | instead
-
-
 ```
 
 
@@ -368,9 +358,9 @@ Pipes do not come in basic R, but are imported with the TidyVerse.
 ```{r}
 # good syntax
 
-food_cpi_mutate %>%                         # takes food_cpi_mutate and passes it forward:
-  arrange(desc(food_change_percent)) %>%    # arranges in descending order by food_change_percent and passes it forward
-  slice(1:5)                                # slices to first five results
+food_cpi_mutate %>% # takes food_cpi_mutate and passes it forward:
+  arrange(desc(food_change_percent)) %>% # arranges in descending order by food_change_percent and passes it forward
+  slice(1:5) # slices to first five results
 ```
 
 As you see, this starts with a dataframe, then "pipes" it into `arrange(desc(food_change_percent))`, and then pipes that result into `slice(1:5)`
@@ -408,26 +398,20 @@ The second statement is *far* more difficult to read, particularly with the func
 
 ```{r}
 # arrange food_cpi_mutate by Year in descending order
-
 ```
 
 ```{r}
 # arrange food_cpi_mutate by All_items_change_percent in descending order
-
 ```
 
 ```{r}
 # arrange food_mutate_cpi by All_items_change_percent, then slice from 1-10 to get the 10 lowest years
 
 # do this using pipes %>% as shown above
-
-
 ```
 
 ```{r}
 # arrange real_cpis by `real_energy` in descending order, then slice from 1-5 to get the highest 5 years of energy prices
-
-
 ```
 
 
@@ -450,13 +434,13 @@ As we'll see, `summarise()` offers us a lot more control over what statistics we
 To use `summarise()`, you first feed in a dataframe. Then, you tell it how to make the variables you want, and these are returned as a new dataframe. To illustrate:
 
 ```{r}
-food_cpi_mutate %>% 
-  summarise(mean_Food = mean(Food),
-            mean_food_change = mean(food_change),
-            sd_Food = sd(Food),
-            sd_food_change = sd(food_change))
-
-
+food_cpi_mutate %>%
+  summarise(
+    mean_Food = mean(Food),
+    mean_food_change = mean(food_change),
+    sd_Food = sd(Food),
+    sd_food_change = sd(food_change)
+  )
 ```
 
 (Notice the `NA` values in the `mean_food_change` and `sd_food_change` columns!)
@@ -493,18 +477,19 @@ Thankfully, we can tell the functions to ignore these rows, and calculate as tho
 # Assuming food_cpi_mutate is your dataframe
 food_cpi_mutate
 
-food_cpi_mutate %>% 
-  summarise(mean_inflation = mean(food_change_percent, na.rm = TRUE),
-            max_inflation = max(food_change_percent, na.rm = TRUE),
-            min_inflation = min(food_change_percent, na.rm = TRUE),
-            sd_inflation = sd(food_change_percent, na.rm = TRUE),
-            var_inflation = var(food_change_percent, na.rm = TRUE),
-            first_inflation = first(food_change_percent),
-            last_inflation = last(food_change_percent),
-            inflation_25 = quantile(food_change_percent, 0.25, na.rm = TRUE),
-            inflation_50 = quantile(food_change_percent, 0.5, na.rm = TRUE),
-            inflation_75 = quantile(food_change_percent, 0.75, na.rm = TRUE))
-
+food_cpi_mutate %>%
+  summarise(
+    mean_inflation = mean(food_change_percent, na.rm = TRUE),
+    max_inflation = max(food_change_percent, na.rm = TRUE),
+    min_inflation = min(food_change_percent, na.rm = TRUE),
+    sd_inflation = sd(food_change_percent, na.rm = TRUE),
+    var_inflation = var(food_change_percent, na.rm = TRUE),
+    first_inflation = first(food_change_percent),
+    last_inflation = last(food_change_percent),
+    inflation_25 = quantile(food_change_percent, 0.25, na.rm = TRUE),
+    inflation_50 = quantile(food_change_percent, 0.5, na.rm = TRUE),
+    inflation_75 = quantile(food_change_percent, 0.75, na.rm = TRUE)
+  )
 ```
 
 There won't be an exercise for this section, because we're going to join `summarise()` with a function that adds a lot more power. 
@@ -537,7 +522,6 @@ food_cpi_mutate <- food_cpi_mutate %>%
 Now we can see if our stats varied systematically between even and odd years, and by decade.
 
 ```{r}
-
 # Calculate summary statistics ignoring NA values
 food_cpi_mutate %>%
   group_by(even_years) %>%
@@ -545,9 +529,7 @@ food_cpi_mutate %>%
     avg_Food = mean(Food),
     avg_food_change = mean(food_change, na.rm = TRUE),
     avg_food_change_percent = mean(food_change_percent, na.rm = TRUE)
-)
-
-
+  )
 ```
 
 #### Exercise (`summarise()`, `group_by()`)
@@ -558,14 +540,11 @@ Only use `na.rm = TRUE` if you have to!
 
 ```{r}
 
-
-
 ```
 
 Now calculate three more summary statistics for `food_cpi_mutate`, grouping by `decade` and `even_years`
 
 ```{r}
-
 
 ```
 
@@ -641,7 +620,7 @@ This is a fairly basic, serviceable line chart. Everybody gets what it means; no
 
 ```{r}
 ggplot(food_cpi_mutate, mapping = aes(x = Year, y = Food)) +
-  geom_smooth(method = "lm", se=FALSE) +
+  geom_smooth(method = "lm", se = FALSE) +
   geom_point() +
   labs(x = "Year", y = "Food Price CPI", title = "Fig 2: Scatter+Regplot of Food Prices over Time")
 ```
@@ -656,11 +635,15 @@ Instead of a lineplot, this visualization shows the individual data points with 
 ggplot(data = food_cpi_mutate) +
   geom_line(aes(x = Year, y = All_items_but_food_energy, color = "All_items_but_food_energy")) +
   geom_line(aes(x = Year, y = Food, color = "Food")) +
-  labs(title = "Fig. 3: CPI Price Comparisons Over Time",
-       x = "Year", y = "Price") +
-  scale_color_manual(values = c("blue", "red"),
-                     labels = c("All-items", "Food"),
-                     name = "Data Series:")
+  labs(
+    title = "Fig. 3: CPI Price Comparisons Over Time",
+    x = "Year", y = "Price"
+  ) +
+  scale_color_manual(
+    values = c("blue", "red"),
+    labels = c("All-items", "Food"),
+    name = "Data Series:"
+  )
 ```
 `All-items` falls behind `Food` starting roughly in 2005, gradually diverging until roughly 2021. Both tick up with much higher inflation than before, but `Food` does so much more sharply. 
 
@@ -670,11 +653,15 @@ Let's take a look at their percentage growths over time.
 ggplot(data = food_cpi_mutate) +
   geom_line(mapping = aes(x = Year, y = All_items_change_percent, color = "All_items")) +
   geom_line(mapping = aes(x = Year, y = food_change_percent, color = "Food")) +
-  labs(title = "Fig. 4: CPI Percentage Changes Over Time",
-       x = "Year", y = "Price") +
-  scale_color_manual(values = c("blue", "red"),
-                     labels = c("All_items", "Food"),
-                     name = "Data Series:")
+  labs(
+    title = "Fig. 4: CPI Percentage Changes Over Time",
+    x = "Year", y = "Price"
+  ) +
+  scale_color_manual(
+    values = c("blue", "red"),
+    labels = c("All_items", "Food"),
+    name = "Data Series:"
+  )
 ```
 
 So, `Food` has consistently higher percentage changes over most of the 2004+ period. How big are these? 
@@ -682,12 +669,13 @@ So, `Food` has consistently higher percentage changes over most of the 2004+ per
 We can actually pass in a modified value as the `y` value in our `geom_line` function. If we subtract `All_items_change_percent` from `food_change_percent`, we get the difference in these values (amazing!) which can be plotted directly. Positive values show when food prices are growing faster; negative values show when All Items are growing faster.
 
 ```{r}
-
 ggplot(data = food_cpi_mutate) +
   geom_line(mapping = aes(x = Year, y = food_change_percent - All_items_change_percent), color = "turquoise") +
   geom_hline(yintercept = 0, linetype = "dashed", color = "black") +
-  labs(title = "Fig 5. Difference in CPI Percentage Change Over Time",
-       x = "Year", y = "Percentage Growth Difference") +
+  labs(
+    title = "Fig 5. Difference in CPI Percentage Change Over Time",
+    x = "Year", y = "Percentage Growth Difference"
+  ) +
   scale_color_manual(values = "turquoise")
 ```
 
@@ -709,14 +697,12 @@ You can make a vertical line with the `geom_vline()` function. You specify where
 
 ```{r}
 
-
 ```
 
 2. Use `durables_cpi` to visualize the CPI of the different product types over time. 
 
 
 ```{r}
-
 
 ```
 
@@ -727,11 +713,11 @@ You can make a vertical line with the `geom_vline()` function. You specify where
 
 
 ```{r}
-colnames(durables_cpi)
-colnames(services_cpi)
+# colnames(durables_cpi)
+# colnames(services_cpi)
 
 
-# Calculate `avg_durable_cpi` 
+# Calculate `avg_durable_cpi`
 
 
 # Select `Year` and `avg_durable_cpi` as new dataframe in preparation for `bind_cols` later
@@ -747,8 +733,6 @@ colnames(services_cpi)
 
 
 # plotting averaged cpi values
-
-
 ```
 
 
@@ -799,7 +783,7 @@ Color?
 ```{r}
 ggplot(food_cpi_mutate, mapping = aes(x = All_items_change_percent, y = food_change_percent)) +
   geom_point() +
-  geom_smooth(method = "lm") + 
+  geom_smooth(method = "lm") +
   labs(x = "All Items But Food, Energy", y = "Food Price", title = "Fig 8a. Food, All-items CPI with Linear Best-Fit Line")
 ```
 
@@ -809,7 +793,7 @@ This is the same fundamental relationship as before, but now visualized with a b
 ```{r}
 ggplot(food_cpi_mutate, mapping = aes(x = All_items_change_percent, y = food_change_percent)) +
   geom_point() +
-  geom_smooth(method = "auto") + 
+  geom_smooth(method = "auto") +
   labs(x = "All Items But Food, Energy", y = "Food Price", title = "Fig 8b. Food, All-items CPI with Local Regression Best-Fit Line")
 ```
 
@@ -827,7 +811,6 @@ Use `food_cpi_mutate` for the exercises.
 4. Make a scatterplot with `Year` on the x-axis, `Food` on the Y-axis, and a linear trendline. Make sure to give it an appropriate `title` in the `labs()` argument!
 
 ```{r}
-
 
 ```
 
