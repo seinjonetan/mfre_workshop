@@ -276,3 +276,47 @@ print(predictions)
 In the code above, we created a new dataframe `new_data` with sepal length and width values for three new iris flowers. We then used the KNN classifier to make predictions on the new data based on the training data.
 
 Machine learning is a powerful tool for building predictive models and making informed decisions based on data. In R, there are many packages available for fitting different types of machine learning models, such as `caret`, `randomForest`, and `xgboost`.
+
+## Excercises 
+
+You will promarily be dealing with the `mtcars` dataset for the excercises. As a reminer, here's what teh dataset looks like:
+
+```{r}
+head(mtcars)
+```
+
+1. Filter out all the cars that have a `mpg` greater than 20 and `hp` greater than 100. What is the average `wt` of these cars?
+
+```{r}
+# Your code here
+```
+
+2. Create a new column in the `mtcars` dataset called `disp_per_cyl` that calculates the displacement per cylinder for each car. The displacement per cylinder can be calculated by dividing the `disp` column by the `cyl` column.
+
+```{r}
+# Your code here
+```
+
+3. Create a scatter plot of `disp_per_cyl` vs `mpg` in the `mtcars` dataset. Add labels to the x-axis, y-axis, and title of the plot.
+
+```{r}
+# Your code here
+```
+
+4. Create a boxplot of `disp_per_cyl` by `cyl` in the `mtcars` dataset. Add labels to the x-axis, y-axis, and title of the plot.
+
+```{r}
+# Your code here
+```
+
+5. Calculate the correlation between `disp_per_cyl` and `mpg` in the `mtcars` dataset.
+
+```{r}
+# Your code here
+```
+
+6. Fit a linear regression model to predict `mpg` based on `disp_per_cyl` in the `mtcars` dataset. Get the summary of the model.
+
+```{r}
+# Your code here
+```
