@@ -1,0 +1,445 @@
+---
+title: "Introduction to R"
+author: "Tan Sein Jone"
+date: "`r Sys.Date()`"
+# output: 
+#   html_document:
+#     theme: united
+#     highlight: tango
+#     toc: true
+#     toc_float: true
+---
+## Introduction
+
+R is a powerful language and environment for statistical computing and graphics. It is a free, open-source software that is widely used in academia, industry, and government. R provides a wide variety of statistical and graphical techniques, and it is highly extensible through user-defined functions and packages.
+
+This tutorial will introduce you to the basics of R programming, including data types, data structures, functions, and control structures. By the end of this tutorial, you should have a good understanding of how to use R for data analysis and visualization.
+
+## Table of Contents
+
+1. [Functional Programming](#functional-programming)
+2. [Data Handling](#data-handling)
+3. [Data Visualization](#data-visualization)
+4. [Statistical Analysis](#statistical-analysis)
+
+## Functional Programming
+
+Functional programming is a key aspect of coding in R, which sets it apart from coding in Python. In R, functions are treated as first-class objects, meaning they can be passed as arguments to other functions, returned as values from other functions, and assigned to variables. This allows for a more flexible and modular approach to programming.
+
+On the other hand, Python is more focused on object-oriented programming (OOP). It is based on the concept of "objects" that can contain data in the form of fields or attributes, and code in the form of procedures or methods. Python's OOP paradigm emphasizes the organization of code into classes and objects, promoting code reusability and encapsulation.
+
+Another difference between R and Python is their syntax and coding style. R has a more concise and expressive syntax, often allowing for shorter and more readable code. It also provides a wide range of built-in statistical and graphical functions, making it a popular choice for data analysis and visualization tasks.
+
+Python, on the other hand, has a more general-purpose syntax and a larger standard library, making it suitable for a wide range of applications beyond statistical computing. Python's syntax is often considered more readable and easier to learn for beginners.
+
+In terms of data handling, R has a strong focus on data frames, which are similar to tables in a relational database. R provides extensive functionality for manipulating and analyzing data frames, making it a powerful tool for data manipulation and exploration.
+
+Python, on the other hand, offers a variety of data structures, including lists, dictionaries, and tuples, which can be used for data handling. Python's pandas library provides similar functionality to R's data frames, allowing for efficient data manipulation and analysis.
+
+### Pure Functions
+
+In functional programming, a pure function is a function that has no side effects and always returns the same output for the same input. This property makes pure functions easier to reason about and test, as they do not depend on external state or produce unexpected results.
+
+This means you can't access or modify variables outside the function's scope. This is a key concept in functional programming, as it helps to avoid bugs and make code more predictable and maintainable.
+
+###  First Class Functions
+
+In R, functions are first-class objects, which means they can be treated like any other object in the language. This allows for a more flexible and modular approach to programming, as functions can be passed as arguments to other functions, returned as values from other functions, and assigned to variables.
+
+### Higher Order Functions
+
+Higher-order functions are functions that take other functions as arguments or return functions as values. In R, higher-order functions are commonly used in functional programming to create more concise and expressive code.
+
+```{r}
+# Define a higher-order function
+apply_function <- function(func, x) {
+    func(x)
+}
+
+# Define a function to square a number
+square <- function(x) {
+    x^2
+}
+
+# Use the higher-order function with the square function
+result <- apply_function(square, 5)
+print(result)
+```
+
+## Data Handling
+
+Data handling is a key aspect of data analysis and visualization in R. R provides a wide variety of data structures and functions for manipulating and analyzing data, making it a powerful tool for data exploration and modeling.
+
+Given that R is a statistical computing language, it provides extensive functionality for working with data frames, which are similar to tables in a relational database. Data frames are a key data structure in R, as they allow you to store and manipulate tabular data in a flexible and efficient way.
+
+### Data Types
+
+R's lineage as a statistical computing language means that the data types shoud be familiar to anyone who has worked with data in a statistical context. R provides several basic data types, including numeric, character, logical, and complex. These data types can be combined to create more complex data structures, such as vectors, matrices, arrays, lists, and data frames.
+
+Techniques we learned in the coding introduciton can be applied here such as typecasting, indexing, and slicing.
+
+```{r}
+# Numeric data type
+x <- 5
+print(class(x))
+
+# Character data type
+y <- "Hello, world!"
+print(class(y))
+
+# Logical data type
+z <- TRUE
+print(class(z))
+
+# Complex data type
+w <- 3 + 4i
+print(class(w))
+```
+
+### Data Structures
+
+R provides a wide variety of data structures for storing and manipulating data. Some of the most commonly used data structures in R include:
+
+- Vectors: One-dimensional arrays that can hold numeric, character, or logical values.
+- Matrices: Two-dimensional arrays that can hold numeric, character, or logical values.
+- Arrays: Multidimensional arrays that can hold numeric, character, or logical values.
+- Lists: Ordered collections of objects that can hold any type of data.
+- Data frames: Tabular data structures that can hold different types of data in columns.
+
+### Functions Best Practices
+
+When writing functions in R, it is important to follow best practices to ensure that your code is readable, maintainable, and efficient. Some key best practices for writing functions in R include:
+
+- Use meaningful function names that describe what the function does.
+- Write clear and concise function documentation using comments and roxygen2-style documentation.
+- Break down complex functions into smaller, more manageable functions.
+- Avoid side effects by using pure functions that do not modify external state.
+- Use vectorized operations whenever possible to improve performance.
+- Write unit tests for your functions to ensure they work as expected.
+
+## Data Handling
+
+Data handling is a key aspect of data analysis and visualization in R. R provides a wide variety of data structures and functions for manipulating and analyzing data, making it a powerful tool for data exploration and modeling.
+
+Data handling is a crucial aspect of data analysis in R. R provides a wide array of data structures and functions that allow for efficient manipulation and analysis of data, making it a powerful tool for data exploration, visualization, and modeling.
+
+In R, data is typically stored in data frames, which are similar to tables in a relational database. A data frame is a list of vectors of equal length, where each vector represents a column, and each element in the vector represents a row in the column. This structure allows for easy manipulation and analysis of tabular data.
+
+### File I/O
+
+R provides several functions for reading and writing data to and from files. Some of the most commonly used functions for file I/O in R include:
+
+- `read.csv()`: Reads data from a CSV file into a data frame.
+- `write.csv()`: Writes data from a data frame to a CSV file.
+- `read.table()`: Reads data from a text file into a data frame.
+- `write.table()`: Writes data from a data frame to a text file.
+- `readRDS()`: Reads data from an RDS file into an R object.
+- `saveRDS()`: Writes data from an R object to an RDS file.
+
+```{r}
+# Generate some sample data
+data <- data.frame(
+    x = 1:10,
+    y = letters[1:10]
+)
+
+# Write data to a CSV file
+write.csv(data, "data.csv")
+
+# Read data from a CSV file
+data_read <- read.csv("data.csv")
+print(data_read)
+```
+
+R also has a variety of built in datasets that can be used for practice and learning. These datasets can be accessed using the `data()` function.
+
+```{r}
+# Load the iris dataset
+data(iris)
+
+# Display the first few rows of the iris dataset
+head(iris)
+```
+
+### Data Manipulation
+
+R provides a wide variety of functions for manipulating and transforming data. Some of the most commonly used functions for data manipulation in R include:
+
+- `subset()`: Subsets rows of a data frame based on a condition.
+- `filter()`: Filters rows of a data frame based on a condition.
+- `select()`: Selects columns of a data frame.
+- `mutate()`: Adds new columns to a data frame.
+- `arrange()`: Sorts rows of a data frame.
+- `group_by()`: Groups rows of a data frame by a variable.
+- `summarize()`: Summarizes grouped data.
+
+All these functions some from the `dplyr` package, which is a powerful and efficient package for data manipulation in R. The `dplyr` package provides a consistent and intuitive grammar for manipulating data frames, making it easy to perform common data manipulation tasks. 
+
+The `dplyr` package is part of the larger `tidyverse` ecosystem, which is a collection of packages designed to work together to make data analysis and visualization in R more efficient and user-friendly. The `tidyverse` ecosystem includes packages for data manipulation (`dplyr`), data visualization (`ggplot2`), and data import/export (`readr`), among others.
+
+```{r}
+# Load the dplyr package
+library(dplyr)
+
+# Filter rows where x is greater than 5
+data_filtered <- data %>% filter(x > 5)
+print(data_filtered)
+
+# Select columns x and y
+data_selected <- data %>% select(x, y)
+
+# Add a new column z
+data_mutated <- data %>% mutate(z = x + 1)
+
+# Sort rows by x
+data_arranged <- data %>% arrange(x)
+
+# Group rows by y and summarize x
+data_grouped <- data %>%
+    group_by(y) %>%
+    summarize(mean_x = mean(x))
+
+print(data_grouped)
+```
+
+### A Note on Package Management & Environments
+
+R has a vast ecosystem of packages that extend its functionality in various ways. To install a package in R, you can use the `install.packages()` function. For example, to install the `dplyr` package, you can run:
+
+```{r}
+# install.packages("dplyr")
+```
+
+Once a package is installed, you can load it into your R session using the `library()` function. Unlike Python, R does not have a built-in package manager, so you will need to install packages manually using the `install.packages()` function. This is a key difference between R and Python, as Python has a built-in package manager called `pip` that allows you to easily install and manage packages.
+
+R also has a concept of environments, which are used to manage the scope and visibility of objects in R. An environment is a collection of symbols and their values, similar to a namespace in Python. Environments are used to manage the scope of variables and functions in R, allowing you to create isolated environments for different parts of your code.
+
+### How to Write Pretty Code
+
+Unlike Python, R is not a whitespace-sensitive language, so you can use spaces, tabs, and newlines to format your code in a way that is easy to read and understand. However, it is important to follow some best practices to ensure that your code is readable and maintainable.
+
+Some key tips for writing pretty code in R include:
+
+- Use consistent indentation to show the structure of your code.
+- Use meaningful variable names that describe the purpose of the variable.
+- Break long lines of code into multiple lines to improve readability.
+- Use comments to explain the purpose of your code and any complex logic.
+- Use whitespace to separate different parts of your code, such as functions and loops.
+
+By following these best practices, you can write code that is easy to read, understand, and maintain, making it easier to collaborate with others and debug your code.
+
+Here are some examples of how to write pretty code in R:
+
+```{r}
+# For a long function, collapse the arguments into multiple lines
+# result <- my_function(
+#     arg1 = value1,
+#     arg2 = value2,
+#     arg3 = value3
+# )
+```
+
+## Data Visualization
+
+Data visualization is a key aspect of data analysis in R. R provides a wide variety of functions and packages for creating high-quality visualizations, making it a powerful tool for exploring and communicating data.
+
+### Base Graphics
+
+R provides a powerful and flexible system for creating plots and visualizations using base graphics. Base graphics in R are built on the `graphics` package, which provides a wide variety of functions for creating plots, histograms, scatter plots, bar plots, and more.
+
+Some of the most commonly used functions for creating base graphics in R include:
+
+- `plot()`: Creates a scatter plot.
+- `hist()`: Creates a histogram.
+- `barplot()`: Creates a bar plot.
+- `boxplot()`: Creates a box plot.
+- `pie()`: Creates a pie chart.
+- `plot()`: Creates a scatter plot.
+
+```{r}
+# Create a scatter plot
+plot(iris$Sepal.Length, iris$Sepal.Width, xlab = "Sepal Length", ylab = "Sepal Width", main = "Sepal Length vs. Sepal Width")
+
+# Create a histogram
+hist(iris$Sepal.Length, xlab = "Sepal Length", main = "Histogram of Sepal Length")
+
+# Create a bar plot
+barplot(table(iris$Species), xlab = "Species", ylab = "Count", main = "Bar Plot of Species")
+```
+
+### ggplot2
+
+`ggplot2` is a powerful and flexible package for creating high-quality visualizations in R. It is part of the `tidyverse`, a collection of R packages designed for data science. `ggplot2` is built on the principles of "The Grammar of Graphics", which is a system for understanding the building blocks of a graph or a plot.
+
+The package provides a consistent and intuitive interface for creating a wide variety of plots. It allows you to start with a basic plot and add layers of detail to it, such as points, lines, labels, and legends. This layered approach makes it easy to build complex plots in a step-by-step manner.
+
+`ggplot2` includes functions for creating many different types of plots, including scatter plots, line plots, bar plots, box plots, histograms, and more. It also provides functions for controlling every detail of the plot, including the scales, labels, legends, and themes.
+
+One of the key features of `ggplot2` is its use of aesthetics (aes) and geometric objects (geoms). Aesthetics describe how your data will relate to your plot, including variables used for the x and y axes, color, size, shape, etc. Geometric objects, on the other hand, describe the type of plot you will produce, such as a scatter plot (geom_point), line plot (geom_line), bar plot (geom_bar), etc.
+
+Here's an example of how to create a scatter plot using `ggplot2`:
+```{r}
+# Load the ggplot2 package
+library(ggplot2)
+
+# Create a scatter plot using ggplot2
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+    geom_point() +
+    labs(x = "Sepal Length", y = "Sepal Width", title = "Sepal Length vs. Sepal Width")
+```
+
+In this example, `ggplot()` initializes the plot with the data frame `iris` and the aesthetics are defined within `aes()`. `geom_point()` adds a layer to the plot to create a scatter plot. `labs()` is used to add labels to the x and y axes and a title to the plot.
+
+For more information on `ggplot2`, you can refer to the official [documentation](https://ggplot2.tidyverse.org/) and the many tutorials and examples available online.
+
+### Interactive Visualizations
+
+R provides several packages for creating interactive visualizations, which allow users to interact with the data and explore it in more detail. Some of the most commonly used packages for creating interactive visualizations in R include:
+
+- `plotly`: Provides functions for creating interactive plots using the Plotly JavaScript library.
+- `shiny`: Allows you to create interactive web applications using R.
+- `leaflet`: Provides functions for creating interactive maps using the Leaflet JavaScript library.
+- `dygraphs`: Provides functions for creating interactive time series plots.
+
+These packages allow you to create interactive visualizations that can be shared online or embedded in web applications, making it easy to communicate your findings and insights with others.
+
+```{r}
+# Load the plotly package
+library(plotly)
+
+# Create an interactive scatter plot using plotly
+plot_ly(iris, x = ~Sepal.Length, y = ~Sepal.Width, color = ~Species, type = "scatter", mode = "markers") %>%
+    layout(xaxis = list(title = "Sepal Length"), yaxis = list(title = "Sepal Width"), title = "Sepal Length vs. Sepal Width")
+
+# Create an interactive bar plot using plotly
+plot_ly(iris, x = ~Species, type = "bar") %>%
+    layout(xaxis = list(title = "Species"), yaxis = list(title = "Count"), title = "Bar Plot of Species")
+```
+
+### Best Practices
+
+When creating visualizations in R, it is important to follow best practices to ensure that your plots are clear, informative, and visually appealing. Some key best practices for data visualization in R include:
+
+- Choose the right type of plot for your data and research question.
+- Use appropriate colors, fonts, and labels to make your plot easy to read and understand.
+- Include titles, legends, and annotations to provide context and explain your findings.
+- Use consistent scales and axes to make it easy to compare different parts of the plot.
+- Avoid clutter and unnecessary elements that distract from the main message of the plot.
+
+## Statistical Analysis
+
+R is a powerful tool for statistical analysis, providing a wide variety of functions and packages for analyzing data and performing statistical tests. R is widely used in academia, industry, and government for a wide range of statistical applications, including hypothesis testing, regression analysis, time series analysis, and more.
+
+Given that the packages are highly specialized, it is important to understand the basics of statistical analysis in R to make the most of the available tools. At risk of turning this into a statistics course, we will cover some of the most commonly used functions and packages for statistical analysis in R.
+
+### Hypothesis Testing
+
+Hypothesis testing is a key aspect of statistical analysis in R. R provides a wide variety of functions and packages for performing hypothesis tests, including t-tests, chi-square tests, ANOVA, and more. These tests allow you to compare sample data to a known population or to test the significance of relationships between variables.
+
+Some of the most commonly used functions for hypothesis testing in R include:
+
+- `t.test()`: Performs a t-test to compare the means of two groups.
+- `chisq.test()`: Performs a chi-square test of independence.
+- `cor.test()`: Performs a correlation test between two variables.
+- `anova()`: Performs an analysis of variance (ANOVA) test.
+
+```{r}
+# Perform a t-test to compare the means of two groups
+subset_iris <- iris[iris$Species %in% c("setosa", "versicolor"), ]
+t_test <- t.test(Sepal.Length ~ Species, data = subset_iris)
+print(t_test)
+```
+
+### Regression Analysis
+
+Regression analysis is a powerful statistical technique for modeling the relationship between one or more independent variables and a dependent variable. R provides a wide variety of functions and packages for performing regression analysis, including linear regression, logistic regression, and more.
+
+Some of the most commonly used functions for regression analysis in R include:
+
+- `lm()`: Performs linear regression.
+- `glm()`: Performs generalized linear regression.
+- `nls()`: Performs nonlinear regression.
+- `loess()`: Performs local polynomial regression.
+
+```{r}
+# Perform linear regression
+lm_model <- lm(Sepal.Length ~ Sepal.Width, data = iris)
+summary(lm_model)
+```
+
+### Time Series Analysis
+
+Time series analysis is a key aspect of statistical analysis in R, especially for analyzing data that changes over time. R provides a wide variety of functions and packages for performing time series analysis, including forecasting, decomposition, and more.
+
+Some of the most commonly used functions for time series analysis in R include:
+
+- `ts()`: Creates a time series object.
+- `acf()`: Computes the autocorrelation function.
+- `pacf()`: Computes the partial autocorrelation function.
+- `arima()`: Fits an autoregressive integrated moving average (ARIMA) model.
+
+```{r}
+# Create a time series object
+ts_data <- ts(iris$Sepal.Length, start = c(2010, 1), frequency = 12)
+
+# Compute the autocorrelation function
+acf_data <- acf(ts_data)
+print(acf_data)
+```
+
+### Research Design
+
+Research design is a key aspect of statistical analysis in R, as it helps to ensure that your study is well-designed and that your results are valid and reliable. R provides a wide variety of functions and packages for designing experiments, surveys, and observational studies, including power analysis, sample size calculation, and more.
+
+Some of the most common research designs in Economics include:
+
+- Linear regression analysis
+- Instrumental variables analysis
+- Difference-in-differences analysis
+- Propensity score matching
+- Structural equation modeling
+- Regression discontinuity design
+
+Let's take a look at an example of IV and DiD analysis in R:
+
+```{r}
+# Load the AER package
+library(AER)
+
+# Perform instrumental variables analysis
+iv_model <- ivreg(Sepal.Length ~ Sepal.Width | Petal.Length, data = iris)
+summary(iv_model)
+
+# Perform difference-in-differences analysis
+subset_iris <- iris[iris$Species %in% c("setosa", "versicolor"), ]
+did_model <- lm(Sepal.Length ~ Species * Sepal.Width, data = subset_iris)
+summary(did_model)
+```
+
+### Visualizing Results
+
+How you visualize your reuslts is highly dependent on your research design and the type of analysis you are performing. People in Econ often talk about having a "killer graph" that tells the story of your results in a clear and compelling way. Even presenting your results in a table is it's own art form, with the right table being able to convey a lot of information in a concise and easy-to-read format.
+
+Here's an example of how to visualize the results of a regression analysis using `ggplot2`:
+
+```{r}
+library(rdrobust)
+library(ggplot2)
+
+# Create the treatment variable
+mtcars$treatment <- ifelse(mtcars$mpg >= 20, 1, 0)
+
+# Estimate the RDD model
+rdd_model <- rdrobust(y = mtcars$hp, x = mtcars$mpg, c = 20)
+summary(rdd_model)
+
+# Create a scatter plot of the data
+ggplot(mtcars, aes(x = mpg, y = hp, color = as.factor(treatment))) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE) +
+    labs(
+        x = "Miles per Gallon (mpg)", y = "Horsepower (hp)",
+        title = "Regression Discontinuity Design Plot",
+        color = "Treatment"
+    )
+```
