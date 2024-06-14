@@ -2,7 +2,7 @@
 title: "Introduction to R"
 author: "Tan Sein Jone"
 date: "`r Sys.Date()`"
-# output: 
+output: 
 #   html_document:
 #     theme: united
 #     highlight: tango
@@ -117,14 +117,6 @@ When writing functions in R, it is important to follow best practices to ensure 
 - Use vectorized operations whenever possible to improve performance.
 - Write unit tests for your functions to ensure they work as expected.
 
-## Data Handling
-
-Data handling is a key aspect of data analysis and visualization in R. R provides a wide variety of data structures and functions for manipulating and analyzing data, making it a powerful tool for data exploration and modeling.
-
-Data handling is a crucial aspect of data analysis in R. R provides a wide array of data structures and functions that allow for efficient manipulation and analysis of data, making it a powerful tool for data exploration, visualization, and modeling.
-
-In R, data is typically stored in data frames, which are similar to tables in a relational database. A data frame is a list of vectors of equal length, where each vector represents a column, and each element in the vector represents a row in the column. This structure allows for easy manipulation and analysis of tabular data.
-
 ### File I/O
 
 R provides several functions for reading and writing data to and from files. Some of the most commonly used functions for file I/O in R include:
@@ -201,6 +193,97 @@ data_grouped <- data %>%
 
 print(data_grouped)
 ```
+
+### Merge and Join
+
+R provides several functions for merging and joining data frames. Some of the most commonly used functions for merging and joining data frames in R include:
+
+- `merge()`: Merges two data frames by matching columns.
+- `rbind()`: Combines two data frames by stacking them on top of each other.
+- `cbind()`: Combines two data frames by adding columns side by side.
+- `left_join()`: Joins two data frames by matching columns from the left data frame.
+- `right_join()`: Joins two data frames by matching columns from the right data frame.
+- `inner_join()`: Joins two data frames by matching columns from both data frames.
+- `full_join()`: Joins two data frames by matching columns from both data frames, keeping all rows.
+
+```{r}
+# Create two data frames
+data1 <- data.frame(x = 1:5, y = letters[1:5])
+data2 <- data.frame(x = 6:10, y = letters[6:10])
+
+# Merge the two data frames
+data_merged <- merge(data1, data2, by = "x")
+print(data_merged)
+
+# Combine the two data frames by stacking them on top of each other
+data_combined <- rbind(data1, data2)
+print(data_combined)
+
+# Combine the two data frames by adding columns side by side
+data_combined <- cbind(data1, data2)
+print(data_combined)
+```
+
+### Reshaping Data
+
+R provides several functions for reshaping data frames. Some of the most commonly used functions for reshaping data frames in R include:
+
+- `melt()`: Converts a wide data frame to a long data frame.
+- `dcast()`: Converts a long data frame to a wide data frame.
+- `gather()`: Converts a wide data frame to a long data frame.
+- `spread()`: Converts a long data frame to a wide data frame.
+- `separate()`: Splits a column into multiple columns.
+- `unite()`: Combines multiple columns into a single column.
+
+```{r}
+# Load the tidyr package
+library(tidyr)
+
+# Create a wide data frame
+data_wide <- data.frame(
+    id = 1:5,
+    x1 = 1:5,
+    x2 = 6:10,
+    x3 = 11:15
+)
+
+# Convert the wide data frame to a long data frame
+data_long <- data_wide %>% gather(key = "variable", value = "value", -id)
+print(data_long)
+
+# Convert the long data frame back to a wide data frame
+data_wide <- data_long %>% spread(key = "variable", value = "value")
+print(data_wide)
+```
+
+### Missing Data
+
+There are several ways to handle missing data in R, including removing missing values, imputing missing values, and flagging missing values. Some of the most commonly used functions for handling missing data in R include:
+
+- `na.omit()`: Removes rows with missing values.
+- `na.exclude()`: Excludes rows with missing values from calculations.
+- `na.rm()`: Removes missing values from calculations.
+- `na.fail()`: Fails if there are missing values.
+- `na.pass()`: Passes if there are missing values.
+- `complete.cases()`: Returns rows with no missing values.
+- `is.na()`: Checks for missing values.
+
+```{r}
+# Create a data frame with missing values
+data_missing <- data.frame(
+    x = c(1, 2, NA, 4, 5),
+    y = c("a", "b", NA, "d", "e")
+)
+
+# Check for missing values
+print(is.na(data_missing))
+
+# Remove rows with missing values
+data_clean <- na.omit(data_missing)
+print(data_clean)
+```
+
+In general, it is not recommended to remove missing values from your data, as this can lead to biased results and loss of information. Instead, it is better to impute missing values using appropriate techniques, such as mean imputation, median imputation, or multiple imputation. This allows you to retain all the data in your analysis and produce more accurate and reliable results.
 
 ### A Note on Package Management & Environments
 
