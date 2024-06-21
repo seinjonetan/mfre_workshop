@@ -1,0 +1,195 @@
+\documentclass[serif, 9pt, aspectratio=32]{beamer} 
+\usetheme{Darmstadt}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usetikzlibrary{shapes, arrows}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Introduction to Coding}
+\date{\today}
+\author{Tan Sein Jone}
+\institute{University of British Columbia}
+
+\pgfplotsset{compat=1.18}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Functions}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Hello World}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item The first program that every programmer writes
+        \item How to start a Python program
+        \item How to print to the console
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{In Terminal}
+    \begin{lstlisting}[language=Python]
+        code hello_world.py
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{hello\_world.py}
+    \begin{lstlisting}[language=Python]
+        print("Hello, World!")
+    \end{lstlisting}
+\end{frame}
+
+\section{Variables}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{What are Variables?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Variables are used to store data
+        \item Variables are assigned a value
+        \item Variables can be changed
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Variable Naming Rules}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Variables must start with a letter or underscore
+        \item Variables can only contain letters, numbers, and underscores
+        \item Variables are case-sensitive
+        \item Variables cannot be reserved words
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Variable Naming Conventions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Camel Case: myVariableName
+        \item Pascal Case: MyVariableName
+        \item Snake Case: my\_variable\_name
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Scope}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Global Variables: Variables declared outside of a function
+              \begin{itemize}
+                  \item Can be accessed anywhere
+              \end{itemize}
+        \item Local Variables: Variables declared inside of a function
+              \begin{itemize}
+                  \item Can only be accessed within the function
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        def my_function()\:
+            x = 10
+        x = 20
+        my_function()
+        print(x)
+    \end{lstlisting}
+\end{frame}
+
+\section{Data Types}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Types}
+    \begin{itemize}
+        \setlength{\itemsep}{1em}
+        \item Integers: Whole numbers
+        \item Floats: Numbers with decimals
+        \item Strings: Text
+        \item Booleans: True or False
+        \item Lists: Ordered collection of items
+        \item Tuples: Ordered collection of items that cannot be changed
+        \item Dictionaries: Unordered collection of items
+        \item Sets: Unordered collection of unique items
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Importance of Type Checking}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item There are advantages and disadvantages to using each data type
+        \item Interacting with different data types can cause errors
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        random_int = 10
+        random_float = 10.0
+        random_string = "10"
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Type Casting}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Converting between data types
+        \item Can be done using built-in functions
+        \item
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        converted_int = int(random_float)
+    \end{lstlisting}
+
+\end{frame}
+
+\end{document}
