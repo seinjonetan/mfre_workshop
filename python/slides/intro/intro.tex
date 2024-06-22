@@ -181,7 +181,7 @@
         \setlength{\itemsep}{3em}
         \item Converting between data types
         \item Can be done using built-in functions
-        \item
+        \item Not all conversions are possible
     \end{itemize}
 \end{frame}
 
@@ -189,7 +189,344 @@
     \begin{lstlisting}[language=Python]
         converted_int = int(random_float)
     \end{lstlisting}
+\end{frame}
 
+\begin{frame}
+    \centering
+    \frametitle{Data Types with Multiple Values}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Lists, Tuples, Dictionaries, and Sets can store multiple values
+        \item Each value can be a different data type
+        \item Each value can be accessed using an index
+        \item Each value can be changed
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        random_list = [10, 10.0, "10"]
+        random_tuple = (10, 10.0, "10")
+        random_dict = {"int": 10, "float": 10.0, "string": "10"}
+        random_set = {10, 10.0, "10"}
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Usecases}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Lists and dicitonaries will likely be the most used data types
+        \item Lists are used to store multiple values
+        \item Dictionaries are used to store key-value pairs
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Combining Data Types}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Data types can be combined
+        \item Lists can store dictionaries
+        \item Dictionaries can store lists
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Lists of dictionaries}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Say for example we have a list of students
+        \item Each student has a name, age, and grade
+        \item We can store this information in a list of dictionaries
+        \item Each dictionary will represent a student
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        students = [
+            {"name": "Alice", "age": 20, "grade": 90},
+            {"name": "Bob", "age": 21, "grade": 85},
+            {"name": "Charlie", "age": 22, "grade": 80}
+        ]
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Dictionaries of lists}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Say for example we have a dictionary of students
+        \item Each student has a list of grades
+        \item We can store this information in a dictionary of lists
+        \item Each key will represent a student
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        students = {
+            "Alice": [90, 85, 80],
+            "Bob": [85, 80, 75],
+            "Charlie": [80, 75, 70]
+        }
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common methods for lists and dictionaries}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item append(): Adds an element to the end of the list
+        \item insert(): Adds an element at a specific index
+        \item remove(): Removes an element from the list
+        \item get(): Gets the value of a key in a dictionary
+        \item keys(): Gets all the keys in a dictionary
+        \item values(): Gets all the values in a dictionary
+    \end{itemize}
+\end{frame}
+
+\section{Conditionals}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{What are Conditionals?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Conditionals are used to make decisions
+        \item Conditionals are used to execute code based on a condition
+        \item Conditionals are used to compare values
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Comparison Operators}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item ==: Equal to
+        \item !=: Not equal to
+        \item \textless: Less than
+        \item \textgreater: Greater than
+        \item \textless=: Less than or equal to
+        \item \textgreater=: Greater than or equal to
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Logical Operators}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item and: Returns True if both statements are true
+        \item or: Returns True if one of the statements is true
+        \item not: Returns True if the statement is false
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{If Statements}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item If statements are used to execute code if a condition is true
+        \item If statements can be followed by an else statement
+        \item If statements can be followed by an elif statement
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        x = 10
+        if x == 10:
+            print("x is 10")
+        elif x == 20:
+            print("x is 20")
+        else:
+            print("x is not 10 or 20")
+    \end{lstlisting}
+\end{frame}
+
+\section{Loops}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{What are Loops?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Loops are used to repeat code
+        \item Loops are used to iterate over a sequence
+        \item Loops are used to execute code a specific number of times
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{For Loops}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item For loops are used to iterate over a sequence
+        \item For loops are used to execute code a specific number of times
+        \item For loops can be used with lists, tuples, dictionaries, and sets
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        for x in range(10):
+            print(x)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{While Loops}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item While loops are used to execute code as long as a condition is true
+        \item While loops are used to execute code a specific number of times
+        \item While loops can be used with lists, tuples, dictionaries, and sets
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        x = 0
+        while x < 10:
+            print(x)
+            x += 1
+    \end{lstlisting}
+\end{frame}
+
+\section{How to Write a Function}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{What are Functions?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Functions are used to organize code
+        \item Functions are used to make code reusable
+        \item Functions are used to make code easier to read
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Defining Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Functions are defined using the def keyword
+        \item Functions can take arguments
+        \item Functions can return values
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        def my_function(x):
+            return x
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Calling Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Functions are called using the function name
+        \item Functions can be called with or without arguments
+        \item Functions can be called multiple times
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        def my_function(x):
+            return x
+        print(my_function(10))
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pseudocode}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Pseudocode is used to plan out code
+        \item Pseudocode is used to break down complex problems
+        \item Pseudocode is used to make code easier to write
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        # Pseudocode
+        # Define a function that takes a list of numbers as 
+            an argument
+        # Iterate over the list of numbers
+        # If the number is even, add it to a new list
+        # Return the new list
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Debugging}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Debugging is the process of finding and fixing errors in code
+        \item Debugging is an important skill for programmers
+        \item It may be frustrating to get an error message, but sometimes not getting one can be worse
+        \item When we get an error message, we can use it to help us find the problem
+        \item When the program runs without errors, but the output is not what we expect, have to use debugging techniques to find the problem
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Read Error Messages}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Syntax Errors: Errors in the code structure
+        \item Logic Errors: Errors in the code logic
+        \item Runtime Errors: Errors that occur while the code is running
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Rubber Duck Debugging}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Explaining the code to someone else
+        \item Explaining the code to an inanimate object
+        \item Explaining the code to yourself
+    \end{itemize}
 \end{frame}
 
 \end{document}

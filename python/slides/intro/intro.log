@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  21 JUN 2024 21:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  22 JUN 2024 19:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -885,6 +885,118 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 
  (./intro.vrb) [18
 
+] [19
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb
+Overfull \hbox (27.99446pt too wide) in paragraph at lines 4--5
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [20
+
+] [21
+
+] [22
+
+] [23
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [24
+
+] [25
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [26
+
+] [27
+
+] (./intro.toc) [28
+
+] [29
+
+]
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 326.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 326.
+
+Overfull \vbox (1.7284pt too high) detected at line 326
+ []
+
+[30
+
+] [31
+
+] [32
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [33
+
+] (./intro.toc) [34
+
+] [35
+
+] [36
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [37
+
+] [38
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [39
+
+] (./intro.toc) [40
+
+] [41
+
+] [42
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [43
+
+] [44
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [45
+
+] [46
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb
+Overfull \hbox (0.24437pt too wide) in paragraph at lines 3--4
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [47
+
+] [48
+
+] [49
+
+] [50
+
 ]
 \tf@nav=\write6
 \openout6 = `intro.nav'.
@@ -897,21 +1009,21 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 
  (./intro.aux)
 Package rerunfilecheck Info: File `intro.out' has not changed.
-(rerunfilecheck)             Checksum: E66259662800A3B8D90AB2F56B244C14;272.
+(rerunfilecheck)             Checksum: 03CD5E67AFCB8EDD755FE15A89F62309;613.
  ) 
 Here is how much of TeX's memory you used:
- 39416 strings out of 478287
- 939225 string characters out of 5849289
- 1490264 words of memory out of 5000000
- 56849 multiletter control sequences out of 15000+600000
- 471302 words of font info for 35 fonts, out of 8000000 for 9000
+ 39621 strings out of 478287
+ 941292 string characters out of 5849289
+ 1524630 words of memory out of 5000000
+ 56958 multiletter control sequences out of 15000+600000
+ 472005 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,104p,784b,1428s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on intro.pdf (18 pages, 138922 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on intro.pdf (50 pages, 311168 bytes).
 PDF statistics:
- 935 PDF objects out of 1000 (max. 8388607)
- 854 compressed objects within 9 object streams
- 40 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4232 PDF objects out of 4296 (max. 8388607)
+ 4048 compressed objects within 41 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
