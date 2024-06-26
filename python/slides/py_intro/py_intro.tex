@@ -1,0 +1,509 @@
+\documentclass[serif, 9pt, aspectratio=32]{beamer} 
+\usetheme{Darmstadt}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usetikzlibrary{shapes, arrows}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Introduction to Python}
+\date{\today}
+\author{Tan Sein Jone}
+\institute{University of British Columbia}
+
+\pgfplotsset{compat=1.18}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Object Oriented Programming}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Classes and Objects}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A class is a blueprint for creating object
+        \item Classes define the properties and behaviours of objects
+        \item Objects have attributes and methods
+        \item Attributes are variables that store data
+        \item Methods are functions that perform actions
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Attributes}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Attributes are variables that store data
+        \item They are defined in the \texttt{\_\_init\_\_} method
+        \item They are accessed using the dot operator
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Attributes}
+    \begin{lstlisting}[language=Python]
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Attributes}
+    \begin{lstlisting}[language=Python]
+person = Person("John", 36)
+print(person.name)
+print(person.age)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Methods}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Methods are functions that perform actions
+        \item They are defined in the class
+        \item They are accessed using the dot operator
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Methods}
+    \begin{lstlisting}[language=Python]
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hello, my name is {self.name}")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Methods}
+    \begin{lstlisting}[language=Python]
+person = Person("John", 36)
+person.greet()
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Benefits of OOP}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Encapsulation
+        \item Inheritance
+        \item Polymorphism
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Encapsulation}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Encapsulation is the bundling of data and methods that operate on the data
+        \item It restricts access to some of the object's components
+        \item It prevents the accidental modification of data
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Inheritance}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Inheritance is the mechanism of basing a class upon another class
+        \item It allows a class to inherit attributes and methods from another class
+        \item It allows a class to override methods of another class
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Polymorphism}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Polymorphism is the ability to present the same interface for different data types
+        \item It allows a function to accept different data types
+        \item It allows a class to override methods of another class
+    \end{itemize}
+\end{frame}
+
+\section{Pythonics}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pythonics}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Pythonic code is code that follows the conventions of the Python language
+        \item It is code that is clean, readable, and maintainable
+        \item It is code that is idiomatic and expressive
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Zen of Python}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The Zen of Python is a collection of aphorisms that capture the philosophy of Python
+        \item It is a set of guiding principles for writing computer programs
+        \item It is a set of rules for writing Pythonic code
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Value Swapping and Multiple Assignment}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Python allows you to swap the values of two variables in a single line
+        \item It also allows you to assign multiple values to multiple variables in a single line
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Value Swapping and Multiple Assignment}
+    \begin{lstlisting}[language=Python]
+a = 1
+b = 2
+a, b = b, a
+print(a, b)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Passing Multiple Arguments}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Python allows you to pass multiple arguments to a function
+        \item It also allows you to pass keyword arguments to a function
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Passing Multiple Arguments}
+    \begin{lstlisting}[language=Python]
+def greet(*names):
+    for name in names:
+        print(f"Hello, {name}")
+
+greet("John", "Jane", "Jack")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{List Comprehension}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item List comprehension is a concise way to create lists
+        \item It allows you to create lists using a single line of code
+        \item It is more readable and expressive than traditional loops
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{List Comprehension}
+    \begin{lstlisting}[language=Python]
+squares = [x ** 2 for x in range(10)]
+print(squares)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{A Note on Indentation}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Python uses indentation to define blocks of code
+        \item It uses whitespace to delimit code
+    \end{itemize}
+\end{frame}
+
+\section{Data Handling}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Handling}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Data handling is the process of managing data
+        \item It involves reading, writing, and processing data
+        \item It involves working with files, databases, and APIs
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Lists and Dictionaries}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Lists are ordered collections of items
+        \item Dictionaries are unordered collections of key-value pairs
+        \item Lists are indexed by integers
+        \item Dictionaries are indexed by keys
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Combining Lists and Dictionaries}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item You can combine lists and dictionaries to create complex data structures
+        \item You can nest lists and dictionaries to create hierarchical data structures
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Combining Lists and Dictionaries}
+    \begin{lstlisting}[language=Python]
+person = {
+    "name": "John",
+    "age": 36,
+    "friends": ["Jane", "Jack"]
+}
+print(person["name"])
+print(person["age"])
+print(person["friends"])
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Reading and Writing Files}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Python allows you to read and write files
+        \item It allows you to open files in read mode, write mode, or append mode
+        \item It allows you to read files line by line or all at once
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Reading and Writing Files}
+    \begin{lstlisting}[language=Python]
+with open("data.txt", "w") as file:
+    file.write("Hello, world!")
+
+with open("data.txt", "r") as file:
+    data = file.read()
+    print(data)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{NumPy}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item NumPy is a library for numerical computing
+        \item It provides support for arrays and matrices
+        \item It allows you to perform mathematical operations on arrays and matrices
+        \item It is the foundation of many other libraries
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{NumPy}
+    \begin{lstlisting}[language=Python]
+import numpy as np
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+c = a * b
+print(c)
+
+d = np.dot(a, b)
+print(d)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pandas}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Pandas is a library for data manipulation and analysis
+        \item It provides support for data structures like Series and DataFrame
+        \item It allows you to read and write data from various sources
+        \item It is built on top of NumPy
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pandas IO}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Pandas allows you to read and write data from various sources
+        \item It allows you to read and write data from CSV files, Excel files, SQL databases, and APIs
+        \item It allows you to read and write data from URLs, HTML tables, and clipboard
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Pandas IO}
+    \begin{lstlisting}[language=Python]
+import pandas as pd
+
+data = pd.read_csv("data.csv")
+print(data)
+
+data.to_csv("data.csv", index=False)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Manipulating Dataframes}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Pandas allows you to manipulate dataframes
+        \item It allows you to filter, sort, group, and aggregate data
+        \item It allows you to merge, join, and concatenate data
+        \item It allows you to reshape, pivot, and melt data
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Manipulating Dataframes}
+    \begin{lstlisting}[language=Python]
+import pandas as pd
+
+data = pd.read_csv("data.csv")
+data = data[data["age"] > 30]
+data = data.sort_values("age")
+data['rank'] = data['age'].rank()
+data.loc['total'] = data.sum()
+print(data)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{pd.apply()}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Pandas allows you to apply functions to dataframes
+        \item It allows you to apply functions to rows, columns, or cells
+        \item It allows you to apply lambda functions, user-defined functions, or built-in functions
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{pd.apply()}
+    \begin{lstlisting}[language=Python]
+import pandas as pd
+
+data = pd.read_csv("data.csv")
+data['age'] = data['age'].apply(lambda x: x + 1)
+print(data)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Merge and Join}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Pandas allows you to merge and join dataframes
+        \item It allows you to merge dataframes on columns or indices
+        \item It allows you to merge dataframes using inner, outer, left, or right joins
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Merge and Join}
+    \begin{lstlisting}[language=Python]
+import pandas as pd
+
+data1 = pd.read_csv("data1.csv")
+data2 = pd.read_csv("data2.csv")
+data = pd.merge(data1, data2, on="id")
+print(data)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Null Values}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Pandas allows you to handle null values
+        \item It allows you to drop null values, fill null values, or interpolate null values
+        \item It allows you to check for null values, count null values, or filter null values
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Null Values}
+    \begin{lstlisting}[language=Python]
+import pandas as pd
+
+data = pd.read_csv("data.csv")
+data = data.dropna()
+data = data.fillna(0)
+data = data.interpolate()
+print(data)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Rules of Thumb for Missing Data}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item If the missing data is random, drop the rows
+        \item If the missing data is systematic, fill the missing values
+        \item If the missing data is time-dependent, interpolate the missing values
+    \end{itemize}
+\end{frame}
+
+\section{Statistical Analysis}
+
+\end{document}

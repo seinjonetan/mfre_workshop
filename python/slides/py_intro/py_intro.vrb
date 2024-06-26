@@ -1,0 +1,10 @@
+\frametitle{Null Values}
+    \begin{lstlisting}[language=Python]
+import pandas as pd
+
+data = pd.read_csv("data.csv")
+data = data.dropna()
+data = data.fillna(0)
+data = data.interpolate()
+print(data)
+    \end{lstlisting}
