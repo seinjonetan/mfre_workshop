@@ -499,7 +499,7 @@ did_model <- lm(Sepal.Length ~ Species * Sepal.Width, data = subset_iris)
 summary(did_model)
 ```
 
-### Visualizing Results
+### Presenting Results
 
 How you visualize your reuslts is highly dependent on your research design and the type of analysis you are performing. People in Econ often talk about having a "killer graph" that tells the story of your results in a clear and compelling way. Even presenting your results in a table is it's own art form, with the right table being able to convey a lot of information in a concise and easy-to-read format.
 
