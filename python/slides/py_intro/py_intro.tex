@@ -506,4 +506,163 @@ print(data)
 
 \section{Statistical Analysis}
 
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Statasmodel}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Statsmodels is a library for statistical modeling
+        \item It provides support for linear regression, logistic regression, and time series analysis
+        \item It allows you to fit models, make predictions, and evaluate results
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Linear Regression}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Linear regression is a statistical method for modeling the relationship between two variables
+        \item It is used to predict the value of one variable based on the value of another variable
+        \item It is used to estimate the coefficients of the regression equation
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Linear Regression}
+    \begin{lstlisting}[language=Python]
+import statsmodels.api as sm
+import numpy as np
+
+data = {
+    "age": np.random.normal(50, 10, 100),
+    "income": np.random.normal(50000, 10000, 100)
+}
+data = pd.DataFrame(data)
+X = data["age"]
+y = data["income"]
+X = sm.add_constant(X)
+model = sm.OLS(y, X).fit()
+print(model.summary())
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Hypothesis Testing}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Hypothesis testing is a statistical method for testing the validity of a hypothesis
+        \item It is used to determine whether a hypothesis is true or false
+        \item It is used to make inferences about a population based on a sample
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Hypothesis Testing}
+    \begin{lstlisting}[language=Python]
+import statsmodels.api as sm
+
+data = {
+    "age": np.random.normal(50, 10, 100),
+    "income": np.random.normal(50000, 10000, 100)
+}
+
+data = pd.DataFrame(data)
+X = data["age"]
+y = data["income"]
+X = sm.add_constant(X)
+model = sm.OLS(y, X).fit()
+print(model.summary())
+print(model.pvalues)
+    \end{lstlisting}
+\end{frame}
+
+\section{Data Visualization}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Matplotlib}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Matplotlib is a library for creating static, animated, and interactive visualizations
+        \item It provides support for line plots, bar plots, scatter plots, and histograms
+        \item It allows you to customize the appearance of plots
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Line Plot}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A line plot is a type of plot that displays data as a series of points connected by lines
+        \item It is used to show trends, patterns, and relationships in data
+        \item It is used to visualize the relationship between two variables
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Line Plot}
+    \begin{lstlisting}[language=Python]
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+plt.plot(x, y)
+plt.show()
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Seaborn}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Seaborn is a library for creating statistical data visualizations
+        \item It provides support for line plots, bar plots, scatter plots, and histograms
+        \item It allows you to customize the appearance of plots
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Bar Plot}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A bar plot is a type of plot that displays data as a series of bars
+        \item It is used to compare the values of different categories
+        \item It is used to visualize the distribution of a categorical variable
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bar Plot}
+    \begin{lstlisting}[language=Python]
+import seaborn as sns
+
+data = {
+    "age": np.random.normal(50, 10, 100),
+    "income": np.random.normal(50000, 10000, 100)
+}
+data = pd.DataFrame(data)
+sns.barplot(x="age", y="income", data=data)
+plt.savefig("barplot.png")
+plt.show()
+    \end{lstlisting}
+\end{frame}
+
 \end{document}
