@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{Functional Programming}{3}{0}{1}
+\beamer@sectionintoc {2}{Data Handling}{11}{0}{2}
+\beamer@sectionintoc {3}{Data Visualization}{26}{0}{3}

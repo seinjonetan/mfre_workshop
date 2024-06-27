@@ -1,0 +1,392 @@
+\documentclass[serif, 9pt, aspectratio=32]{beamer} 
+\usetheme{Darmstadt}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usetikzlibrary{shapes, arrows}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Introduction to R}
+\date{\today}
+\author{Tan Sein Jone}
+\institute{University of British Columbia}
+
+\pgfplotsset{compat=1.18}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Functional Programming}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Functional Programming}
+    \begin{itemize}
+        \item Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data.
+        \item It is a declarative type of programming style.
+        \item It focuses on what to solve rather than how to solve.
+        \item It uses expressions instead of statements.
+        \item It is based on mathematical functions.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pure Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A pure function is a function where the output value is determined by its input values, without observable side effects.
+        \item This is how functions in math work: Math.cos(x) will, for the same value of x, always return the same result.
+        \item Pure functions are easier to reason about and test.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        pure_function <- function(x, y){
+            return(x + y)
+        }
+
+        impure_function <- function(x, y){
+            print(x)
+            return(x + y)
+        }
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{First Class Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item In functional programming, functions are first-class citizens.
+        \item This means that functions can be assigned to variables, passed as arguments, and returned from other functions.
+        \item This allows for the creation of higher-order functions.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        add <- function(x, y){
+            return(x + y)
+        }
+
+        subtract <- function(x, y){
+            return(x - y)
+        }
+
+        operate <- function(func, x, y){
+            return(func(x, y))
+        }
+
+        operate(add, 5, 3)
+        operate(subtract, 5, 3)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Higher Order Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Higher-order functions are functions that can either take other functions as arguments or return them as results.
+        \item This is possible because functions are first-class citizens.
+        \item Higher-order functions allow us to abstract over actions, not just values.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        add <- function(x, y){
+            return(x + y)
+        }
+
+        subtract <- function(x, y){
+            return(x - y)
+        }
+
+        create_operator <- function(op){
+            if(op == "add"){
+                return(add)
+            } else if(op == "subtract"){
+                return(subtract)
+            }
+        }
+
+        operator <- create_operator("add")
+        operator(5, 3)
+    \end{lstlisting}
+\end{frame}
+
+\section{Data Handling}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Handling}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Data handling is a crucial part of data analysis.
+        \item R has a wide range of functions and packages that make data handling easier.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Structures}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item R has several data structures that are used to store data.
+        \item The most common data structures are vectors, matrices, data frames, and lists.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Vectors}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A vector is a one-dimensional array that can hold numeric, character, or logical data.
+        \item Vectors are created using the c() function.
+        \item Vectors can be of two types: atomic vectors and lists.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        numeric_vector <- c(1, 2, 3, 4, 5)
+        character_vector <- c("a", "b", "c", "d", "e")
+        logical_vector <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Matrices}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A matrix is a two-dimensional array that can hold numeric, character, or logical data.
+        \item Matrices are created using the matrix() function.
+        \item Matrices are created by combining vectors.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        matrix_1 <- matrix(1:9, nrow = 3, ncol = 3)
+        matrix_2 <- matrix(letters[1:9], nrow = 3, ncol = 3)
+        matrix_3 <- matrix(c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE), nrow = 2, ncol = 3)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Frames}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A data frame is a two-dimensional array that can hold numeric, character, or logical data.
+        \item Data frames are created using the data.frame() function.
+        \item Data frames are similar to matrices, but they can hold different types of data in each column.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        data_frame <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            age = c(25, 30, 35),
+            married = c(TRUE, FALSE, TRUE)
+        )
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{File IO}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item R has functions that allow you to read and write data from and to files.
+        \item The most common file formats are CSV, Excel, and text files.
+        \item R has functions that allow you to read and write data in these formats.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        data <- read.csv("data.csv")
+        write.csv(data, "data.csv")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Manipulation}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Data manipulation is the process of transforming data to make it more useful for analysis.
+        \item R has functions and packages that make data manipulation easier.
+        \item The most common data manipulation tasks are filtering, sorting, and aggregating data.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        data <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            age = c(25, 30, 35),
+            married = c(TRUE, FALSE, TRUE)
+        )
+
+        # Filter data
+        filtered_data <- data[data$age > 30, ]
+
+        # Sort data
+        sorted_data <- data[order(data$age), ]
+
+        # Aggregate data
+        aggregated_data <- aggregate(data$age, by = list(data$married), FUN = mean)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Merge and Join}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Merge and join are two common data manipulation tasks.
+        \item Merge is used to combine two data frames based on a common column.
+        \item Join is used to combine two data frames based on a common column.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        data_1 <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            age = c(25, 30, 35),
+            married = c(TRUE, FALSE, TRUE)
+        )
+
+        data_2 <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            salary = c(50000, 60000, 70000)
+        )
+
+        merged_data <- merge(data_1, data_2, by = "name")
+        joined_data <- merge(data_1, data_2, by = "name", all = TRUE)
+    \end{lstlisting}
+\end{frame}
+
+\section{Data Visualization}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Visualization}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Data visualization is the process of representing data graphically.
+        \item R has a wide range of functions and packages that make data visualization easier.
+        \item The most common types of data visualizations are scatter plots, bar charts, and line charts.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Base Plotting}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Base plotting is the default plotting system in R.
+        \item Base plotting is simple and easy to use.
+        \item Base plotting is good for creating simple plots.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        x <- c(1, 2, 3, 4, 5)
+        y <- c(2, 4, 6, 8, 10)
+
+        plot(x, y)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{ggplot2}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item ggplot2 is a popular plotting package in R.
+        \item ggplot2 is based on the grammar of graphics.
+        \item ggplot2 is good for creating complex plots.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(ggplot2)
+
+        data <- data.frame(
+            x = c(1, 2, 3, 4, 5),
+            y = c(2, 4, 6, 8, 10)
+        )
+
+        ggplot(data, aes(x = x, y = y)) + geom_point()
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Plotly}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Plotly is an interactive plotting package in R.
+        \item Plotly is based on the Plotly.js library.
+        \item Plotly is good for creating interactive plots.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(plotly)
+
+        data <- data.frame(
+            x = c(1, 2, 3, 4, 5),
+            y = c(2, 4, 6, 8, 10)
+        )
+
+        plot_ly(data, x = ~x, y = ~y, type = "scatter", mode = "markers")
+    \end{lstlisting}
+\end{frame}
+
+\end{document}
