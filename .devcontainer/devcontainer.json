@@ -7,7 +7,8 @@
     "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter",
-        "REditorSupport.r"
+        "REditorSupport.r",
+        "ms-toolsai.datawrangler"
     ],
     "forwardPorts": [
         8888
