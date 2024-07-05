@@ -1,0 +1,23 @@
+1. Data IO
+2. Data Preview (Jupyter Extension)
+
+3. Manipulation 
+3.1 Select columns and rows 
+3.2 Filter data 
+3.3 Sort & group data 
+3.4 Merge & map data 
+3.5 Applying functions
+3.6 Setting indexes
+
+4. Cleaning
+4.1 Duplicates 
+4.2 Missing values
+
+5. Visualization
+5.1 Matplotlib (Basic)
+5.2 Seaborn (Advanced)
+
+6. Tasks 
+6.1 Change in emissions over time by province (1 dataset)
+6.2 Emissions by sector (1 dataset)
+6.3 Yearly sector pollution by province (2 datasets)
