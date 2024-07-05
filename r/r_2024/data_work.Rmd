@@ -1,0 +1,94 @@
+---
+title: "Introduction to R"
+author: "Tan Sein Jone"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
+---
+## Data IO
+```{r}
+# Read data from csv file
+data <- read.csv("data/pollution.csv")
+head(data)
+```
+
+## Data Manipulation
+```{r}
+library(dplyr)
+
+# Filter data after 2010
+data_2010 <- data[data$year == 2010, ]
+head(data_2010)
+
+# Get only 'Transport' sector
+data_transport <- select(data, Province, Year, Transport)
+head(data_transport)
+
+# Total pollution by province
+data_province <- data %>%
+    group_by(Province) %>%
+    summarise(Total = sum(Transport))
+head(data_province)
+
+# Sort by total pollution
+data$total_pollution <- rowSums(data[, -c(1, 2)])
+data_sorted <- data[order(data$total_pollution, decreasing = TRUE), ]
+head(data_sorted)
+
+# Apply logs to all pollution values
+data_log <- data %>%
+    mutate_at(vars(-Province, -Year), log)
+head(data_log)
+```
+
+## Data Visualization
+
+```{r}
+library(ggplot2)
+
+# Plot total pollution by province
+ggplot(data_province, aes(x = Province, y = Total)) +
+    geom_bar(stat = "identity") +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Plot pollution over time
+ggplot(data, aes(x = Year, y = Transport)) +
+    geom_line(aes(color = Province)) +
+    theme(legend.position = "bottom")
+
+# Plot log pollution as a heatmap
+ggplot(data_log, aes(x = Year, y = Province, fill = Transport)) +
+    geom_tile() +
+    scale_fill_gradient(low = "white", high = "red") +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+## Diff in Diff
+
+```{r}
+# Assume there's a policy implemented in BC in 2000
+# Run a diff-in-diff analysis to estimate the effect of the policy
+data_bc <- data[data$Province == "BC", ]
+data_bc_diff <- data_bc[data_bc$Year %in% c(1999, 2000, 2001), ]
+data_bc_diff$Post <- ifelse(data_bc_diff$Year >= 2000, 1, 0)
+data_bc_diff$Treat <- ifelse(data_bc_diff$Province == "BC", 1, 0)
+
+lm_diff <- lm(Transport ~ Post + Treat + Post:Treat, data = data_bc_diff)
+summary(lm_diff)
+
+head(data_bc_diff)
+```
+
+## RDD
+
+```{r}
+library(rdrobust)
+# Assume there's a policy implemented in 2000
+# Run a regression discontinuity analysis to estimate the effect of the policy
+rd_result <- rdrobust(y = data$total_pollution, x = data$Year, c = 2000)
+summary(rd_result)
+```
