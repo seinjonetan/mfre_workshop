@@ -1,0 +1,147 @@
+\documentclass[serif, 9pt, aspectratio=32]{beamer} 
+\usetheme{Darmstadt}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usetikzlibrary{shapes, arrows}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Introduction to Coding}
+\date{\today}
+\author{Tan Sein Jone}
+\institute{University of British Columbia}
+
+\pgfplotsset{compat=1.18}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{How to Write a Function}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{What are Functions?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Functions are used to organize code
+        \item Functions are used to make code reusable
+        \item Functions are used to make code easier to read
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Defining Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Functions are defined using the def keyword
+        \item Functions can take arguments
+        \item Functions can return values
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        def my_function(x):
+            return x
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Calling Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Functions are called using the function name
+        \item Functions can be called with or without arguments
+        \item Functions can be called multiple times
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        def my_function(x):
+            return x
+        print(my_function(10))
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pseudocode}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Pseudocode is used to plan out code
+        \item Pseudocode is used to break down complex problems
+        \item Pseudocode is used to make code easier to write
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        # Pseudocode
+        # Define a function that takes a list of numbers as 
+            an argument
+        # Iterate over the list of numbers
+        # If the number is even, add it to a new list
+        # Return the new list
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Debugging}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Debugging is the process of finding and fixing errors in code
+        \item Debugging is an important skill for programmers
+        \item It may be frustrating to get an error message, but sometimes not getting one can be worse
+        \item When we get an error message, we can use it to help us find the problem
+        \item When the program runs without errors, but the output is not what we expect, have to use debugging techniques to find the problem
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Read Error Messages}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Syntax Errors: Errors in the code structure
+        \item Logic Errors: Errors in the code logic
+        \item Runtime Errors: Errors that occur while the code is running
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Rubber Duck Debugging}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Explaining the code to someone else
+        \item Explaining the code to an inanimate object
+        \item Explaining the code to yourself
+    \end{itemize}
+\end{frame}
+
+\end{document}

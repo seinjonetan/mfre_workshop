@@ -1,0 +1,8 @@
+\begin{lstlisting}[language=Python]
+        # Pseudocode
+        # Define a function that takes a list of numbers as
+            an argument
+        # Iterate over the list of numbers
+        # If the number is even, add it to a new list
+        # Return the new list
+    \end{lstlisting}

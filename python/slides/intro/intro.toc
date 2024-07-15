@@ -3,4 +3,3 @@
 \beamer@sectionintoc {3}{Data Types}{13}{0}{3}
 \beamer@sectionintoc {4}{Conditionals}{28}{0}{4}
 \beamer@sectionintoc {5}{Loops}{34}{0}{5}
-\beamer@sectionintoc {6}{How to Write a Function}{40}{0}{6}
