@@ -144,4 +144,103 @@
     \end{itemize}
 \end{frame}
 
+\section{Simple Functions}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Simple Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Let's write a simple function that does only one thing
+        \item This function will take a number as an argument and return the square of that number
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        def square(x):
+            return x * x
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Simple Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Functions don't necessarily have to take arguments
+        \item They don't necessarily have to return values
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        def hello():
+            print("Hello, World!")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{When Will We Use Simple Functions?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item When we want to break down a complex problem into smaller parts
+        \item When we want to make our code more readable
+    \end{itemize}
+\end{frame}
+
+\section{Compound Functions}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Compound Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item You can write functions that call other functions
+        \item This is called a compound function
+        \item Say you want to write a function that first checks if a value is an integer, and then squares it
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}[language=Python]
+        def is_integer(x):
+            return type(x) == int
+
+        def square(x):
+            return x * x
+
+        def square_integer(x):
+            if is_integer(x):
+                return square(x)
+            else:
+                return "Not an integer"
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Importance of Modularity}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Modularity is the practice of breaking down code into smaller, more manageable parts
+        \item Modularity makes code easier to read and understand
+        \item Modularity makes code easier to maintain
+        \item Modularity makes code easier to test
+    \end{itemize}
+\end{frame}
+
 \end{document}

@@ -1,8 +1,13 @@
 \begin{lstlisting}[language=Python]
-        # Pseudocode
-        # Define a function that takes a list of numbers as
-            an argument
-        # Iterate over the list of numbers
-        # If the number is even, add it to a new list
-        # Return the new list
+        def is_integer(x):
+            return type(x) == int
+
+        def square(x):
+            return x * x
+
+        def square_integer(x):
+            if is_integer(x):
+                return square(x)
+            else:
+                return "Not an integer"
     \end{lstlisting}

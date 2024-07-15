@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  15 JUL 2024 23:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  15 JUL 2024 23:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -867,6 +867,35 @@ Overfull \hbox (0.24437pt too wide) in paragraph at lines 3--4
 
 ] [13
 
+] (./intro_afternoon.toc) [14
+
+] [15
+
+]
+\openout4 = `intro_afternoon.vrb'.
+
+ (./intro_afternoon.vrb) [16
+
+] [17
+
+]
+\openout4 = `intro_afternoon.vrb'.
+
+ (./intro_afternoon.vrb) [18
+
+] [19
+
+] (./intro_afternoon.toc) [20
+
+] [21
+
+]
+\openout4 = `intro_afternoon.vrb'.
+
+ (./intro_afternoon.vrb) [22
+
+] [23
+
 ]
 \tf@nav=\write6
 \openout6 = `intro_afternoon.nav'.
@@ -879,21 +908,21 @@ Overfull \hbox (0.24437pt too wide) in paragraph at lines 3--4
 
  (./intro_afternoon.aux)
 Package rerunfilecheck Info: File `intro_afternoon.out' has not changed.
-(rerunfilecheck)             Checksum: A8F4219CD29520F34B1A8C58D3E23AFC;170.
+(rerunfilecheck)             Checksum: 9951CDC6E405786A9E866AF3BEA191BA;432.
  ) 
 Here is how much of TeX's memory you used:
- 39308 strings out of 478287
- 937449 string characters out of 5849289
- 1490660 words of memory out of 5000000
- 56765 multiletter control sequences out of 15000+600000
- 471093 words of font info for 34 fonts, out of 8000000 for 9000
+ 39386 strings out of 478287
+ 938549 string characters out of 5849289
+ 1502378 words of memory out of 5000000
+ 56810 multiletter control sequences out of 15000+600000
+ 471430 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,104p,804b,1330s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on intro_afternoon.pdf (13 pages, 113389 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb>
+Output written on intro_afternoon.pdf (23 pages, 158165 bytes).
 PDF statistics:
- 585 PDF objects out of 1000 (max. 8388607)
- 522 compressed objects within 6 object streams
- 28 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1280 PDF objects out of 1440 (max. 8388607)
+ 1187 compressed objects within 12 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
