@@ -1,0 +1,14 @@
+Shortnam,Region,Temperature,Precipitation
+NL,Newfoundland and Labrador,-6.0,71.0
+PEI,Prince Edward Island,-1.0,34.0
+NS,Nova Scotia,-18.0,2.0
+NB,New Brunswick,-20.0,4.0
+QC,Quebec,0.0,5.0
+ON,Ontario,0.0,59.0
+MB,Manitoba,-12.0,58.0
+SK,Saskatchewan,-4.0,3.0
+AB,Alberta,-2.0,21.0
+BC,British Columbia,-17.0,91.0
+YT,Yukon,-13.0,51.0
+NT,Northwest Territories,-16.0,6.0
+NU,Nunavut,-16.0,30.0
