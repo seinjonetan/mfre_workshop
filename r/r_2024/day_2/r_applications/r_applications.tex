@@ -185,82 +185,82 @@ summary(model)
     \end{lstlisting}
 \end{frame}
 
-\section{Time Series Analysis}
+% \section{Time Series Analysis}
 
-\begin{frame}
-    \frametitle{Table of Contents}
-    \setbeamertemplate{section in toc}[sections numbered]
-    \tableofcontents[currentsection]
-\end{frame}
+% \begin{frame}
+%     \frametitle{Table of Contents}
+%     \setbeamertemplate{section in toc}[sections numbered]
+%     \tableofcontents[currentsection]
+% \end{frame}
 
-\begin{frame}{Time Series Analysis}
-    \begin{itemize}
-        \item Time series analysis is a statistical method that is used to model and forecast time series data.
-        \item Time series data is a sequence of observations that are recorded at regular intervals over time.
-        \item Time series analysis is used in many fields, such as economics, finance, and engineering, to analyze and predict trends and patterns in the data.
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Time Series Analysis}
+%     \begin{itemize}
+%         \item Time series analysis is a statistical method that is used to model and forecast time series data.
+%         \item Time series data is a sequence of observations that are recorded at regular intervals over time.
+%         \item Time series analysis is used in many fields, such as economics, finance, and engineering, to analyze and predict trends and patterns in the data.
+%     \end{itemize}
+% \end{frame}
 
-\begin{frame}{Time Series Analysis}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item Time series analysis is used to model the underlying structure of the time series data and to make forecasts of future values.
-        \item The goal of time series analysis is to identify the patterns and trends in the data and to make predictions based on these patterns and trends.
-        \item Time series analysis is used to analyze and forecast time series data using statistical models, such as autoregressive integrated moving average (ARIMA) models and exponential smoothing models.
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Time Series Analysis}
+%     \begin{itemize}
+%         \setlength{\itemsep}{2em}
+%         \item Time series analysis is used to model the underlying structure of the time series data and to make forecasts of future values.
+%         \item The goal of time series analysis is to identify the patterns and trends in the data and to make predictions based on these patterns and trends.
+%         \item Time series analysis is used to analyze and forecast time series data using statistical models, such as autoregressive integrated moving average (ARIMA) models and exponential smoothing models.
+%     \end{itemize}
+% \end{frame}
 
-\begin{frame}{Time Series Analysis}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item ARIMA models are a class of models that are used to model time series data that exhibit autocorrelation and seasonality.
-        \item ARIMA models are specified by three parameters: the autoregressive order (p), the differencing order (d), and the moving average order (q).
-        \item Exponential smoothing models are a class of models that are used to model time series data that exhibit trend and seasonality.
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Time Series Analysis}
+%     \begin{itemize}
+%         \setlength{\itemsep}{2em}
+%         \item ARIMA models are a class of models that are used to model time series data that exhibit autocorrelation and seasonality.
+%         \item ARIMA models are specified by three parameters: the autoregressive order (p), the differencing order (d), and the moving average order (q).
+%         \item Exponential smoothing models are a class of models that are used to model time series data that exhibit trend and seasonality.
+%     \end{itemize}
+% \end{frame}
 
-\begin{frame}{Time Series Analysis}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item Exponential smoothing models are specified by three parameters: the level parameter (alpha), the trend parameter (beta), and the seasonality parameter (gamma).
-        \item The parameters of the time series models are estimated using the method of maximum likelihood, which maximizes the likelihood of the observed data given the model.
-        \item The goodness of fit of the time series model is measured using the mean squared error (MSE) and the Akaike information criterion (AIC).
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Time Series Analysis}
+%     \begin{itemize}
+%         \setlength{\itemsep}{2em}
+%         \item Exponential smoothing models are specified by three parameters: the level parameter (alpha), the trend parameter (beta), and the seasonality parameter (gamma).
+%         \item The parameters of the time series models are estimated using the method of maximum likelihood, which maximizes the likelihood of the observed data given the model.
+%         \item The goodness of fit of the time series model is measured using the mean squared error (MSE) and the Akaike information criterion (AIC).
+%     \end{itemize}
+% \end{frame}
 
-\begin{frame}{Time Series Analysis in R}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item In R, the \texttt{arima()} function is used to fit ARIMA models to time series data.
-        \item The \texttt{arima()} function takes in the time series data and the parameters of the ARIMA model as arguments.
-        \item The parameters of the ARIMA model are specified by the order argument, which is a vector of the autoregressive order, the differencing order, and the moving average order.
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Time Series Analysis in R}
+%     \begin{itemize}
+%         \setlength{\itemsep}{2em}
+%         \item In R, the \texttt{arima()} function is used to fit ARIMA models to time series data.
+%         \item The \texttt{arima()} function takes in the time series data and the parameters of the ARIMA model as arguments.
+%         \item The parameters of the ARIMA model are specified by the order argument, which is a vector of the autoregressive order, the differencing order, and the moving average order.
+%     \end{itemize}
+% \end{frame}
 
-\begin{frame}{Time Series Analysis in R}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item In R, the \texttt{ets()} function is used to fit exponential smoothing models to time series data.
-        \item The \texttt{ets()} function takes in the time series data and the parameters of the exponential smoothing model as arguments.
-        \item The parameters of the exponential smoothing model are specified by the model argument, which is a string that specifies the type of exponential smoothing model to fit.
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Time Series Analysis in R}
+%     \begin{itemize}
+%         \setlength{\itemsep}{2em}
+%         \item In R, the \texttt{ets()} function is used to fit exponential smoothing models to time series data.
+%         \item The \texttt{ets()} function takes in the time series data and the parameters of the exponential smoothing model as arguments.
+%         \item The parameters of the exponential smoothing model are specified by the model argument, which is a string that specifies the type of exponential smoothing model to fit.
+%     \end{itemize}
+% \end{frame}
 
-\begin{frame}[fragile]{Time Series Analysis in R}
-    \begin{lstlisting}[language=R]
-# Load packages
-library(forecast)
+% \begin{frame}[fragile]{Time Series Analysis in R}
+%     \begin{lstlisting}[language=R]
+% # Load packages
+% library(forecast)
 
-# Generate time series data
-data <- ts(data, start = 1, end = n, frequency = f)
+% # Generate time series data
+% data <- ts(data, start = 1, end = n, frequency = f)
 
-# Fit ARIMA model
-model <- arima(data, order = c(p, d, q))
+% # Fit ARIMA model
+% model <- arima(data, order = c(p, d, q))
 
-# Fit exponential smoothing model
-model <- ets(data, model = "ZZZ")
-    \end{lstlisting}
-\end{frame}
+% # Fit exponential smoothing model
+% model <- ets(data, model = "ZZZ")
+%     \end{lstlisting}
+% \end{frame}
 
 \section{Research Design}
 
@@ -318,98 +318,6 @@ y <- 1 + 2 * x + 3 * z + rnorm(n)
 # Fit instrumental variables regression model
 model <- ivreg(y ~ x | z)
 summary(model)
-    \end{lstlisting}
-\end{frame}
-
-\section{Presenting Results}
-
-\begin{frame}
-    \frametitle{Table of Contents}
-    \setbeamertemplate{section in toc}[sections numbered]
-    \tableofcontents[currentsection]
-\end{frame}
-
-\begin{frame}{Presenting Results}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item When presenting the results of a statistical analysis, it is important to clearly communicate the findings to the audience.
-        \item The results should be presented in a clear and concise manner that is easy to understand.
-        \item The results should be presented in a format that is appropriate for the audience and the purpose of the analysis.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Stargazer}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item Stargazer is an R package that is used to create tables of regression results.
-        \item Stargazer is used to create tables of regression results that can be easily formatted and exported to different file formats.
-        \item Stargazer is used to create tables of regression results that can be included in reports, presentations, and publications.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Stargazer}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item Stargazer is used to create tables of regression results that include the estimated coefficients, the standard errors, the t-values, and the p-values of the regression model.
-        \item Stargazer is used to create tables of regression results that can be customized with different formatting options, such as bolding the coefficients and adding stars to indicate significance.
-        \item Stargazer is used to create tables of regression results that can be exported to different file formats, such as HTML, LaTeX, and Word.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Stargazer}
-    \begin{lstlisting}[language=R]
-# Load packages
-library(stargazer)
-
-# Generate some data
-set.seed(123)
-n <- 100
-x1 <- rnorm(n)
-x2 <- rnorm(n)
-y <- 1 + 2 * x1 + 3 * x2 + rnorm(n)
-
-# Fit linear regression model
-model <- lm(y ~ x1 + x2, data = data)
-
-# Create table of regression results
-stargazer(model, type = "html", out = "results.html")
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}{Plotting Linear Regression}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item When presenting the results of a linear regression analysis, it is often helpful to include a plot of the data and the regression line.
-        \item The plot of the data and the regression line can help to visualize the relationship between the dependent variable and the independent variables.
-        \item The plot of the data and the regression line can help to identify patterns and trends in the data and to assess the goodness of fit of the regression model.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Plotting Linear Regression}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item In R, the \texttt{plot()} function is used to create a scatter plot of the data.
-        \item The \texttt{abline()} function is used to add a regression line to the plot.
-        \item The \texttt{points()} function is used to add points to the plot.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Plotting Linear Regression}
-    \begin{lstlisting}[language=R]
-# Generate some data
-set.seed(123)
-n <- 100
-x <- rnorm(n)
-y <- 1 + 2 * x + rnorm(n)
-
-# Create scatter plot of data
-plot(x, y)
-
-# Add regression line to plot
-abline(model)
-
-# Add points to plot
-points(x, y)
     \end{lstlisting}
 \end{frame}
 

@@ -1,0 +1,7 @@
+\frametitle{Some Examples of LaTeX}
+\begin{lstlisting}[language=R]
+\begin{align}
+    y &= \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \\
+    \hat{y} &= \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2
+\end{align}
+    \end{lstlisting}

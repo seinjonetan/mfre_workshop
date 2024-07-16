@@ -1,0 +1,214 @@
+\documentclass[serif, 9pt, aspectratio=32]{beamer} 
+\usetheme{Darmstadt}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usetikzlibrary{shapes, arrows}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{R Applications}
+\date{\today}
+\author{Tan Sein Jone}
+\institute{University of British Columbia}
+
+\pgfplotsset{compat=1.18}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Presenting Results}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Presenting Results}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item When presenting the results of a statistical analysis, it is important to clearly communicate the findings to the audience.
+        \item The results should be presented in a clear and concise manner that is easy to understand.
+        \item The results should be presented in a format that is appropriate for the audience and the purpose of the analysis.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Stargazer}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Stargazer is an R package that is used to create tables of regression results.
+        \item Stargazer is used to create tables of regression results that can be easily formatted and exported to different file formats.
+        \item Stargazer is used to create tables of regression results that can be included in reports, presentations, and publications.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Stargazer}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Stargazer is used to create tables of regression results that include the estimated coefficients, the standard errors, the t-values, and the p-values of the regression model.
+        \item Stargazer is used to create tables of regression results that can be customized with different formatting options, such as bolding the coefficients and adding stars to indicate significance.
+        \item Stargazer is used to create tables of regression results that can be exported to different file formats, such as HTML, LaTeX, and Word.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Stargazer}
+    \begin{lstlisting}[language=R]
+# Load packages
+library(stargazer)
+
+# Generate some data
+set.seed(123)
+n <- 100
+x1 <- rnorm(n)
+x2 <- rnorm(n)
+y <- 1 + 2 * x1 + 3 * x2 + rnorm(n)
+
+# Fit linear regression model
+model <- lm(y ~ x1 + x2, data = data)
+
+# Create table of regression results
+stargazer(model, type = "html", out = "results.html")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Plotting Linear Regression}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item When presenting the results of a linear regression analysis, it is often helpful to include a plot of the data and the regression line.
+        \item The plot of the data and the regression line can help to visualize the relationship between the dependent variable and the independent variables.
+        \item The plot of the data and the regression line can help to identify patterns and trends in the data and to assess the goodness of fit of the regression model.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Plotting Linear Regression}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item In R, the \texttt{plot()} function is used to create a scatter plot of the data.
+        \item The \texttt{abline()} function is used to add a regression line to the plot.
+        \item The \texttt{points()} function is used to add points to the plot.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Plotting Linear Regression}
+    \begin{lstlisting}[language=R]
+# Generate some data
+set.seed(123)
+n <- 100
+x <- rnorm(n)
+y <- 1 + 2 * x + rnorm(n)
+
+# Create scatter plot of data
+plot(x, y)
+
+# Add regression line to plot
+abline(model)
+
+# Add points to plot
+points(x, y)
+    \end{lstlisting}
+\end{frame}
+
+\section{Creating Reports}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Creating Reports}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item When presenting the results of a statistical analysis, it is often helpful to create a report that summarizes the findings.
+        \item The report should include a description of the research question, the data, the methods, the results, and the conclusions.
+        \item The report should be well-organized, clearly written, and easy to understand.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{R Markdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item R Markdown is an R package that is used to create dynamic documents that combine R code, text, and output.
+        \item R Markdown is used to create reports, presentations, and websites that include the results of a statistical analysis.
+        \item R Markdown is used to create reports that can be easily updated and modified as new data becomes available or as the analysis is refined.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{R Markdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item R Markdown is used to create reports that can be exported to different file formats, such as HTML, PDF, and Word.
+        \item R Markdown is used to create reports that can include tables, figures, and other types of output that are generated by R code.
+        \item R Markdown is used to create reports that can be shared with collaborators, reviewers, and other stakeholders.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{R Markdown}
+    \begin{lstlisting}[language=R]
+# Load packages
+library(rmarkdown)
+
+# Create R Markdown document
+rmarkdown::render("report.Rmd", output_format = "html_document")
+    \end{lstlisting}
+\end{frame}
+
+\section{R Markdown and LaTeX}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{R Markdown and LaTeX}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item R Markdown can be used to create reports that include LaTeX code.
+        \item LaTeX is a typesetting system that is used to create high-quality documents, such as academic papers, reports, and books.
+        \item R Markdown can be used to create reports that include LaTeX code for formatting text, equations, tables, and figures.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{R Markdown and LaTeX}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item R Markdown can be used to create reports that include LaTeX code for creating bibliographies, citations, and references.
+        \item R Markdown can be used to create reports that include LaTeX code for creating lists, footnotes, and cross-references.
+        \item R Markdown can be used to create reports that include LaTeX code for creating custom styles, layouts, and templates.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Some Examples of LaTeX}
+    \begin{lstlisting}[language=R]
+\begin{align}
+    y &= \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon \\
+    \hat{y} &= \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2
+\end{align}
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Output}
+    \begin{align}
+        y       & = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon        \\
+        \hat{y} & = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2
+    \end{align}
+\end{frame}
+
+\end{document}

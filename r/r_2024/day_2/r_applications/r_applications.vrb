@@ -1,0 +1,13 @@
+\frametitle{Instrumental Variables in R}
+\begin{lstlisting}[language=R]
+# Generate some data
+set.seed(123)
+n <- 100
+x <- rnorm(n)
+z <- rnorm(n)
+y <- 1 + 2 * x + 3 * z + rnorm(n)
+
+# Fit instrumental variables regression model
+model <- ivreg(y ~ x | z)
+summary(model)
+    \end{lstlisting}

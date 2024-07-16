@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{Hypothesis Testing}{3}{0}{1}
+\beamer@sectionintoc {2}{Regression Analysis}{12}{0}{2}
+\beamer@sectionintoc {3}{Research Design}{20}{0}{3}
