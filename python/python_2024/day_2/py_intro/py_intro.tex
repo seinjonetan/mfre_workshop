@@ -415,7 +415,7 @@ data.to_csv("data.csv", index=False)
     \begin{lstlisting}[language=Python]
 import pandas as pd
 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("age.csv")
 data = data[data["age"] > 30]
 data = data.sort_values("age")
 data['rank'] = data['age'].rank()
@@ -440,7 +440,7 @@ print(data)
     \begin{lstlisting}[language=Python]
 import pandas as pd
 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("age.csv")
 data['age'] = data['age'].apply(lambda x: x + 1)
 print(data)
     \end{lstlisting}
@@ -462,9 +462,9 @@ print(data)
     \begin{lstlisting}[language=Python]
 import pandas as pd
 
-data1 = pd.read_csv("data1.csv")
-data2 = pd.read_csv("data2.csv")
-data = pd.merge(data1, data2, on="id")
+data1 = pd.read_csv("age.csv")
+data2 = pd.read_csv("blood_type.csv")
+data = pd.merge(data1, data2, on="name")
 print(data)
     \end{lstlisting}
 \end{frame}
@@ -485,7 +485,7 @@ print(data)
     \begin{lstlisting}[language=Python]
 import pandas as pd
 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("temp.csv")
 data = data.dropna()
 data = data.fillna(0)
 data = data.interpolate()

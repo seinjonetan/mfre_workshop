@@ -66,6 +66,7 @@
     \begin{lstlisting}[language=Python]
 import statsmodels.api as sm
 import numpy as np
+import random
 
 data = {
     "age": np.random.normal(50, 10, 100),
@@ -240,7 +241,7 @@ plt.show()
     \begin{lstlisting}[language=Python]
 import pandas as pd
 
-df = pd.read_csv("data/province_weather.csv")
+df = pd.read_csv("../data/province_weather.csv")
 df.head()
 df.info()
 
@@ -252,9 +253,9 @@ weather.describe()
 \begin{frame}[fragile]
     \frametitle{Pandas Best Practices}
     \begin{lstlisting}[language=Python]
-weather['fahrenheit'] = weather['temperature'].apply(lambda x: x * 9/5 + 32)
+weather['fahrenheit'] = weather['Temperature'].apply(lambda x: x * 9/5 + 32)
 
-weather.to_csv("data/province_weather_fahrenheit.csv", index=False)
+weather.to_csv("../data/province_weather_fahrenheit.csv", index=False)
     \end{lstlisting}
 \end{frame}
 
