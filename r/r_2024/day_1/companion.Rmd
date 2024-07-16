@@ -1,0 +1,245 @@
+---
+title: "Companion"
+author: "Tan Sein Jone"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+    toc: true
+    toc_float: true
+---
+
+```{r}
+pure_function <- function(x, y) {
+    return(x + y)
+}
+
+impure_function <- function(x, y) {
+    print(x)
+    return(x + y)
+}
+
+pure_function(1, 2)
+impure_function(1, 2)
+```
+
+```{r}
+add <- function(x, y) {
+    return(x + y)
+}
+
+subtract <- function(x, y) {
+    return(x - y)
+}
+
+operate <- function(func, x, y) {
+    return(func(x, y))
+}
+
+operate(add, 5, 3)
+operate(subtract, 5, 3)
+```
+
+```{r}
+add <- function(x, y) {
+    return(x + y)
+}
+
+subtract <- function(x, y) {
+    return(x - y)
+}
+
+create_operator <- function(op) {
+    if (op == "add") {
+        return(add)
+    } else if (op == "subtract") {
+        return(subtract)
+    }
+}
+
+operator <- create_operator("add")
+operator(5, 3)
+```
+
+```{r}
+numeric_vector <- c(1, 2, 3, 4, 5)
+character_vector <- c("a", "b", "c", "d", "e")
+logical_vector <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
+
+matrix_1 <- matrix(1:9, nrow = 3, ncol = 3)
+matrix_2 <- matrix(letters[1:9], nrow = 3, ncol = 3)
+matrix_3 <- matrix(c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE), nrow = 2, ncol = 3)
+
+data_frame <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    married = c(TRUE, FALSE, TRUE)
+)
+```
+
+```{r}
+data <- read.csv("data_frame.csv")
+head(data)
+# write.csv(data, "data_frame.csv", row.names = FALSE)
+```
+
+```{r}
+data <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    married = c(TRUE, FALSE, TRUE)
+)
+
+# Filter data
+filtered_data <- data[data$age > 30, ]
+
+# Sort data
+sorted_data <- data[order(data$age), ]
+
+# Aggregate data
+aggregated_data <- aggregate(data$age, by = list(data$married), FUN = mean)
+```
+
+```{r}
+data_1 <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    married = c(TRUE, FALSE, TRUE)
+)
+
+data_2 <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    salary = c(50000, 60000, 70000)
+)
+
+merged_data <- merge(data_1, data_2, by = "name")
+joined_data <- merge(data_1, data_2, by = "name", all = TRUE)
+```
+
+```{r}
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+
+plot(x, y)
+```
+
+```{r}
+library(ggplot2)
+
+data <- data.frame(
+    x = c(1, 2, 3, 4, 5),
+    y = c(2, 4, 6, 8, 10)
+)
+
+ggplot(data, aes(x = x, y = y)) +
+    geom_point()
+```
+
+```{r}
+library(plotly)
+
+data <- data.frame(
+    x = c(1, 2, 3, 4, 5),
+    y = c(2, 4, 6, 8, 10)
+)
+
+plot_ly(data, x = ~x, y = ~y, type = "scatter", mode = "markers")
+```
+
+```{r}
+library(dplyr)
+
+data <- data.frame(
+    x = c(1, 2, 3, 4, 5),
+    y = c(2, 4, 6, 8, 10)
+)
+
+data %>%
+    filter(x > 2) %>%
+    ggplot(aes(x = x, y = y)) +
+    geom_point()
+```
+
+```{r}
+library(dplyr)
+
+data <- tibble(
+    x = c(1, 2, 3, 4, 5),
+    y = c(2, 4, 6, 8, 10)
+)
+
+data %>%
+    filter(x > 2) %>%
+    ggplot(aes(x = x, y = y)) +
+    geom_point()
+```
+
+```{r}
+library(dplyr)
+
+data <- data.frame(
+    x = c(1, 2, 3, 4, 5),
+    y = c(2, 4, 6, 8, 10),
+    group = c("A", "A", "B", "B", "B")
+)
+
+data %>%
+    group_by(group) %>%
+    summarize(mean_y = mean(y))
+```
+
+```{r}
+add <- function(x, y) {
+    return(x + y)
+}
+
+add(5, 3)
+```
+
+```{r}
+add <- function(x, y = 0) {
+    return(x + y)
+}
+
+add(5, 3)
+add(5)
+```
+
+```{r}
+add <- function(x, y) {
+    return(x + y)
+}
+
+subtract <- function(x, y) {
+    return(x - y)
+}
+
+operate <- function(func, x, y) {
+    return(func(x, y))
+}
+
+operate(add, 5, 3)
+operate(subtract, 5, 3)
+```
+
+```{r}
+add <- function(x, y) {
+    return(x + y)
+}
+
+subtract <- function(x, y) {
+    return(x - y)
+}
+
+create_operator <- function(op) {
+    if (op == "add") {
+        return(add)
+    } else if (op == "subtract") {
+        return(subtract)
+    }
+}
+
+operator <- create_operator("add")
+operator(5, 3)
+```
