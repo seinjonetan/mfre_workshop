@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1721085327 "/home/sjone9/school/mfre_workshop/python/slides/intro/intro.tex" "intro.pdf" "intro" 1721085330
+["pdflatex"] 1721099666 "/home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro/intro.tex" "intro.pdf" "intro" 1721099669
   "/etc/texmf/web2c/texmf.cnf" 1695173623 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sjone9/school/mfre_workshop/python/slides/intro/intro.tex" 1721085323 11497 5158b89f097ca04785f228bc26722357 ""
+  "/home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro/intro.tex" 1721099666 11503 b38ab64b31d7f44f2c4f7c9fd9ce4718 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm" 1136768653 1328 5442e22a7072966dbaf88ca900acf3f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1136768653 1524 d89e2d087a9828407a196f428428ef4a ""
@@ -266,12 +266,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1708461188 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1716345046 2800201 cddebe4358212a15764e55ccdc48a1b1 ""
-  "intro.aux" 1721085330 7316 3327bd96ceecfaf0e60342cf1766b628 "pdflatex"
-  "intro.nav" 1721085330 4547 4e21bac9b2904640af3d92d15fba410a "pdflatex"
-  "intro.out" 1721085330 443 6b8c350601a095f55b10fdcfe13b2332 "pdflatex"
-  "intro.tex" 1721085323 11497 5158b89f097ca04785f228bc26722357 ""
-  "intro.toc" 1721085330 228 ae72d089c055d8a84d2b27fb7992d645 "pdflatex"
-  "intro.vrb" 1721085330 133 a8bb4e938c9a06be58782bcc8a167317 "pdflatex"
+  "intro.aux" 1721099669 7316 3327bd96ceecfaf0e60342cf1766b628 "pdflatex"
+  "intro.nav" 1721099669 4547 4e21bac9b2904640af3d92d15fba410a "pdflatex"
+  "intro.out" 1721099669 443 6b8c350601a095f55b10fdcfe13b2332 "pdflatex"
+  "intro.tex" 1721099666 11503 b38ab64b31d7f44f2c4f7c9fd9ce4718 ""
+  "intro.toc" 1721099669 228 ae72d089c055d8a84d2b27fb7992d645 "pdflatex"
+  "intro.vrb" 1721099669 133 a8bb4e938c9a06be58782bcc8a167317 "pdflatex"
   (generated)
   "intro.aux"
   "intro.log"

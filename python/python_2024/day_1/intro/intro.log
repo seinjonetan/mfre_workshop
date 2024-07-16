@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  15 JUL 2024 23:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  16 JUL 2024 03:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/sjone9/school/mfre_workshop/python/slides/intro/intro.tex
-(/home/sjone9/school/mfre_workshop/python/slides/intro/intro.tex
+**/home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro/intro.tex
+(/home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro/intro.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2022/01/21 v3.65 A class for typesetting presentations
@@ -977,14 +977,14 @@ Package rerunfilecheck Info: File `intro.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  39560 strings out of 478287
- 940719 string characters out of 5849289
- 1513683 words of memory out of 5000000
+ 940758 string characters out of 5849289
+ 1513682 words of memory out of 5000000
  56929 multiletter control sequences out of 15000+600000
  471660 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,20n,104p,784b,1428s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,20n,104p,795b,1428s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on intro.pdf (39 pages, 235188 bytes).
+Output written on intro.pdf (39 pages, 235435 bytes).
 PDF statistics:
  2842 PDF objects out of 2984 (max. 8388607)
  2697 compressed objects within 27 object streams
