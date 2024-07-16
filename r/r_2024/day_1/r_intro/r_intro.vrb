@@ -1,0 +1,15 @@
+\begin{lstlisting}
+        data_1 <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            age = c(25, 30, 35),
+            married = c(TRUE, FALSE, TRUE)
+        )
+
+        data_2 <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            salary = c(50000, 60000, 70000)
+        )
+
+        merged_data <- merge(data_1, data_2, by = "name")
+        joined_data <- merge(data_1, data_2, by = "name", all = TRUE)
+    \end{lstlisting}

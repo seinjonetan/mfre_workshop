@@ -1,0 +1,20 @@
+\begin{lstlisting}
+        add <- function(x, y){
+            return(x + y)
+        }
+
+        subtract <- function(x, y){
+            return(x - y)
+        }
+
+        create_operator <- function(op){
+            if(op == "add"){
+                return(add)
+            } else if(op == "subtract"){
+                return(subtract)
+            }
+        }
+
+        operator <- create_operator("add")
+        operator(5, 3)
+    \end{lstlisting}

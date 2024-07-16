@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{Data Visualization}{3}{0}{1}
+\beamer@sectionintoc {2}{Tips for Tidyverse}{11}{0}{2}
+\beamer@sectionintoc {3}{Functions Best Practices}{19}{0}{3}

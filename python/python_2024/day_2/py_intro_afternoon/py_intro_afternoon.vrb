@@ -1,6 +1,9 @@
 \frametitle{Pandas Best Practices}
     \begin{lstlisting}[language=Python]
-weather['fahrenheit'] = weather['Temperature'].apply(lambda x: x * 9/5 + 32)
+weather['fahrenheit'] = weather['Temperature']
+                            .apply(lambda x: x * 9/5 + 32)
 
-weather.to_csv("../data/province_weather_fahrenheit.csv", index=False)
+weather.to_csv(
+    "../data/province_weather_fahrenheit.csv", index=False
+)
     \end{lstlisting}

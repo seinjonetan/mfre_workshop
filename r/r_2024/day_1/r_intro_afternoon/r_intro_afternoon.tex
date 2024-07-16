@@ -1,0 +1,347 @@
+\documentclass[serif, 9pt, aspectratio=32]{beamer} 
+\usetheme{Darmstadt}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usetikzlibrary{shapes, arrows}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Introduction to R}
+\date{\today}
+\author{Tan Sein Jone}
+\institute{University of British Columbia}
+
+\pgfplotsset{compat=1.18}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Data Visualization}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Visualization}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Data visualization is the process of representing data graphically.
+        \item R has a wide range of functions and packages that make data visualization easier.
+        \item The most common types of data visualizations are scatter plots, bar charts, and line charts.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Base Plotting}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Base plotting is the default plotting system in R.
+        \item Base plotting is simple and easy to use.
+        \item Base plotting is good for creating simple plots.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        x <- c(1, 2, 3, 4, 5)
+        y <- c(2, 4, 6, 8, 10)
+
+        plot(x, y)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{ggplot2}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item ggplot2 is a popular plotting package in R.
+        \item ggplot2 is based on the grammar of graphics.
+        \item ggplot2 is good for creating complex plots.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(ggplot2)
+
+        data <- data.frame(
+            x = c(1, 2, 3, 4, 5),
+            y = c(2, 4, 6, 8, 10)
+        )
+
+        ggplot(data, aes(x = x, y = y)) + geom_point()
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Plotly}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Plotly is an interactive plotting package in R.
+        \item Plotly is based on the Plotly.js library.
+        \item Plotly is good for creating interactive plots.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(plotly)
+
+        data <- data.frame(
+            x = c(1, 2, 3, 4, 5),
+            y = c(2, 4, 6, 8, 10)
+        )
+
+        plot_ly(data, x = ~x, y = ~y, type = "scatter", mode = "markers")
+    \end{lstlisting}
+\end{frame}
+
+\section{Tips for Tidyverse}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Tips for Tidyverse}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The Tidyverse is a collection of R packages designed for data science.
+        \item The Tidyverse is based on the principles of tidy data.
+        \item The Tidyverse is good for data manipulation and visualization.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pipes}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Pipes are a way to chain R functions together.
+        \item Pipes make it easy to read and write code.
+        \item Pipes are good for data manipulation and visualization.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(dplyr)
+
+        data <- data.frame(
+            x = c(1, 2, 3, 4, 5),
+            y = c(2, 4, 6, 8, 10)
+        )
+
+        data %>%
+            filter(x > 2) %>%
+            ggplot(aes(x = x, y = y)) +
+            geom_point()
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Tibbles}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Tibbles are a modern version of data frames.
+        \item Tibbles are easier to read and write than data frames.
+        \item Tibbles are good for data manipulation and visualization.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(dplyr)
+
+        data <- tibble(
+            x = c(1, 2, 3, 4, 5),
+            y = c(2, 4, 6, 8, 10)
+        )
+
+        data %>%
+            filter(x > 2) %>%
+            ggplot(aes(x = x, y = y)) +
+            geom_point()
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Grouping}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Grouping is a way to split data into groups.
+        \item Grouping is good for data manipulation and visualization.
+        \item Grouping is good for summarizing data.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(dplyr)
+
+        data <- data.frame(
+            x = c(1, 2, 3, 4, 5),
+            y = c(2, 4, 6, 8, 10),
+            group = c("A", "A", "B", "B", "B")
+        )
+
+        data %>%
+            group_by(group) %>%
+            summarize(mean_y = mean(y))
+    \end{lstlisting}
+\end{frame}
+
+\section{Functions Best Practices}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Functions Best Practices}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Functions are a way to organize code in R.
+        \item Functions are good for code reuse and readability.
+        \item Functions are good for data manipulation and visualization.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Function Basics}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A function is a block of code that performs a specific task.
+        \item A function takes input, processes it, and returns output.
+        \item A function is defined using the function keyword.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        add <- function(x, y){
+            return(x + y)
+        }
+
+        add(5, 3)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Function Arguments}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A function can take zero or more arguments.
+        \item Arguments are the input values that a function uses to perform its task.
+        \item Arguments can have default values.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        add <- function(x, y = 0){
+            return(x + y)
+        }
+
+        add(5, 3)
+        add(5)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Higher Order Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Higher-order functions are functions that can either take other functions as arguments or return them as results.
+        \item This is possible because functions are first-class citizens.
+        \item Higher-order functions allow us to abstract over actions, not just values.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Tips for Higher Order Functions and Modularity}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Higher-order functions are functions that can take other functions as arguments or return them as results.
+        \item Higher-order functions allow us to abstract over actions, not just values.
+        \item Higher-order functions are good for modularity and code reuse.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        add <- function(x, y){
+            return(x + y)
+        }
+
+        subtract <- function(x, y){
+            return(x - y)
+        }
+
+        operate <- function(func, x, y){
+            return(func(x, y))
+        }
+
+        operate(add, 5, 3)
+        operate(subtract, 5, 3)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        add <- function(x, y){
+            return(x + y)
+        }
+
+        subtract <- function(x, y){
+            return(x - y)
+        }
+
+        create_operator <- function(op){
+            if(op == "add"){
+                return(add)
+            } else if(op == "subtract"){
+                return(subtract)
+            }
+        }
+
+        operator <- create_operator("add")
+        operator(5, 3)
+    \end{lstlisting}
+\end{frame}
+
+\end{document}
