@@ -1,5 +1,6 @@
 \frametitle{Instrumental Variables in R}
 \begin{lstlisting}[language=R]
+library(AER)
 # Generate some data
 set.seed(123)
 n <- 100

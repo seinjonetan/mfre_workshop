@@ -103,6 +103,11 @@
 
 \begin{frame}[fragile]{Hypothesis Testing in R}
     \begin{lstlisting}[language=R]
+# Generate some data
+set.seed(123)
+x <- rnorm(100, mean = 5, sd = 2)
+y <- rnorm(100, mean = 6, sd = 2)
+
 # One-sample t-test
 t.test(x, mu = 0)
 
@@ -177,6 +182,14 @@ t.test(x, y, paired = TRUE)
 
 \begin{frame}[fragile]{Regression Analysis in R}
     \begin{lstlisting}[language=R]
+# Generate some data
+set.seed(123)
+data <- data.frame(
+    y = rnorm(100, mean = 5, sd = 2),
+    x1 = rnorm(100, mean = 6, sd = 2),
+    x2 = rnorm(100, mean = 7, sd = 2)
+)
+
 # Fit linear regression model
 model <- lm(y ~ x1 + x2, data = data)
 
@@ -308,6 +321,7 @@ summary(model)
 
 \begin{frame}[fragile]{Instrumental Variables in R}
     \begin{lstlisting}[language=R]
+library(AER)
 # Generate some data 
 set.seed(123)
 n <- 100

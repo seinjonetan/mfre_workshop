@@ -112,6 +112,8 @@ n <- 100
 x <- rnorm(n)
 y <- 1 + 2 * x + rnorm(n)
 
+model <- lm(y ~ x)
+
 # Create scatter plot of data
 plot(x, y)
 
