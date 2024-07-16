@@ -1,13 +1,10 @@
-\frametitle{Bar Plot}
+\frametitle{Null Values}
     \begin{lstlisting}[language=Python]
-import seaborn as sns
+import pandas as pd
 
-data = {
-    "age": np.random.normal(50, 10, 100),
-    "income": np.random.normal(50000, 10000, 100)
-}
-data = pd.DataFrame(data)
-sns.barplot(x="age", y="income", data=data)
-plt.savefig("barplot.png")
-plt.show()
+data = pd.read_csv("data.csv")
+data = data.dropna()
+data = data.fillna(0)
+data = data.interpolate()
+print(data)
     \end{lstlisting}

@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{Statistical Analysis}{3}{0}{1}
+\beamer@sectionintoc {2}{Data Visualization}{9}{0}{2}
+\beamer@sectionintoc {3}{Pandas Best Practices}{16}{0}{3}
