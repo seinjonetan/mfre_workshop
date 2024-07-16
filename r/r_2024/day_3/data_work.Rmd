@@ -12,7 +12,7 @@ output:
 ## Data IO
 ```{r}
 # Read data from csv file
-data <- read.csv("data/pollution.csv")
+data <- read.csv("../data/pollution.csv")
 head(data)
 ```
 
@@ -91,4 +91,54 @@ library(rdrobust)
 # Run a regression discontinuity analysis to estimate the effect of the policy
 rd_result <- rdrobust(y = data$total_pollution, x = data$Year, c = 2000)
 summary(rd_result)
+```
+
+## Tasks for Practice
+
+1. Calculate the total pollution for each province in the year 2015.
+
+```{r}
+# Load the pollution dataset
+data <- read.csv("../data/pollution.csv")
+
+# Filter the data for the year 2015
+data_2015 <- data[data$Year == 2015, ]
+
+# Calculate the total pollution for each province
+data_province_2015 <- data_2015 %>%
+    group_by(Province) %>%
+    summarise(Total = sum(Transport))
+head(data_province_2015)
+```
+
+2. Plot the trend of pollution over time for the 'Transport' sector, aggregating all provinces.
+
+```{r}
+# Aggregate the data by year
+data_year <- data %>%
+    group_by(Year) %>%
+    summarise(Total = sum(Transport))
+
+# Plot the trend of pollution over time
+ggplot(data_year, aes(x = Year, y = Total)) +
+    geom_line() +
+    labs(title = "Trend of Pollution Over Time", x = "Year", y = "Total Pollution")
+```
+
+3. Plot the total pollution over time for the top 5 provinces with the highest pollution levels in 1999.
+
+```{r}
+# Filter the data for the year 1999
+data_1999 <- data[data$Year == 1999, ]
+
+# Get the top 5 provinces with the highest pollution levels in 1999
+top_provinces <- head(data_1999[order(data_1999$Transport, decreasing = TRUE), ], 5)
+
+# Get the pollution data for the top 5 provinces
+data_top_provinces <- data[data$Province %in% top_provinces$Province, ]
+
+# Plot the total pollution over time for the top 5 provinces
+ggplot(data_top_provinces, aes(x = Year, y = Transport, color = Province)) +
+    geom_line() +
+    labs(title = "Total Pollution Over Time for Top 5 Provinces in 1999", x = "Year", y = "Total Pollution")
 ```
