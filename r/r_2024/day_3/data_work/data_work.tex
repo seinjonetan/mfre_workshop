@@ -1,0 +1,193 @@
+\documentclass[serif, 9pt, aspectratio=32]{beamer} 
+\usetheme{Darmstadt}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usetikzlibrary{shapes, arrows}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Python Applications}
+\date{\today}
+\author{Tan Sein Jone}
+\institute{University of British Columbia}
+
+\pgfplotsset{compat=1.18}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Data Preview}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pollution Data}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Synthetic data on pollution levels in a province by industry and year
+        \item Data is in a csv file
+        \item Relatively long dataset
+    \end{itemize}
+\end{frame}
+
+\section{Variable Preview}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Variable Preview}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item In R studio, there's a section in the IDE that allows you to view the variables in your environment
+        \item This is useful for checking the data types of your variables
+        \item You can also see the first few rows of your data
+        \item I don't know any extensions in R studio that has the same functionality as Data Wrangler in VS Code, but if you do let me know!
+    \end{itemize}
+\end{frame}
+
+\section{Data Manipulation}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Data Manipulation}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Data manipulation is the process of changing data to make it easier to read or more organized.
+        \item This can involve changing the data type of a variable, removing missing values, or creating new variables.
+        \item In R, the dplyr package is commonly used for data manipulation.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Data Manipulation}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Filter data after 2010
+        \item Get pollution data for the transport sector
+        \item Total pollution by province
+        \item Applying functions
+    \end{itemize}
+\end{frame}
+
+\section{Data Visualization}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Data Visualization}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Data visualization is the process of representing data graphically.
+        \item This can help you identify patterns in the data that may not be obvious from looking at the raw data.
+        \item In R, the ggplot2 package is commonly used for data visualization.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Data Visualization}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Create a plot of pollution levels by province
+        \item Create a plot of pollution levels over time
+        \item Plot pollution as a Heatmap
+    \end{itemize}
+\end{frame}
+
+\section{Diff in diff}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Diff in diff}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Difference in differences is a statistical technique used to estimate the causal effect of a treatment or intervention.
+        \item It compares the change in outcomes over time between a treatment group and a control group.
+        \item In R, the plm package is commonly used for difference in differences analysis.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Diff in diff}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Assume there's a policy implemented in BC in 2000
+        \item Run a diff-in-diff analysis to estimate the effect of the policy
+    \end{itemize}
+\end{frame}
+
+\section{Regression Discontinuity Design (RDD)}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Regression Discontinuity Design (RDD)}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Regression discontinuity design is a quasi-experimental design used to estimate the causal effect of a treatment or intervention.
+        \item It exploits the fact that individuals on either side of a cutoff point are similar in all other respects.
+        \item In R, the rdd package is commonly used for regression discontinuity design analysis.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Regression Discontinuity Design (RDD)}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Assume there's a policy implemented in 2000
+        \item Run a regression discontinuity design analysis to estimate the effect of the policy
+    \end{itemize}
+\end{frame}
+
+\section{Tasks}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Tasks}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Calculate the total pollution for each province in the year 2015.
+        \item Plot the trend of pollution over time for the 'Transport' sector, aggregating all provinces.
+        \item Plot the total pollution over time for the top 5 provinces with the highest pollution levels in 1999.
+    \end{itemize}
+\end{frame}
+
+\end{document}
