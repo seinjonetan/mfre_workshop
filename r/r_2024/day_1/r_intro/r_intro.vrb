@@ -11,5 +11,8 @@
         )
 
         merged_data <- merge(data_1, data_2, by = "name")
-        joined_data <- merge(data_1, data_2, by = "name", all = TRUE)
+        joined_data <- merge(
+            data_1, data_2, by = "name",
+            all = TRUE
+        )
     \end{lstlisting}

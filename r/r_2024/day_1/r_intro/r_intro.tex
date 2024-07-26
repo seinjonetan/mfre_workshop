@@ -200,7 +200,10 @@
     \begin{lstlisting}
         matrix_1 <- matrix(1:9, nrow = 3, ncol = 3)
         matrix_2 <- matrix(letters[1:9], nrow = 3, ncol = 3)
-        matrix_3 <- matrix(c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE), nrow = 2, ncol = 3)
+        matrix_3 <- matrix(
+            c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE),
+            nrow = 2, ncol = 3
+        )
     \end{lstlisting}
 \end{frame}
 
@@ -269,7 +272,11 @@
         sorted_data <- data[order(data$age), ]
 
         # Aggregate data
-        aggregated_data <- aggregate(data$age, by = list(data$married), FUN = mean)
+        aggregated_data <- aggregate(
+            data$age,
+            by = list(data$married),
+            FUN = mean
+        )
     \end{lstlisting}
 \end{frame}
 
@@ -298,7 +305,10 @@
         )
 
         merged_data <- merge(data_1, data_2, by = "name")
-        joined_data <- merge(data_1, data_2, by = "name", all = TRUE)
+        joined_data <- merge(
+            data_1, data_2, by = "name",
+            all = TRUE
+        )
     \end{lstlisting}
 \end{frame}
 

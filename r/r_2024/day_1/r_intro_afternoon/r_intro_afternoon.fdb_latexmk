@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1721102969 "/home/sjone9/school/mfre_workshop/r/r_2024/day_1/r_intro_afternoon/r_intro_afternoon.tex" "r_intro_afternoon.pdf" "r_intro_afternoon" 1721102971
+["pdflatex"] 1722019295 "/home/sjone9/school/mfre_workshop/r/r_2024/day_1/r_intro_afternoon/r_intro_afternoon.tex" "r_intro_afternoon.pdf" "r_intro_afternoon" 1722019297
   "/etc/texmf/web2c/texmf.cnf" 1695173623 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sjone9/school/mfre_workshop/r/r_2024/day_1/r_intro_afternoon/r_intro_afternoon.tex" 1721102968 8972 3cef8bed93feba3e2ae9924a03a51cbb ""
+  "/home/sjone9/school/mfre_workshop/r/r_2024/day_1/r_intro_afternoon/r_intro_afternoon.tex" 1722019295 9020 3479903a7e418b3c1a79d237a4122b82 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1136768653 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1136768653 1524 d89e2d087a9828407a196f428428ef4a ""
@@ -264,12 +264,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1708461188 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1716345046 2800201 cddebe4358212a15764e55ccdc48a1b1 ""
-  "r_intro_afternoon.aux" 1721102971 5462 f799443682ee567e1406e1d0a11ea93c "pdflatex"
-  "r_intro_afternoon.nav" 1721102971 3291 932359bec8b7530e8041dd440af79b76 "pdflatex"
-  "r_intro_afternoon.out" 1721102971 444 5c11953c895c425f124d50ef772965e5 "pdflatex"
-  "r_intro_afternoon.tex" 1721102968 8972 3cef8bed93feba3e2ae9924a03a51cbb ""
-  "r_intro_afternoon.toc" 1721102971 170 487a7ae95dcaff3bb9d81268101e57b1 "pdflatex"
-  "r_intro_afternoon.vrb" 1721102971 444 d44fd8f7bcc5b4d54ba625a8ca688e09 "pdflatex"
+  "r_intro_afternoon.aux" 1722019297 5462 f799443682ee567e1406e1d0a11ea93c "pdflatex"
+  "r_intro_afternoon.nav" 1722019297 3291 932359bec8b7530e8041dd440af79b76 "pdflatex"
+  "r_intro_afternoon.out" 1722019297 444 5c11953c895c425f124d50ef772965e5 "pdflatex"
+  "r_intro_afternoon.tex" 1722019295 9020 3479903a7e418b3c1a79d237a4122b82 ""
+  "r_intro_afternoon.toc" 1722019297 170 487a7ae95dcaff3bb9d81268101e57b1 "pdflatex"
+  "r_intro_afternoon.vrb" 1722019297 444 d44fd8f7bcc5b4d54ba625a8ca688e09 "pdflatex"
   (generated)
   "r_intro_afternoon.aux"
   "r_intro_afternoon.log"
