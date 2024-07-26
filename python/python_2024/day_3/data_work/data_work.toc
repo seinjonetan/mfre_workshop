@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Data Preview}{3}{0}{1}
+\beamer@sectionintoc {2}{Data Wrangler}{5}{0}{2}
+\beamer@sectionintoc {3}{Data Manipulation}{9}{0}{3}
+\beamer@sectionintoc {4}{Cleaning}{15}{0}{4}
+\beamer@sectionintoc {5}{Visualization}{17}{0}{5}
+\beamer@sectionintoc {6}{Task}{21}{0}{6}

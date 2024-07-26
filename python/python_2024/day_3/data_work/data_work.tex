@@ -1,0 +1,224 @@
+\documentclass[serif, 9pt, aspectratio=32]{beamer} 
+\usetheme{Darmstadt}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usetikzlibrary{shapes, arrows}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Python Applications}
+\date{\today}
+\author{Tan Sein Jone}
+\institute{University of British Columbia}
+
+\pgfplotsset{compat=1.18}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Data Preview}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pollution Data}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Synthetic data on pollution levels in a province by industry and year
+        \item Data is in a csv file
+        \item Relatively long dataset
+    \end{itemize}
+\end{frame}
+
+\section{Data Wrangler}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Data Wrangler}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Data Wrangler is an extension in VS Code that allows you to preview data in a more readable format.
+        \item It is useful for viewing data in a tabular format.
+        \item It provides important summary statistics for the data.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Data Wrangler}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item You can access it in a couple of ways in VS Code.
+        \item Open a csv file and in the top right corner, click on the icon that looks like a table.
+        \item You can also right-click on a csv file and select "Show in Data Wrangler".
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item When you load in data to the python kernel in VS Code, you can also view the data in Data Wrangler.
+        \item In the bottom tool bar, you should see a tab for Jupyter.
+        \item You should be able to see a button to the left of each variable that allows you to view the data in Data Wrangler.
+    \end{itemize}
+\end{frame}
+
+\section{Data Manipulation}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Manipulation}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Select columns and rows
+        \item Get pollution numbers for BC
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Manipulation}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Filter data
+        \item Filter out pollution data post 2000
+        \item Name the highest polluting sector for every province in every year
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Manipulation}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Filter and Group data
+        \item Total pollution for every province sector pair
+        \item Get total pollution by province
+        \item Group pollution into pre 2000 and post 2000
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Manipulation}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Merge data
+        \item Map full names to province abbreviations
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Manipulation}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Applying functions
+        \item Assume you want to change pollution values to logs for all columns except 'Year' and 'Province'
+        \item Getting Total pollution for every sector
+        \item Get a summary of pollution for every province
+    \end{itemize}
+\end{frame}
+
+\section{Cleaning}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Cleaning}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Handling duplicates
+        \item Handling missing values
+    \end{itemize}
+\end{frame}
+
+\section{Visualization}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Visualization}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Using matplotlib
+        \item Plot a line graph of pollution by sector for British Columbia over time
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Visualization}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Using seaborn
+        \item Total emissions over time by province
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Visualization}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Heatmap
+    \end{itemize}
+\end{frame}
+
+\section{Task}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Task}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Plot emissions over time by sector
+        \item Track the total pollution of the top 5 polluters in the year 2000
+    \end{itemize}
+\end{frame}
+
+\end{document}
