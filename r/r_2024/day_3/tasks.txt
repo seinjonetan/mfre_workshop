@@ -1,0 +1,7 @@
+1. Create a bar chart for total pollution levels in 1990 with provinces in the x axis and total pollution levels in the y axis.
+2. Create a bar chart for total pollution and temperature levels in 1990 with provinces in the x axis and total pollution levels and temperature in the y axis. The x axis should contain full provincial names.
+3. Plot a line chart of changes in pollution over time by province for the provinces with the highest and lowest pollution levels in 1990.
+4. Create a table with the average pollution levels for each industry by province. Provinces should be in rows and industries in columns. Province names should be full names. The table should also include the average temperature over time. Identify the industry with the highest average pollution level and the province with the highest temperature.
+5. Do a linear regression of total pollution levels on temperature levels. Plot the regression line on a scatter plot of total pollution levels and temperature levels.
+
+Recommended Packages: ggplot2, dplyr, tidyr
