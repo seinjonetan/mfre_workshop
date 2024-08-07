@@ -63,6 +63,45 @@ operator(5, 3)
 ```
 
 ```{r}
+factorial <- function(n) {
+    if (n == 0) {
+        return(1)
+    } else {
+        return(n * factorial(n - 1))
+    }
+}
+
+factorial(5)
+```
+
+```{r}
+add_one <- function(x) {
+    return(x + 1)
+}
+
+numbers <- c(1, 2, 3, 4, 5)
+mapped_numbers <- lapply(numbers, add_one)
+```
+
+```{r}
+is_even <- function(x) {
+    return(x %% 2 == 0)
+}
+
+numbers <- c(1, 2, 3, 4, 5)
+filtered_numbers <- numbers[numbers %% 2 == 0]
+```
+
+```{r}
+add <- function(x, y) {
+    return(x + y)
+}
+
+numbers <- c(1, 2, 3, 4, 5)
+reduced_number <- Reduce(add, numbers)
+```
+
+```{r}
 numeric_vector <- c(1, 2, 3, 4, 5)
 character_vector <- c("a", "b", "c", "d", "e")
 logical_vector <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
@@ -75,6 +114,44 @@ data_frame <- data.frame(
     name = c("Alice", "Bob", "Charlie"),
     age = c(25, 30, 35),
     married = c(TRUE, FALSE, TRUE)
+)
+```
+
+```{r}
+matrix_1 <- matrix(1:9, nrow = 3, ncol = 3)
+matrix_2 <- matrix(9:1, nrow = 3, ncol = 3)
+
+# Addition
+added_matrix <- matrix_1 + matrix_2
+
+# Subtraction
+subtracted_matrix <- matrix_1 - matrix_2
+
+# Multiplication
+multiplied_matrix <- matrix_1 %*% matrix_2
+
+# Division
+divided_matrix <- matrix_1 / matrix_2
+```
+
+```{r}
+data <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    married = c(TRUE, FALSE, TRUE)
+)
+
+# Filter data
+filtered_data <- data[data$age > 30, ]
+
+# Sort data
+sorted_data <- data[order(data$age), ]
+
+# Aggregate data
+aggregated_data <- aggregate(
+    data$age,
+    by = list(data$married),
+    FUN = mean
 )
 ```
 
@@ -242,4 +319,44 @@ create_operator <- function(op) {
 
 operator <- create_operator("add")
 operator(5, 3)
+```
+
+```{r}
+library(dplyr)
+
+data <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    married = c(TRUE, FALSE, TRUE)
+)
+
+filtered_data <- data %>% filter(age > 30)
+sorted_data <- data %>% arrange(age)
+aggregated_data <- data %>% summarise(mean_age = mean(age))
+```
+
+```{r}
+library(tidyr)
+
+data <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    married = c(TRUE, FALSE, TRUE)
+)
+
+gathered_data <- data %>% gather(key = "variable", value = "value", -name)
+spreaded_data <- gathered_data %>% spread(key = "variable", value = "value")
+```
+
+```{r}
+library(ggplot2)
+
+data <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    married = c(TRUE, FALSE, TRUE)
+)
+
+ggplot(data, aes(x = name, y = age)) +
+    geom_bar(stat = "identity")
 ```

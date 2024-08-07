@@ -52,6 +52,17 @@
 
 \begin{frame}
     \centering
+    \frametitle{Immutability}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item In functional programming, data is immutable.
+        \item This means that once a value is assigned to a variable, it should not be changed.
+        \item This makes it easier to reason about the code and prevents bugs caused by side effects.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Pure Functions}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -72,6 +83,18 @@
             return(x + y)
         }
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The pure\_function function takes two arguments, x and y, and returns their sum.
+        \item The impure\_function function takes two arguments, x and y, prints the value of x, and returns their sum.
+        \item The pure\_function function is a pure function because it only depends on its input values.
+        \item The impure\_function function is an impure function because it has a side effect (printing the value of x).
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -138,6 +161,178 @@
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}
+    \centering
+    \frametitle{Recursion}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Recursion is a technique in which a function calls itself to solve a problem.
+        \item Recursion is a common feature of functional programming.
+        \item Recursion is used to solve problems that can be broken down into smaller subproblems.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        factorial <- function(n){
+            if(n == 0){
+                return(1)
+            } else {
+                return(n * factorial(n - 1))
+            }
+        }
+
+        factorial(5)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The factorial function takes an integer n as an argument.
+        \item If n is 0, the function returns 1.
+        \item Otherwise, the function returns n times the factorial of n - 1.
+        \item This continues until n is 0, at which point the function returns 1.
+        \item The function is called with the argument 5, which returns 120.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Tail Recursion}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Tail recursion is a special form of recursion where the recursive call is the last thing the function does.
+        \item Tail recursion is more efficient than regular recursion because it can be optimized by the compiler.
+        \item Tail recursion is a common feature of functional programming.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Map, Filter, and Reduce}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Map, filter, and reduce are three common higher-order functions in functional programming.
+        \item Map applies a function to each element of a list.
+        \item Filter selects elements from a list based on a condition.
+        \item Reduce combines all elements of a list into a single value.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Map}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The map function applies a function to each element of a list and returns a new list with the results.
+        \item The map function is a higher-order function because it takes a function as an argument.
+        \item The map function is a common feature of functional programming.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        add_one <- function(x){
+            return(x + 1)
+        }
+
+        numbers <- c(1, 2, 3, 4, 5)
+        mapped_numbers <- lapply(numbers, add_one)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The add\_one function takes an integer x as an argument and returns x + 1.
+        \item The numbers vector contains the integers 1, 2, 3, 4, and 5.
+        \item The lapply function applies the add\_one function to each element of the numbers vector and returns a new list with the results.
+        \item The mapped\_numbers list contains the integers 2, 3, 4, 5, and 6.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Filter}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The filter function selects elements from a list based on a condition and returns a new list with the selected elements.
+        \item The filter function is a higher-order function because it takes a function as an argument.
+        \item The filter function is a common feature of functional programming.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        is_even <- function(x){
+            return(x %% 2 == 0)
+        }
+
+        numbers <- c(1, 2, 3, 4, 5)
+        filtered_numbers <- numbers[numbers %% 2 == 0]
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The is\_even function takes an integer x as an argument and returns TRUE if x is even and FALSE otherwise.
+        \item The numbers vector contains the integers 1, 2, 3, 4, and 5.
+        \item The filtered\_numbers vector contains the even integers from the numbers vector.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Reduce}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The reduce function combines all elements of a list into a single value using a binary operation.
+        \item The reduce function is a higher-order function because it takes a function as an argument.
+        \item The reduce function is a common feature of functional programming.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        add <- function(x, y){
+            return(x + y)
+        }
+
+        numbers <- c(1, 2, 3, 4, 5)
+        reduced_number <- Reduce(add, numbers)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The add function takes two integers, x and y, as arguments and returns their sum.
+        \item The numbers vector contains the integers 1, 2, 3, 4, and 5.
+        \item The reduced\_number variable contains the sum of all the integers in the numbers vector.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Functional Programming in R}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item R is a functional programming language.
+        \item R has functions and packages that make functional programming easier.
+        \item R has higher-order functions like lapply, sapply, and Reduce that allow you to apply functions to lists and vectors.
+    \end{itemize}
+\end{frame}
+
 \section{Data Handling}
 
 \begin{frame}
@@ -168,6 +363,39 @@
 
 \begin{frame}
     \centering
+    \frametitle{Lists}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A list is a one-dimensional array that can hold numeric, character, or logical data.
+        \item Lists are created using the list() function.
+        \item Lists can hold different types of data in each element.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        list_1 <- list(1, "a", TRUE)
+        list_2 <- list(
+            name = "Alice",
+            age = 25,
+            married = TRUE
+        )
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Dictionaries}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A dictionary is a one-dimensional array that can hold key-value pairs.
+        \item Dictionaries are created using the list() function.
+        \item Dictionaries are similar to lists, but they have named elements.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Vectors}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -183,6 +411,38 @@
         character_vector <- c("a", "b", "c", "d", "e")
         logical_vector <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Atomic Vectors}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item An atomic vector is a vector that can hold only one type of data.
+        \item Atomic vectors can be of four types: numeric, character, logical, and complex.
+        \item Atomic vectors are created using the c() function.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        numeric_vector <- c(1, 2, 3, 4, 5)
+        character_vector <- c("a", "b", "c", "d", "e")
+        logical_vector <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
+        complex_vector <- c(1 + 2i, 3 + 4i, 5 + 6i)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{When To Use Vectors}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Use vectors when you have a one-dimensional array of data.
+        \item Use atomic vectors when you have a one-dimensional array of data of the same type.
+        \item Use lists when you have a one-dimensional array of data of different types.
+        \item Use dictionaries when you have a one-dimensional array of key-value pairs.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -209,6 +469,50 @@
 
 \begin{frame}
     \centering
+    \frametitle{When To Use Matrices}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Use matrices when you have a two-dimensional array of data.
+        \item Use matrices when you have numeric, character, or logical data.
+        \item Use matrices when you want to perform matrix operations like addition, subtraction, multiplication, and division.
+        \item Use matrices when you want to represent data in a tabular format.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Matrix Operations}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item R has functions and packages that allow you to perform matrix operations.
+        \item The most common matrix operations are addition, subtraction, multiplication, and division.
+        \item R has functions that allow you to perform these operations on matrices.
+        \item R has functions that allow you to transpose, invert, and concatenate matrices.
+        \item R has functions that allow you to extract rows and columns from matrices.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        matrix_1 <- matrix(1:9, nrow = 3, ncol = 3)
+        matrix_2 <- matrix(9:1, nrow = 3, ncol = 3)
+
+        # Addition
+        added_matrix <- matrix_1 + matrix_2
+
+        # Subtraction
+        subtracted_matrix <- matrix_1 - matrix_2
+
+        # Multiplication
+        multiplied_matrix <- matrix_1 %*% matrix_2
+
+        # Division
+        divided_matrix <- matrix_1 / matrix_2
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Data Frames}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -230,6 +534,53 @@
 
 \begin{frame}
     \centering
+    \frametitle{When To Use Data Frames}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Use data frames when you have a two-dimensional array of data.
+        \item Use data frames when you have different types of data in each column.
+        \item Use data frames when you want to perform data manipulation tasks like filtering, sorting, and aggregating data.
+        \item Use data frames when you want to represent data in a tabular format.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Data Frame Operations}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item R has functions and packages that allow you to perform data frame operations.
+        \item The most common data frame operations are filtering, sorting, and aggregating data.
+        \item R has functions that allow you to perform these operations on data frames.
+        \item R has functions that allow you to merge and join data frames.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        data <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            age = c(25, 30, 35),
+            married = c(TRUE, FALSE, TRUE)
+        )
+
+        # Filter data
+        filtered_data <- data[data$age > 30, ]
+
+        # Sort data
+        sorted_data <- data[order(data$age), ]
+
+        # Aggregate data
+        aggregated_data <- aggregate(
+            data$age,
+            by = list(data$married),
+            FUN = mean
+        )
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{File IO}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -244,6 +595,17 @@
         data <- read.csv("data_frame.csv")
         write.csv(data, "data_frame.csv")
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Word of Caution}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item If you specify the same file name for the read and write functions, the file will be overwritten.
+        \item Make sure to back up your data before using the write function.
+        \item Make sure to check the file permissions before using the write function.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -310,6 +672,202 @@
             all = TRUE
         )
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The data\_1 data frame contains the name, age, and married columns.
+        \item The data\_2 data frame contains the name and salary columns.
+        \item The merged\_data data frame contains the name, age, married, and salary columns.
+        \item The joined\_data data frame contains the name, age, married, and salary columns.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Tidyverse}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Tidyverse is a collection of R packages that make data manipulation easier.
+        \item Tidyverse packages are designed to work together and follow a consistent design philosophy.
+        \item Tidyverse packages are widely used in the R community.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The dplyr package provides functions for data manipulation tasks like filtering, sorting, and aggregating data.
+        \item The tidyr package provides functions for data manipulation tasks like reshaping and tidying data.
+        \item The ggplot2 package provides functions for data visualization tasks like creating plots and charts.
+        \item The readr package provides functions for reading and writing data from and to files.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{dplyr}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The dplyr package provides functions for data manipulation tasks like filtering, sorting, and aggregating data.
+        \item Some common dplyr functions are filter(), arrange(), and summarise().
+        \item filter() is used to filter rows based on a condition.
+        \item arrange() is used to sort rows based on a column.
+        \item summarise() is used to aggregate data based on a column.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(dplyr)
+
+        data <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            age = c(25, 30, 35),
+            married = c(TRUE, FALSE, TRUE)
+        )
+
+        filtered_data <- data %>% filter(age > 30)
+        sorted_data <- data %>% arrange(age)
+        aggregated_data <- data %>% summarise(mean_age = mean(age))
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The data data frame contains the name, age, and married columns.
+        \item The filtered\_data data frame contains the rows where the age column is greater than 30.
+        \item The sorted\_data data frame contains the rows sorted by the age column.
+        \item The aggregated\_data data frame contains the mean age of the data frame.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{tidyr}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The tidyr package provides functions for data manipulation tasks like reshaping and tidying data.
+        \item Some common tidyr functions are gather() and spread().
+        \item gather() is used to reshape data from wide to long format.
+        \item spread() is used to reshape data from long to wide format.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(tidyr)
+
+        data <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            age = c(25, 30, 35),
+            married = c(TRUE, FALSE, TRUE)
+        )
+
+        gathered_data <- data %>% gather(key = "variable", value = "value", -name)
+        spreaded_data <- gathered_data %>% spread(key = "variable", value = "value")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The data data frame contains the name, age, and married columns.
+        \item The gathered\_data data frame contains the data in long format.
+        \item The spreaded\_data data frame contains the data in wide format.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{ggplot2}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The ggplot2 package provides functions for data visualization tasks like creating plots and charts.
+        \item The ggplot2 package is based on the grammar of graphics.
+        \item The ggplot2 package allows you to create complex plots with a few lines of code.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(ggplot2)
+
+        data <- data.frame(
+            name = c("Alice", "Bob", "Charlie"),
+            age = c(25, 30, 35),
+            married = c(TRUE, FALSE, TRUE)
+        )
+
+        ggplot(data, aes(x = name, y = age)) +
+            geom_bar(stat = "identity")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The data data frame contains the name, age, and married columns.
+        \item The ggplot function creates a plot with the data data frame.
+        \item The aes function specifies the x and y variables for the plot.
+        \item The geom\_bar function creates a bar plot with the data.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{readr}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The readr package provides functions for reading and writing data from and to files.
+        \item The readr package is faster and more user-friendly than the base R functions.
+        \item The readr package is widely used in the R community.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{lstlisting}
+        library(readr)
+
+        data <- read_csv("data_frame.csv")
+        write_csv(data, "data_frame.csv")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The read\_csv function reads data from a CSV file.
+        \item The write\_csv function writes data to a CSV file.
+        \item The data data frame contains the data read from the CSV file.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Summary}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions.
+        \item Functional programming focuses on immutability, pure functions, and first-class functions.
+        \item R is a functional programming language that has functions and packages that make functional programming easier.
+        \item R has data structures like vectors, matrices, data frames, and lists that are used to store data.
+        \item R has functions and packages that allow you to perform data manipulation tasks like filtering, sorting, and aggregating data.
+    \end{itemize}
 \end{frame}
 
 \end{document}
