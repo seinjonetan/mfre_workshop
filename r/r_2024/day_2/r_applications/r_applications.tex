@@ -65,21 +65,167 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Hypothesis Testing}
+\begin{frame}
+    \frametitle{Types of Hypothesis Tests}
     \begin{itemize}
         \setlength{\itemsep}{2em}
-        \item The p-value is the probability of observing a test statistic as extreme as the one computed from the sample data, assuming that the null hypothesis is true.
-        \item If the p-value is less than the significance level, then the null hypothesis is rejected.
-        \item The significance level is the probability of rejecting the null hypothesis when it is true.
+        \item One-Sample t-Test: Used to test whether the mean of a single sample is significantly different from a specified value.
+        \item Two-Sample t-Test: Used to test whether the means of two independent samples are significantly different from each other.
+        \item Paired t-Test: Used to test whether the means of two paired samples are significantly different from each other.
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Hypothesis Testing}
+\begin{frame}
+    \frametitle{Types of Hypothesis Tests}
     \begin{itemize}
         \setlength{\itemsep}{2em}
+        \item One-Sample z-Test: Used to test whether the mean of a single sample is significantly different from a specified value when the sample size is large.
+        \item Two-Sample z-Test: Used to test whether the means of two independent samples are significantly different from each other when the sample sizes are large.
+        \item Chi-Square Test: Used to test whether the observed frequencies in a contingency table are significantly different from the expected frequencies.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Types of Hypothesis Tests}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item One-Way ANOVA: Used to test whether the means of three or more independent samples are significantly different from each other.
+        \item Two-Way ANOVA: Used to test whether the means of two or more independent samples are significantly different from each other, taking into account two independent variables.
+        \item Goodness of Fit Test: Used to test whether the observed frequencies in a sample are consistent with the expected frequencies.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Types of Hypothesis Tests}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Test for Equal Variances: Used to test whether the variances of two or more samples are equal.
+        \item Test for Normality: Used to test whether the data in a sample comes from a normal distribution.
+        \item Test for Independence: Used to test whether the observations in a sample are independent of each other.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Steps in Hypothesis Testing}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Step 1: State the null hypothesis and the alternative hypothesis.
+        \item Step 2: Choose the significance level.
+        \item Step 3: Collect the sample data and calculate the test statistic.
+        \item Step 4: Determine the critical value or the p-value.
+        \item Step 5: Make a decision to reject or fail to reject the null hypothesis.
+        \item Step 6: Interpret the results of the hypothesis test.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Null and Alternative Hypotheses}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The null hypothesis is denoted by $H_0$ and states that there is no effect or no difference.
+        \item The alternative hypothesis is denoted by $H_1$ and states that there is an effect or a difference.
+        \item The null hypothesis is the default assumption that is tested against the alternative hypothesis.
+        \item The null hypothesis is rejected if the sample data provide enough evidence that the null hypothesis is false.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Assumptions of Hypothesis Testing}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The sample data are independent and identically distributed.
+        \item The sample data are drawn from a population that is normally distributed.
+        \item The sample data are drawn from a population that has a constant variance.
+        \item The sample data are drawn from a population that is randomly selected.
+        \item The sample data are drawn from a population that is representative of the population of interest.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Significance Level}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The significance level is the probability of rejecting the null hypothesis when it is true.
+        \item The significance level is denoted by $\alpha$ and is usually set to 0.05.
+        \item The significance level is the threshold for determining whether the null hypothesis should be rejected.
+        \item If the p-value is less than the significance level, then the null hypothesis is rejected.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Test Statistic}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The test statistic is a numerical value that is used to determine whether the null hypothesis should be rejected.
+        \item The test statistic is calculated from the sample data and is compared to a critical value or a p-value.
+        \item The test statistic measures the strength of the evidence against the null hypothesis.
+        \item The test statistic is used to make a decision to reject or fail to reject the null hypothesis.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Critical Value}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The critical value is a value that determines whether the null hypothesis can be rejected.
+        \item The critical value is determined by the significance level and the degrees of freedom.
+        \item The critical value is compared to the test statistic to determine whether the null hypothesis should be rejected.
+        \item If the test statistic is more extreme than the critical value, then the null hypothesis is rejected.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{P-Value}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The p-value is the probability of observing a test statistic as extreme as the one computed from the sample data, assuming that the null hypothesis is true.
         \item The p-value is a measure of the strength of the evidence against the null hypothesis.
-        \item The smaller the p-value, the stronger the evidence against the null hypothesis.
         \item The p-value is compared to the significance level to determine whether the null hypothesis should be rejected.
+        \item If the p-value is less than the significance level, then the null hypothesis is rejected.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Type I and Type II Errors}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Type I Error: Occurs when the null hypothesis is rejected when it is true.
+        \item Type II Error: Occurs when the null hypothesis is not rejected when it is false.
+        \item The probability of a Type I Error is denoted by $\alpha$ and is equal to the significance level.
+        \item The probability of a Type II Error is denoted by $\beta$ and is equal to 1 minus the power of the test.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Power of the Test}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The power of the test is the probability of rejecting the null hypothesis when it is false.
+        \item The power of the test is equal to 1 minus the probability of a Type II Error.
+        \item The power of the test is a measure of the ability of the test to detect an effect or a difference when it exists.
+        \item The power of the test is affected by the sample size, the effect size, and the significance level.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Confidence Interval}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item A confidence interval is a range of values that is likely to contain the true value of the population parameter.
+        \item A confidence interval is calculated from the sample data and is used to estimate the population parameter.
+        \item The confidence interval is calculated from the sample mean and the standard error of the mean.
+        \item The confidence interval is used to make inferences about the population parameter with a specified level of confidence.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Confidence Level}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The confidence level is the probability that the confidence interval contains the true value of the population parameter.
+        \item The confidence level is denoted by $(1 - \alpha) \times 100\%$ and is usually set to 95\%.
+        \item The confidence level is the proportion of confidence intervals that contain the true value of the population parameter.
+        \item The confidence level is used to make inferences about the population parameter with a specified level of confidence.
     \end{itemize}
 \end{frame}
 
@@ -119,6 +265,37 @@ t.test(x, y, paired = TRUE)
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}{Breakdown of Hypothesis Testing in R}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \textbf{Set Seed:}
+              \begin{itemize}
+                  \item \texttt{set.seed(123)}: Sets the seed for random number generation to ensure reproducibility of results.
+              \end{itemize}
+
+        \item \textbf{Generate Data:}
+              \begin{itemize}
+                  \item \texttt{x <- rnorm(100, mean = 5, sd = 2)}: Generates 100 random numbers from a normal distribution with a mean of 5 and a standard deviation of 2, and assigns them to vector \texttt{x}.
+                  \item \texttt{y <- rnorm(100, mean = 6, sd = 2)}: Generates 100 random numbers from a normal distribution with a mean of 6 and a standard deviation of 2, and assigns them to vector \texttt{y}.
+              \end{itemize}
+
+        \item \textbf{One-Sample t-Test:}
+              \begin{itemize}
+                  \item \texttt{t.test(x, mu = 0)}: Performs a one-sample t-test to check if the mean of vector \texttt{x} is significantly different from 0.
+              \end{itemize}
+
+        \item \textbf{Two-Sample t-Test:}
+              \begin{itemize}
+                  \item \texttt{t.test(x, y)}: Performs a two-sample t-test to check if the means of vectors \texttt{x} and \texttt{y} are significantly different from each other.
+              \end{itemize}
+
+        \item \textbf{Paired t-Test:}
+              \begin{itemize}
+                  \item \texttt{t.test(x, y, paired = TRUE)}: Performs a paired t-test to check if the means of vectors \texttt{x} and \texttt{y} are significantly different, assuming that the samples are paired.
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
 \section{Regression Analysis}
 
 \begin{frame}
@@ -135,21 +312,119 @@ t.test(x, y, paired = TRUE)
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Regression Analysis}
+% \begin{frame}{Regression Analysis}
+%     \begin{itemize}
+%         \setlength{\itemsep}{2em}
+%         \item There are many types of regression models, such as linear regression, logistic regression, and polynomial regression.
+%         \item Linear regression is a regression model that assumes a linear relationship between the dependent variable and the independent variables.
+%         \item Logistic regression is a regression model that is used when the dependent variable is binary.
+%     \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Regression Analysis}
+%     \begin{itemize}
+%         \setlength{\itemsep}{2em}
+%         \item Polynomial regression is a regression model that is used when the relationship between the dependent variable and the independent variables is not linear.
+%         \item The regression model is estimated using the method of least squares, which minimizes the sum of the squared differences between the observed values and the predicted values.
+%         \item The estimated parameters of the regression model are the coefficients of the independent variables.
+%     \end{itemize}
+% \end{frame}
+
+\begin{frame}
+    \frametitle{Types of Regression Models}
     \begin{itemize}
         \setlength{\itemsep}{2em}
-        \item There are many types of regression models, such as linear regression, logistic regression, and polynomial regression.
-        \item Linear regression is a regression model that assumes a linear relationship between the dependent variable and the independent variables.
-        \item Logistic regression is a regression model that is used when the dependent variable is binary.
+        \item Linear Regression: Used to model the relationship between a continuous dependent variable and one or more continuous independent variables.
+        \item Logistic Regression: Used to model the relationship between a binary dependent variable and one or more continuous independent variables.
+        \item Polynomial Regression: Used to model the relationship between a continuous dependent variable and one or more continuous independent variables using polynomial functions.
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Regression Analysis}
+\begin{frame}
+    \frametitle{Types of Regression Models}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Ridge Regression: Used to model the relationship between a continuous dependent variable and one or more continuous independent variables with multicollinearity.
+        \item Lasso Regression: Used to model the relationship between a continuous dependent variable and one or more continuous independent variables with feature selection.
+        \item Elastic Net Regression: Used to model the relationship between a continuous dependent variable and one or more continuous independent variables with both ridge and lasso regularization.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linear Regression}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Linear regression is a regression model that assumes a linear relationship between the dependent variable and the independent variables.
+        \item The linear regression model is a mathematical equation that describes the relationship between the dependent variable and the independent variables.
+        \item The linear regression model is estimated using the method of least squares, which minimizes the sum of the squared differences between the observed values and the predicted values.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linear Regression}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The linear regression model is specified by the equation $y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n + \epsilon$, where $y$ is the dependent variable, $x_1, x_2, \ldots, x_n$ are the independent variables, $\beta_0, \beta_1, \beta_2, \ldots, \beta_n$ are the coefficients of the independent variables, and $\epsilon$ is the error term.
+        \item The coefficients of the independent variables are estimated using the method of least squares, which minimizes the sum of the squared differences between the observed values and the predicted values.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Logistic Regression}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Logistic regression is a regression model that is used when the dependent variable is binary.
+        \item The logistic regression model is a mathematical equation that describes the relationship between the dependent variable and the independent variables.
+        \item The logistic regression model is estimated using the method of maximum likelihood, which maximizes the likelihood of the observed data given the model.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ordinary Least Squares}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Ordinary least squares (OLS) is a method that is used to estimate the parameters of a linear regression model.
+        \item OLS minimizes the sum of the squared differences between the observed values and the predicted values.
+        \item OLS is used to estimate the coefficients of the independent variables that best fit the data.
+        \item OLS is used to estimate the coefficients of the independent variables that minimize the sum of the squared differences between the observed values and the predicted values.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Formula for OLS}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The formula for OLS is $\hat{\beta} = (X^T X)^{-1} X^T y$, where $\hat{\beta}$ is the estimated coefficients of the independent variables, $X$ is the matrix of the independent variables, and $y$ is the vector of the dependent variable.
+        \item The formula for OLS is derived by minimizing the sum of the squared differences between the observed values and the predicted values.
+        \item The formula for OLS is used to estimate the coefficients of the independent variables that best fit the data.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Logistic Regression}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The logistic regression model is specified by the equation $p = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n)}}$, where $p$ is the probability of the dependent variable being 1, $x_1, x_2, \ldots, x_n$ are the independent variables, $\beta_0, \beta_1, \beta_2, \ldots, \beta_n$ are the coefficients of the independent variables, and $e$ is the base of the natural logarithm.
+        \item The coefficients of the independent variables are estimated using the method of maximum likelihood, which maximizes the likelihood of the observed data given the model.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Polynomial Regression}
     \begin{itemize}
         \setlength{\itemsep}{2em}
         \item Polynomial regression is a regression model that is used when the relationship between the dependent variable and the independent variables is not linear.
-        \item The regression model is estimated using the method of least squares, which minimizes the sum of the squared differences between the observed values and the predicted values.
-        \item The estimated parameters of the regression model are the coefficients of the independent variables.
+        \item The polynomial regression model is a mathematical equation that describes the relationship between the dependent variable and the independent variables using polynomial functions.
+        \item The polynomial regression model is estimated using the method of least squares, which minimizes the sum of the squared differences between the observed values and the predicted values.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Polynomial Regression}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The polynomial regression model is specified by the equation $y = \beta_0 + \beta_1 x + \beta_2 x^2 + \ldots + \beta_n x^n + \epsilon$, where $y$ is the dependent variable, $x$ is the independent variable, $\beta_0, \beta_1, \beta_2, \ldots, \beta_n$ are the coefficients of the independent variables, and $\epsilon$ is the error term.
+        \item The coefficients of the independent variables are estimated using the method of least squares, which minimizes the sum of the squared differences between the observed values and the predicted values.
     \end{itemize}
 \end{frame}
 
@@ -196,6 +471,55 @@ model <- lm(y ~ x1 + x2, data = data)
 # Display results
 summary(model)
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Breakdown of Regression Analysis in R}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \textbf{Set Seed:}
+              \begin{itemize}
+                  \item \texttt{set.seed(123)}: Sets the seed for random number generation to ensure reproducibility of results.
+              \end{itemize}
+
+        \item \textbf{Generate Data:}
+              \begin{itemize}
+                  \item \texttt{data <- data.frame(y = rnorm(100, mean = 5, sd = 2), x1 = rnorm(100, mean = 6, sd = 2), x2 = rnorm(100, mean = 7, sd = 2)}: Generates 100 random numbers from a normal distribution with specified means and standard deviations, and assigns them to variables \texttt{y}, \texttt{x1}, and \texttt{x2}.
+              \end{itemize}
+
+        \item \textbf{Fit Linear Regression Model:}
+              \begin{itemize}
+                  \item \texttt{model <- lm(y ~ x1 + x2, data = data)}: Fits a linear regression model to predict variable \texttt{y} using variables \texttt{x1} and \texttt{x2} as predictors.
+              \end{itemize}
+
+        \item \textbf{Display Results:}
+              \begin{itemize}
+                  \item \texttt{summary(model)}: Displays the results of the linear regression analysis, including the estimated coefficients, standard errors, t-values, p-values, coefficient of determination, and F-test results.
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Best Practices for Displaying Results}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Use tables to display the results of the regression analysis.
+        \item Include the estimated coefficients, standard errors, t-values, and p-values in the table.
+        \item Highlight the statistically significant coefficients in the table.
+        \item Include the coefficient of determination and the results of the F-test in the table.
+        \item Use visualizations, such as scatter plots and residual plots, to display the relationship between the dependent variable and the independent variables.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Best Practices for Interpreting Results}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Interpret the estimated coefficients of the independent variables in the regression model.
+        \item Interpret the coefficient of determination, which is the proportion of the variance in the dependent variable that is explained by the independent variables.
+        \item Interpret the results of the F-test, which tests whether the regression model is a better fit than a model with no independent variables.
+        \item Interpret the p-values of the estimated coefficients, which indicate the statistical significance of the coefficients.
+    \end{itemize}
 \end{frame}
 
 % \section{Time Series Analysis}
@@ -301,12 +625,87 @@ summary(model)
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Instrumental Variables in R}
+\begin{frame}
+    \frametitle{Assumptions of Instrumental Variables}
     \begin{itemize}
         \setlength{\itemsep}{2em}
-        \item In R, the \texttt{ivreg()} function is used to estimate instrumental variables regression models.
-        \item The \texttt{ivreg()} function takes in the formula for the regression model, the data, and the instrumental variables as arguments.
-        \item The formula specifies the dependent variable, the independent variables, and the instrumental variables in the regression model.
+        \item Relevance: The instrumental variables are correlated with the independent variable.
+        \item Exogeneity: The instrumental variables are uncorrelated with the error term.
+        \item Exclusion: The instrumental variables are not correlated with the dependent variable.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Checking Assumptions}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The relevance assumption can be checked by testing the correlation between the instrumental variables and the independent variable.
+        \item Exogeneity however has to be argued, since it is not testable.
+        \item Exclusion can be checked by testing the correlation between the instrumental variables and the dependent variable.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Local Average Treatment Effect}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The local average treatment effect (LATE) is the causal effect of the independent variable on the dependent variable for the subpopulation of individuals who are affected by the instrumental variables.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wald Estimator}
+    \begin{align}
+        \hat{\beta}_{\text{IV}} = \frac{\text{Cov}(z, y)}{\text{Cov}(z, x)}
+    \end{align}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The Wald estimator is a method that is used to estimate the parameters of the instrumental variables regression model.
+        \item The Wald estimator is calculated as the ratio of the covariance between the instrumental variables and the dependent variable to the covariance between the instrumental variables and the independent variable.
+        \item The Wald estimator is used to estimate the causal effect of the independent variable on the dependent variable by removing the correlation between the independent variable and the error term.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Instrumental Variables}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The instrumental variables regression model is specified by the equation $y = \beta_0 + \beta_1 x + \epsilon$, where $y$ is the dependent variable, $x$ is the independent variable, $\beta_0$ and $\beta_1$ are the coefficients of the independent variable, and $\epsilon$ is the error term.
+        \item The instrumental variables regression model is estimated using the method of instrumental variables, which removes the correlation between the independent variable and the error term.
+        \item The instrumental variables regression model is used to estimate the causal effect of the independent variable on the dependent variable.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{2 Stage Least Squares}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The two-stage least squares (2SLS) method is a method that is used to estimate the parameters of the instrumental variables regression model.
+        \item The 2SLS method is a two-stage procedure that first estimates the parameters of the instrumental variables regression model and then uses the estimated parameters to estimate the causal effect of the independent variable on the dependent variable.
+        \item The 2SLS method is used to estimate the causal effect of the independent variable by removing the correlation between the independent variable and the error term.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{2 Stage Least Squares}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The 2SLS method is specified by the following steps:
+              \begin{itemize}
+                  \item Step 1: Estimate the parameters of the instrumental variables regression model using the instrumental variables.
+                  \item Step 2: Use the estimated parameters to estimate the causal effect of the independent variable on the dependent variable.
+              \end{itemize}
+        \item The 2SLS method is used to estimate the causal effect of the independent variable by removing the correlation between the independent variable and the error term.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Examples of IV}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item The effect of education on income can be estimated using the number of years of schooling as an instrumental variable.
+        \item Education is correlated with income, but it is also correlated with other factors that affect income, such as ability and motivation.
+        \item The number of years of schooling is correlated with education, but it is not correlated with ability and motivation, making it a good instrumental variable.
+        \item The effect of education on income can be estimated using the number of years of schooling as an instrumental variable to remove the correlation between education and ability and motivation.
     \end{itemize}
 \end{frame}
 
@@ -333,6 +732,34 @@ y <- 1 + 2 * x + 3 * z + rnorm(n)
 model <- ivreg(y ~ x | z)
 summary(model)
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Breakdown of Instrumental Variables in R}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \textbf{Load Package:}
+              \begin{itemize}
+                  \item \texttt{library(AER)}: Loads the AER package, which contains the \texttt{ivreg()} function for estimating instrumental variables regression models.
+              \end{itemize}
+
+        \item \textbf{Generate Data:}
+              \begin{itemize}
+                  \item \texttt{x <- rnorm(n)}: Generates \texttt{n} random numbers from a normal distribution and assigns them to vector \texttt{x}.
+                  \item \texttt{z <- rnorm(n)}: Generates \texttt{n} random numbers from a normal distribution and assigns them to vector \texttt{z}.
+                  \item \texttt{y <- 1 + 2 * x + 3 * z + rnorm(n)}: Generates \texttt{n} random numbers from a normal distribution and assigns them to vector \texttt{y}.
+              \end{itemize}
+
+        \item \textbf{Fit Instrumental Variables Regression Model:}
+              \begin{itemize}
+                  \item \texttt{model <- ivreg(y ~ x | z)}: Fits an instrumental variables regression model to predict variable \texttt{y} using variable \texttt{x} as a predictor and variable \texttt{z} as an instrumental variable.
+              \end{itemize}
+
+        \item \textbf{Display Results:}
+              \begin{itemize}
+                  \item \texttt{summary(model)}: Displays the results of the instrumental variables regression analysis, including the estimated coefficients, standard errors, t-values, and p-values.
+              \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \end{document}
