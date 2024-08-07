@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  16 JUL 2024 03:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  7 AUG 2024 21:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -836,18 +836,32 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 ] [5
 
 ]
-\openout4 = `py_intro.vrb'.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [6
 
- (./py_intro.vrb (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)) [6
+] [7
 
 ]
 \openout4 = `py_intro.vrb'.
 
- (./py_intro.vrb) [7
+ (./py_intro.vrb (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)) [8
 
-] [8
+] [9
+
+]
+\openout4 = `py_intro.vrb'.
+
+ (./py_intro.vrb) [10
+
+] [11
 
 ]
 \openout4 = `py_intro.vrb'.
@@ -859,22 +873,16 @@ File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
-) [9
+) [12
+
+] [13
 
 ]
 \openout4 = `py_intro.vrb'.
 
- (./py_intro.vrb) [10
+ (./py_intro.vrb) [14
 
-] [11
-
-] [12
-
-] [13
-
-] [14
-
-] (./py_intro.toc) [15
+] [15
 
 ] [16
 
@@ -882,46 +890,41 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 
 ] [18
 
-]
-\openout4 = `py_intro.vrb'.
-
- (./py_intro.vrb) [19
+] [19
 
 ] [20
 
-]
-\openout4 = `py_intro.vrb'.
+] [21
 
- (./py_intro.vrb) [21
+] (./py_intro.toc) [22
 
-] [22
-
-]
-\openout4 = `py_intro.vrb'.
-
- (./py_intro.vrb) [23
+] [23
 
 ] [24
 
-] (./py_intro.toc) [25
+]
+Overfull \vbox (73.2782pt too high) detected at line 292
+ []
+
+[25
 
 ] [26
 
-] [27
+]
+\openout4 = `py_intro.vrb'.
+
+ (./py_intro.vrb) [27
 
 ] [28
 
-]
-\openout4 = `py_intro.vrb'.
-
- (./py_intro.vrb) [29
-
-] [30
+] [29
 
 ]
 \openout4 = `py_intro.vrb'.
 
- (./py_intro.vrb) [31
+ (./py_intro.vrb) [30
+
+] [31
 
 ] [32
 
@@ -941,17 +944,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 
 ] [37
 
-]
-\openout4 = `py_intro.vrb'.
-
- (./py_intro.vrb
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 6.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 6.
-) [38
+] [38
 
 ] [39
 
@@ -962,19 +955,113 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 
 ] [41
 
-]
-\openout4 = `py_intro.vrb'.
-
- (./py_intro.vrb) [42
+] [42
 
 ] [43
 
+] [44
+
+] (./py_intro.toc) [45
+
+] [46
+
+] [47
+
+] [48
+
 ]
 \openout4 = `py_intro.vrb'.
 
- (./py_intro.vrb) [44
+ (./py_intro.vrb) [49
 
-] [45
+]
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 565.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 565.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 565.
+
+[50
+
+] [51
+
+]
+\openout4 = `py_intro.vrb'.
+
+ (./py_intro.vrb) [52
+
+] [53
+
+] [54
+
+]
+\openout4 = `py_intro.vrb'.
+
+ (./py_intro.vrb) [55
+
+] [56
+
+] [57
+
+] [58
+
+]
+\openout4 = `py_intro.vrb'.
+
+ (./py_intro.vrb) [59
+
+] [60
+
+] [61
+
+]
+\openout4 = `py_intro.vrb'.
+
+ (./py_intro.vrb
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 6.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 6.
+) [62
+
+] [63
+
+] [64
+
+]
+\openout4 = `py_intro.vrb'.
+
+ (./py_intro.vrb) [65
+
+] [66
+
+] [67
+
+]
+\openout4 = `py_intro.vrb'.
+
+ (./py_intro.vrb) [68
+
+] [69
+
+] [70
+
+]
+\openout4 = `py_intro.vrb'.
+
+ (./py_intro.vrb) [71
+
+] [72
+
+] [73
+
+] [74
+
+] [75
 
 ]
 \tf@nav=\write6
@@ -987,22 +1074,25 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 \openout8 = `py_intro.snm'.
 
  (./py_intro.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `py_intro.out' has not changed.
 (rerunfilecheck)             Checksum: 4015294EB0DE83141EB5E5AC15F644A7;383.
  ) 
 Here is how much of TeX's memory you used:
- 39567 strings out of 478287
- 940231 string characters out of 5849289
- 1522839 words of memory out of 5000000
- 56921 multiletter control sequences out of 15000+600000
- 471865 words of font info for 37 fonts, out of 8000000 for 9000
+ 39750 strings out of 478287
+ 942350 string characters out of 5849289
+ 1549231 words of memory out of 5000000
+ 57022 multiletter control sequences out of 15000+600000
+ 474399 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,104p,801b,1457s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb>
-Output written on py_intro.pdf (45 pages, 267465 bytes).
+Output written on py_intro.pdf (75 pages, 467382 bytes).
 PDF statistics:
- 3415 PDF objects out of 3580 (max. 8388607)
- 3253 compressed objects within 33 object streams
- 94 named destinations out of 1000 (max. 500000)
+ 7887 PDF objects out of 8907 (max. 8388607)
+ 7621 compressed objects within 77 object streams
+ 154 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 

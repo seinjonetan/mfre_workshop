@@ -54,6 +54,28 @@
 
 \begin{frame}
     \centering
+    \frametitle{Examples of Classes in Pandas}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{pd.DataFrame} is a class that represents a two-dimensional table of data
+        \item \texttt{pd.Series} is a class that represents a one-dimensional array of data
+        \item \texttt{pd.Index} is a class that represents an index of data
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Examples of Methods in Pandas}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{pd.DataFrame.head()} returns the first $n$ rows of a dataframe
+        \item \texttt{pd.DataFrame.tail()} returns the last $n$ rows of a dataframe
+        \item \texttt{pd.DataFrame.describe()} returns the summary statistics of a dataframe
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Attributes}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -71,6 +93,18 @@ class Person:
         self.name = name
         self.age = age
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{class Person:} defines a class named \texttt{Person}
+        \item \texttt{def \_\_init\_\_(self, name, age):} defines a method named \texttt{\_\_init\_\_} that initializes the object
+        \item \texttt{self} is a reference to the object itself
+        \item \texttt{self.name} and \texttt{self.age} are attributes of the object
+    \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -106,12 +140,35 @@ class Person:
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{class Person:} defines a class named \texttt{Person}
+        \item \texttt{def \_\_init\_\_(self, name, age):} defines a method named \texttt{\_\_init\_\_} that initializes the object
+        \item \texttt{self} is a reference to the object itself
+        \item \texttt{self.name} and \texttt{self.age} are attributes of the object
+        \item \texttt{def greet(self):} defines a method named \texttt{greet} that prints a greeting
+    \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]
     \frametitle{Methods}
     \begin{lstlisting}[language=Python]
 person = Person("John", 36)
 person.greet()
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{person = Person("John", 36)} creates an object of class \texttt{Person}
+        \item \texttt{person.greet()} calls the \texttt{greet} method of the object
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -158,6 +215,34 @@ person.greet()
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \centering
+    \frametitle{Do I Need to Know How to Write Classes?}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item For the purposes of the program, probably not
+        \item Why did I cover this topic? Because it is important to understand how Python works under the hood
+        \item When you call a method in Pandas, you are calling a method of a class
+        \item When you create a dataframe in Pandas, you are creating an object of a class
+        \item This understanding will make it much easier to debug and troubleshoot your code
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Summary}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Classes are blueprints for creating objects
+        \item Objects have attributes and methods
+        \item Attributes are variables that store data
+        \item Methods are functions that perform actions
+        \item Encapsulation is the bundling of data and methods
+        \item Inheritance is the mechanism of basing a class upon another class
+        \item Polymorphism is the ability to present the same interface for different data types
+    \end{itemize}
+\end{frame}
+
 \section{Pythonics}
 
 \begin{frame}
@@ -190,6 +275,24 @@ person.greet()
 
 \begin{frame}
     \centering
+    \frametitle{Zen of Python}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Beautiful is better than ugly
+        \item Explicit is better than implicit
+        \item Simple is better than complex
+        \item Complex is better than complicated
+        \item Readability counts
+        \item There should be one-- and preferably only one --obvious way to do it
+        \item Now is better than never
+        \item Although never is often better than right now
+        \item If the implementation is hard to explain, it's a bad idea
+        \item If the implementation is easy to explain, it may be a good idea
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Value Swapping and Multiple Assignment}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -206,6 +309,50 @@ b = 2
 a, b = b, a
 print(a, b)
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{a, b = b, a} swaps the values of \texttt{a} and \texttt{b}
+        \item \texttt{print(a, b)} prints the values of \texttt{a} and \texttt{b}
+        \item The output is \texttt{2 1}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{List Slicing}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Python allows you to slice lists using the slice operator
+        \item It allows you to slice lists using the start, stop, and step arguments
+        \item It allows you to slice lists using negative indices
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{List Slicing}
+    \begin{lstlisting}[language=Python]
+numbers = [1, 2, 3, 4, 5]
+print(numbers[1:3])
+print(numbers[::2])
+print(numbers[::-1])
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{print(numbers[1:3])} slices the list from index 1 to index 3
+        \item \texttt{print(numbers[::2])} slices the list with a step of 2
+        \item \texttt{print(numbers[::-1])} slices the list in reverse order
+        \item The output is \texttt{[2, 3], [1, 3, 5], [5, 4, 3, 2, 1]}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -231,6 +378,18 @@ greet("John", "Jane", "Jack")
 
 \begin{frame}
     \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{def greet(*names):} defines a function named \texttt{greet} that takes multiple arguments
+        \item \texttt{for name in names:} iterates over the arguments
+        \item \texttt{print(f"Hello, {name}")} prints a greeting for each argument
+        \item The output is \texttt{Hello, John, Hello, Jane, Hello, Jack}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{List Comprehension}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -250,11 +409,90 @@ print(squares)
 
 \begin{frame}
     \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{squares = [x ** 2 for x in range(10)]} creates a list of squares
+        \item \texttt{print(squares)} prints the list of squares
+        \item The output is \texttt{[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{List Comprehension vs Loops}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item It is possible to achieve the same result using a loop
+        \item However, list comprehension is more concise and expressive
+        \item It is also more readable and maintainable
+        \item It is the preferred way to create lists in Python
+        \item If the list comprehension is too complex, use a loop instead
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Lambda Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Lambda functions are anonymous functions
+        \item They are defined using the \texttt{lambda} keyword
+        \item They are used to create small, one-line functions
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Lambda Functions}
+    \begin{lstlisting}[language=Python]
+add = lambda x, y: x + y
+print(add(1, 2))
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{add = lambda x, y: x + y} defines a lambda function that adds two numbers
+        \item \texttt{print(add(1, 2))} calls the lambda function with arguments 1 and 2
+        \item The output is \texttt{3}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{A Note on Indentation}
     \begin{itemize}
         \setlength{\itemsep}{2em}
         \item Python uses indentation to define blocks of code
         \item It uses whitespace to delimit code
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{A Note on Indentation}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Indentation is important in Python
+        \item It is used to define the scope of code
+        \item It is used to group statements together
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Summary}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Pythonic code is code that follows the conventions of the Python language
+        \item It is code that is clean, readable, and maintainable
+        \item It is code that is idiomatic and expressive
+        \item The Zen of Python is a collection of aphorisms that capture the philosophy of Python
+        \item It is a set of guiding principles for writing computer programs
+        \item It is a set of rules for writing Pythonic code
     \end{itemize}
 \end{frame}
 
@@ -315,6 +553,19 @@ print(person["friends"])
 
 \begin{frame}
     \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{person = \{"name": "John", "age": 36, "friends": ["Jane", "Jack"]\}} creates a dictionary
+        \item \texttt{print(person["name"])} prints the value of the key \texttt{"name"}
+        \item \texttt{print(person["age"])} prints the value of the key \texttt{"age"}
+        \item \texttt{print(person["friends"])} prints the value of the key \texttt{"friends"}
+        \item The output is \texttt{John, 36, ["Jane", "Jack"]}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Reading and Writing Files}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -334,6 +585,17 @@ with open("data.txt", "r") as file:
     data = file.read()
     print(data)
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Reading and Writing Files}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Python allows you to read and write files
+        \item It allows you to open files in read mode, write mode, or append mode
+        \item It allows you to read files line by line or all at once
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -361,6 +623,20 @@ print(c)
 d = np.dot(a, b)
 print(d)
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{a = np.array([1, 2, 3])} creates an array \texttt{a}
+        \item \texttt{b = np.array([4, 5, 6])} creates an array \texttt{b}
+        \item \texttt{c = a * b} multiplies the arrays \texttt{a} and \texttt{b} element-wise
+        \item \texttt{print(c)} prints the result of the multiplication
+        \item \texttt{d = np.dot(a, b)} computes the dot product of the arrays \texttt{a} and \texttt{b}
+        \item \texttt{print(d)} prints the result of the dot product
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -400,6 +676,17 @@ data.to_csv("data.csv", index=False)
 
 \begin{frame}
     \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{data = pd.read\_csv("data.csv")} reads a CSV file into a dataframe
+        \item \texttt{print(data)} prints the dataframe
+        \item \texttt{data.to\_csv("data.csv", index=False)} writes the dataframe to a CSV file
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Manipulating Dataframes}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -426,6 +713,20 @@ print(data)
 
 \begin{frame}
     \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{data = pd.read\_csv("age.csv")} reads a CSV file into a dataframe
+        \item \texttt{data = data[data["age"] > 30]} filters the dataframe by age
+        \item \texttt{data = data.sort\_values("age")} sorts the dataframe by age
+        \item \texttt{data['rank'] = data['age'].rank()} ranks the dataframe by age
+        \item \texttt{data.loc['total'] = data.sum()} sums the dataframe
+        \item \texttt{print(data)} prints the dataframe
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{pd.apply()}
     \begin{itemize}
         \setlength{\itemsep}{2em}
@@ -444,6 +745,17 @@ data = pd.read_csv("age.csv")
 data['age'] = data['age'].apply(lambda x: x + 1)
 print(data)
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{data = pd.read\_csv("age.csv")} reads a CSV file into a dataframe
+        \item \texttt{data['age'] = data['age'].apply(lambda x: x + 1)} applies a lambda function to the age column
+        \item \texttt{print(data)} prints the dataframe
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -467,6 +779,18 @@ data2 = pd.read_csv("blood_type.csv")
 data = pd.merge(data1, data2, on="name")
 print(data)
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{data1 = pd.read\_csv("age.csv")} reads a CSV file into a dataframe
+        \item \texttt{data2 = pd.read\_csv("blood\_type.csv")} reads a CSV file into a dataframe
+        \item \texttt{data = pd.merge(data1, data2, on="name")} merges the dataframes on the \texttt{"name"} column
+        \item \texttt{print(data)} prints the merged dataframe
+    \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -495,12 +819,51 @@ print(data)
 
 \begin{frame}
     \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \texttt{data = pd.read\_csv("temp.csv")} reads a CSV file into a dataframe
+        \item \texttt{data = data.dropna()} drops null values from the dataframe
+        \item \texttt{data = data.fillna(0)} fills null values with 0
+        \item \texttt{data = data.interpolate()} interpolates null values
+        \item \texttt{print(data)} prints the dataframe
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Rules of Thumb for Missing Data}
     \begin{itemize}
         \setlength{\itemsep}{2em}
         \item If the missing data is random, drop the rows
         \item If the missing data is systematic, fill the missing values
         \item If the missing data is time-dependent, interpolate the missing values
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Best Practices for Missing Data}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Regardless of what you do with missing data, always document your decisions
+        \item Always check for missing data before performing any analysis
+        \item Always check for missing data after performing any analysis
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Summary}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Data handling is the process of managing data
+        \item It involves reading, writing, and processing data
+        \item It involves working with files, databases, and APIs
+        \item Lists are ordered collections of items
+        \item Dictionaries are unordered collections of key-value pairs
+        \item NumPy is a library for numerical computing
+        \item Pandas is a library for data manipulation and analysis
     \end{itemize}
 \end{frame}
 

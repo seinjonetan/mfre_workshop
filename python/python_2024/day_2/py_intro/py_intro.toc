@@ -1,3 +1,3 @@
 \beamer@sectionintoc {1}{Object Oriented Programming}{3}{0}{1}
-\beamer@sectionintoc {2}{Pythonics}{15}{0}{2}
-\beamer@sectionintoc {3}{Data Handling}{25}{0}{3}
+\beamer@sectionintoc {2}{Pythonics}{22}{0}{2}
+\beamer@sectionintoc {3}{Data Handling}{45}{0}{3}
