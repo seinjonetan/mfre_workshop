@@ -50,18 +50,154 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \centering
+    \frametitle{What is a Function?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item A function is a block of code that performs a specific task
+        \item A function can take in parameters
+        \item A function can return a value
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Why Use Functions?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Functions make code more modular
+        \item Functions make code more readable
+        \item Functions make code more reusable
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Calling a Function}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item A function can ba called within a program/script
+        \item A function can also be called using the terminal
+    \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]
-    \frametitle{In Terminal}
+    \frametitle{In The Terminal}
+    \begin{lstlisting}[language=Python]
+        python3 print("Hello, World!")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item python3: The Python interpreter
+        \item print(): The function
+        \item "Hello, World!": The argument
+        \item Output: This command will print "Hello, World!" to the console
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Why Running Code Like This is Not Ideal}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Code is not saved (in other words, it's ephemeral)
+        \item Code is not reusable
+        \item Code is not readable (everything is in one line)
+        \item Let's instead try to run the code in a script
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{In The Terminal}
     \begin{lstlisting}[language=Python]
         touch first_notebook.ipynb
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item touch: Command to create a file
+        \item first\_notebook.ipynb: The name of the file
+        \item Output: This command will create a file called first\_notebook.ipynb
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Jupyter Notebooks vs Python Scripts}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item They both run Python code
+        \item Jupyter Notebooks are more interactive
+        \item Jupyter Notebooks are more visual
+        \item Jupyter Notebooks are more user-friendly, due to the ability to run code in cells
+        \item It makes it easier to debug code
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Running Code in a Jupyter Notebook}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Open the Jupyter Notebook
+        \item Create a new cell
+        \item Write the code in the cell
+        \item Run the cell
+    \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]
-    \frametitle{hello\_world.py}
+    \frametitle{first\_notebook.ipynb}
     \begin{lstlisting}[language=Python]
         print("Hello, World!")
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Functions and Packages/Libraries}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Functions can be defined in packages/libraries
+        \item Functions can be imported from packages/libraries
+        \item Functions can also be built into the Python interpreter
+        \item Certain functions and classes are reserved words
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Built-in Functions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item print(): Prints to the console
+        \item input(): Takes user input
+        \item len(): Returns the length of an object
+        \item range(): Returns a sequence of numbers
+        \item type(): Returns the type of an object
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Expressive Languages}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Python is what's known as an expressive language
+        \item Expressive languages are designed to be easy to read and write
+        \item These languages translate code into machine code
+        \item An example of machine code is binary
+    \end{itemize}
 \end{frame}
 
 \section{Variables}
@@ -108,6 +244,65 @@
 
 \begin{frame}
     \centering
+    \frametitle{Variable Naming Conventions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Each language has its own naming conventions
+        \item Python uses snake case
+        \item JavaScript uses camel case
+        \item C\# uses pascal case
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Variable Naming Tips}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Try to name variables descriptively
+        \item But don't make it so descriptive that it's long and hard to read
+        \item Bear in mind YOU will have to be the one typing these variables out
+        \item Make sure the variable name is relevant to the data it's storing
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Good and Bad Examples of Variable Names}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Good: name, age, grade
+        \item Too short and ambiguous: n, a, g
+        \item Too long and descriptive: name\_of\_student, age\_of\_student, grade\_of\_student
+        \item Too long and irrelevant: name\_of\_student\_in\_class, age\_of\_student\_in\_class, grade\_of\_student\_in\_class
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Variables and Modern IDEs}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Modern IDEs have features that help with variable naming and autocompletion
+        \item Most IDEs have a feature similar to intellesense in Visual Studio Code
+        \item This feature will suggest variable names as you type
+        \item It will also bring up a list of variables that have also been created
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Pay Attention to the Warnings Your IDE Gives You}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item IDEs will give you warnings if you use a variable that hasn't been declared
+        \item IDEs will give you warnings if you use a variable that has already been declared
+        \item IDEs will give you warnings if you use a variable that is not being used
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Scope}
     \begin{itemize}
         \setlength{\itemsep}{3em}
@@ -130,6 +325,31 @@
         my_function()
         print(x)
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item x = 20: This is a global variable
+        \item x = 10: This is a local variable
+        \item print(x): This will print 20
+        \item This is because the x in the function is a local variable
+        \item The x outside of the function is a global variable
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Reusing Variable Names}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item In general, it's best to avoid reusing variable names, especially if they're part of different scopes
+        \item This can lead to confusion
+        \item This can lead to errors
+        \item You can however get away with this if you import functions from different scripts
+    \end{itemize}
 \end{frame}
 
 \section{Data Types}
@@ -158,11 +378,44 @@
 
 \begin{frame}
     \centering
+    \frametitle{Type Checking}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Type checking is used to determine the data type of a variable
+        \item Type checking is used to ensure that the correct data type is being used
+        \item Type checking is used to prevent errors
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Importance of Type Checking}
     \begin{itemize}
         \setlength{\itemsep}{3em}
         \item There are advantages and disadvantages to using each data type
         \item Interacting with different data types can cause errors
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Data Type Errors}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Mixing data types
+        \item Using the wrong data type
+        \item Not converting data types
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Why Not Store An Int as a String?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item It's not efficient
+        \item An int takes up less memory than a string
+        \item You cannot perform mathematical operations on a string
     \end{itemize}
 \end{frame}
 
@@ -185,6 +438,29 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \centering
+    \frametitle{Common Type Casting Errors}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Converting a string to an int that is not a number
+        \item Converting a float to an int that is not a whole number
+        \item Converting a float to an int that is too large
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Data Type Conversions}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item int(): Converts a value to an integer
+        \item float(): Converts a value to a float
+        \item str(): Converts a value to a string
+        \item bool(): Converts a value to a boolean
+    \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]
     \begin{lstlisting}[language=Python]
         converted_int = int(random_float)
@@ -200,6 +476,18 @@
         \item Each value can be a different data type
         \item Each value can be accessed using an index
         \item Each value can be changed
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Data Types with Multiple Values}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Lists: Ordered collection of items
+        \item Tuples: Ordered collection of items that cannot be changed
+        \item Dictionaries: Unordered collection of items
+        \item Sets: Unordered collection of unique items
     \end{itemize}
 \end{frame}
 
@@ -220,6 +508,65 @@
         \item Lists and dicitonaries will likely be the most used data types
         \item Lists are used to store multiple values
         \item Dictionaries are used to store key-value pairs
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{When to Use a List}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item When you need to store multiple values
+        \item You need to change the values
+        \item You have to keep track of the order of the values
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{When to Use a Dictionary}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item When you need to store key-value pairs
+        \item You need to change the values
+        \item You don't need to keep track of the order of the values
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Methods for Lists}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item append(): Adds an element to the end of the list
+        \item insert(): Adds an element at a specific index
+        \item remove(): Removes an element from the list
+        \item pop(): Removes an element at a specific index
+        \item clear(): Removes all elements from the list
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Methods for Dictionaries}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item get(): Gets the value of a key
+        \item keys(): Gets all the keys
+        \item values(): Gets all the values
+        \item items(): Gets all the key-value pairs
+        \item clear(): Removes all key-value pairs
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Why Don't We ALways Use Dictionaries?}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Dictionaries are not ordered
+        \item Dictionaries are not indexed
+        \item Dictionaries are not iterable
     \end{itemize}
 \end{frame}
 
@@ -280,15 +627,23 @@
 
 \begin{frame}
     \centering
-    \frametitle{Common methods for lists and dictionaries}
+    \frametitle{Possible Problem}
     \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item append(): Adds an element to the end of the list
-        \item insert(): Adds an element at a specific index
-        \item remove(): Removes an element from the list
-        \item get(): Gets the value of a key in a dictionary
-        \item keys(): Gets all the keys in a dictionary
-        \item values(): Gets all the values in a dictionary
+        \setlength{\itemsep}{3em}
+        \item Assuming that the order of the list of grades is important
+        \item We cannot guarantee that the order of the list of grades will be maintained
+        \item This is because dictionaries are not ordered
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Possible Solution}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item We can use a dictionary of dictionaries instead
+        \item Each key will represent a student
+        \item Each value will be a dictionary of grades
     \end{itemize}
 \end{frame}
 
@@ -327,6 +682,17 @@
 
 \begin{frame}
     \centering
+    \frametitle{Common Use Cases}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item If a student's grade is greater than 90, print "A"
+        \item If condition is true, execute code
+        \item If condition is false, execute other code
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{Logical Operators}
     \begin{itemize}
         \setlength{\itemsep}{3em}
@@ -359,6 +725,53 @@
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item x = 10: This is the value of x
+        \item if x == 10: This is the condition
+        \item print("x is 10"): This is the code that will be executed if the condition is true
+        \item elif x == 20: This is the condition that will be checked if the first condition is false
+        \item print("x is 20"): This is the code that will be executed if the condition is true
+        \item else: This is the code that will be executed if all the conditions are false
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Mistakes}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Not using the correct comparison operator
+        \item Not using the correct logical operator
+        \item Not using the correct indentation
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Nested If Statements}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item If statements can be nested
+        \item Nested if statements are used to check multiple conditions
+        \item Nested if statements can be difficult to read
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Alternatives to Nested If Statements}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Using elif statements
+        \item Using logical operators
+        \item Using functions
+    \end{itemize}
+\end{frame}
+
 \section{Loops}
 
 \begin{frame}
@@ -375,6 +788,16 @@
         \item Loops are used to repeat code
         \item Loops are used to iterate over a sequence
         \item Loops are used to execute code a specific number of times
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Types of Loops}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item For Loops: Used to iterate over a sequence
+        \item While Loops: Used to execute code as long as a condition is true
     \end{itemize}
 \end{frame}
 
@@ -398,6 +821,18 @@
 
 \begin{frame}
     \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item for x in range(10): This is the loop
+        \item print(x): This is the code that will be executed
+        \item x: This is the variable that will be used to iterate over the sequence
+        \item range(10): This is the sequence
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
     \frametitle{While Loops}
     \begin{itemize}
         \setlength{\itemsep}{3em}
@@ -414,6 +849,40 @@
             print(x)
             x += 1
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Breakdown}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item x = 0: This is the variable that will be used to check the condition
+        \item while x < 10: This is the loop
+        \item print(x): This is the code that will be executed
+        \item x += 1: This is the code that will increment the variable
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Common Mistakes}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Not using the correct comparison operator
+        \item Not using the correct logical operator
+        \item Not using the correct indentation
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \frametitle{Nested Loops}
+    \begin{itemize}
+        \setlength{\itemsep}{3em}
+        \item Loops can be nested
+        \item Nested loops are used to iterate over multiple sequences
+        \item Nested loops can be difficult to read
+    \end{itemize}
 \end{frame}
 
 \end{document}

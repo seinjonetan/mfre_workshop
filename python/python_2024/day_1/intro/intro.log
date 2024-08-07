@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  16 JUL 2024 03:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  7 AUG 2024 21:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -833,27 +833,64 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 
 ] [4
 
+] [5
+
+] [6
+
+] [7
+
 ]
 \openout4 = `intro.vrb'.
 
  (./intro.vrb (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-)) [5
-
-]
-\openout4 = `intro.vrb'.
-
- (./intro.vrb) [6
-
-] (./intro.toc) [7
-
-] [8
+)) [8
 
 ] [9
 
 ] [10
 
-] [11
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [11
+
+] [12
+
+] [13
+
+] [14
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [15
+
+] [16
+
+] [17
+
+] [18
+
+] (./intro.toc) [19
+
+] [20
+
+] [21
+
+] [22
+
+] [23
+
+] [24
+
+] [25
+
+] [26
+
+] [27
+
+] [28
 
 ]
 \openout4 = `intro.vrb'.
@@ -865,27 +902,43 @@ File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2.
-) [12
+) [29
 
-] (./intro.toc) [13
+] [30
 
-] [14
+] [31
 
-] [15
+] (./intro.toc) [32
+
+] [33
+
+] [34
+
+] [35
+
+] [36
+
+] [37
 
 ]
 \openout4 = `intro.vrb'.
 
- (./intro.vrb) [16
+ (./intro.vrb) [38
 
-] [17
+] [39
+
+] [40
+
+] [41
 
 ]
 \openout4 = `intro.vrb'.
 
- (./intro.vrb) [18
+ (./intro.vrb) [42
 
-] [19
+] [43
+
+] [44
 
 ]
 \openout4 = `intro.vrb'.
@@ -895,71 +948,107 @@ Overfull \hbox (27.99446pt too wide) in paragraph at lines 4--5
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [20
+) [45
 
-] [21
+] [46
 
-] [22
+] [47
 
-] [23
+] [48
+
+] [49
+
+] [50
+
+] [51
+
+] [52
+
+] [53
 
 ]
 \openout4 = `intro.vrb'.
 
- (./intro.vrb) [24
+ (./intro.vrb) [54
 
-] [25
+] [55
 
 ]
 \openout4 = `intro.vrb'.
 
- (./intro.vrb) [26
+ (./intro.vrb) [56
 
-] [27
+] [57
 
-] (./intro.toc) [28
+] [58
 
-] [29
+] (./intro.toc) [59
+
+] [60
 
 ]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 326.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 681.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 326.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 681.
 
-Overfull \vbox (1.7284pt too high) detected at line 326
+Overfull \vbox (1.7284pt too high) detected at line 681
  []
 
-[30
+[61
 
-] [31
+] [62
 
-] [32
+] [63
 
-]
-\openout4 = `intro.vrb'.
-
- (./intro.vrb) [33
-
-] (./intro.toc) [34
-
-] [35
-
-] [36
+] [64
 
 ]
 \openout4 = `intro.vrb'.
 
- (./intro.vrb) [37
+ (./intro.vrb) [65
 
-] [38
+]
+Overfull \vbox (32.82838pt too high) detected at line 740
+ []
+
+[66
+
+] [67
+
+] [68
+
+] [69
+
+] (./intro.toc) [70
+
+] [71
+
+] [72
+
+] [73
 
 ]
 \openout4 = `intro.vrb'.
 
- (./intro.vrb) [39
+ (./intro.vrb) [74
+
+] [75
+
+] [76
+
+]
+\openout4 = `intro.vrb'.
+
+ (./intro.vrb) [77
+
+] [78
+
+] [79
+
+] [80
 
 ]
 \tf@nav=\write6
@@ -976,18 +1065,18 @@ Package rerunfilecheck Info: File `intro.out' has not changed.
 (rerunfilecheck)             Checksum: 6B8C350601A095F55B10FDCFE13B2332;443.
  ) 
 Here is how much of TeX's memory you used:
- 39560 strings out of 478287
- 940758 string characters out of 5849289
- 1513682 words of memory out of 5000000
- 56929 multiletter control sequences out of 15000+600000
+ 39727 strings out of 478287
+ 942310 string characters out of 5849289
+ 1549747 words of memory out of 5000000
+ 57012 multiletter control sequences out of 15000+600000
  471660 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,104p,795b,1428s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on intro.pdf (39 pages, 235435 bytes).
+Output written on intro.pdf (80 pages, 493691 bytes).
 PDF statistics:
- 2842 PDF objects out of 2984 (max. 8388607)
- 2697 compressed objects within 27 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 8995 PDF objects out of 10688 (max. 8388607)
+ 8707 compressed objects within 88 object streams
+ 166 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
