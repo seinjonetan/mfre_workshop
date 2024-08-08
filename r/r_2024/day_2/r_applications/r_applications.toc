@@ -1,3 +1,4 @@
-\beamer@sectionintoc {1}{Hypothesis Testing}{3}{0}{1}
-\beamer@sectionintoc {2}{Regression Analysis}{26}{0}{2}
-\beamer@sectionintoc {3}{Research Design}{45}{0}{3}
+\beamer@sectionintoc {1}{Piping}{3}{0}{1}
+\beamer@sectionintoc {2}{Hypothesis Testing}{11}{0}{2}
+\beamer@sectionintoc {3}{Regression Analysis}{34}{0}{3}
+\beamer@sectionintoc {4}{Research Design}{51}{0}{4}

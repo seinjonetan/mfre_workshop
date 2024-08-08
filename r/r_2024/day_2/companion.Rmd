@@ -11,6 +11,29 @@ output:
 ---
 
 ```{r}
+# Load necessary library
+library(dplyr)
+
+# Generate data
+set.seed(123)
+data <- data.frame(
+  x = rnorm(100, mean = 5, sd = 2),
+  y = rnorm(100, mean = 6, sd = 2)
+)
+
+# Non-piping approach
+data <- mutate(data, z = x + y)
+data <- filter(data, z > 10)
+summary(data)
+
+# Piping approach
+data %>%
+  mutate(z = x + y) %>%
+  filter(z > 10) %>%
+  summary()
+```
+
+```{r}
 # Generate some data
 set.seed(123)
 x <- rnorm(100, mean = 5, sd = 2)
@@ -30,9 +53,9 @@ t.test(x, y, paired = TRUE)
 # Generate some data
 set.seed(123)
 data <- data.frame(
-    y = rnorm(100, mean = 5, sd = 2),
-    x1 = rnorm(100, mean = 6, sd = 2),
-    x2 = rnorm(100, mean = 7, sd = 2)
+  y = rnorm(100, mean = 5, sd = 2),
+  x1 = rnorm(100, mean = 6, sd = 2),
+  x2 = rnorm(100, mean = 7, sd = 2)
 )
 
 # Fit linear regression model

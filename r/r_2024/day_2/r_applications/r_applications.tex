@@ -31,6 +31,123 @@
     \tableofcontents[hideallsubsections]
 \end{frame}
 
+\section{Piping}
+
+\begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Piping}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Piping is a way to simplify your code by passing the output of one function directly to the input of another function.
+        \item Piping is done using the pipe operator, which is represented by the \%\textgreater\% symbol.
+        \item Piping makes your code more readable and easier to understand by breaking it down into smaller, more manageable steps.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Piping}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Piping is especially useful when you have a series of operations that need to be performed on the same data.
+        \item Piping allows you to chain together multiple functions in a single line of code.
+        \item Piping is a powerful tool that can help you write more efficient and concise code.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Piping}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Piping is done using the pipe operator, which is represented by the \%\textgreater\% symbol.
+        \item The pipe operator takes the output of the function on the left and passes it as the first argument to the function on the right.
+        \item The pipe operator can be used to chain together multiple functions in a single line of code.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Example of Piping vs. Non-Piping}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \textbf{Without Piping:}
+              \begin{lstlisting}[language=R]
+            # Load necessary library
+            library(dplyr)
+            
+            # Generate data
+            set.seed(123)
+            data <- data.frame(
+              x = rnorm(100, mean = 5, sd = 2),
+              y = rnorm(100, mean = 6, sd = 2)
+            )
+            
+            # Non-piping approach
+            data <- mutate(data, z = x + y)
+            data <- filter(data, z > 10)
+            summary(data)
+        \end{lstlisting}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Example of Piping vs. Non-Piping}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \textbf{Without Piping:}
+              \begin{lstlisting}[language=R]
+            # Load necessary library
+            library(dplyr)
+            
+            # Generate data
+            set.seed(123)
+            data <- data.frame(
+              x = rnorm(100, mean = 5, sd = 2),
+              y = rnorm(100, mean = 6, sd = 2)
+            )
+            
+            # Piping approach
+            data %>%
+              mutate(z = x + y) %>%
+              filter(z > 10) %>%
+              summary()
+        \end{lstlisting}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Breakdown of Piping}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item \textbf{Load Necessary Library:}
+              \begin{itemize}
+                  \item \texttt{library(dplyr)}: Loads the \texttt{dplyr} package, which provides functions for data manipulation.
+              \end{itemize}
+
+        \item \textbf{Generate Data:}
+              \begin{itemize}
+                  \item \texttt{set.seed(123)}: Sets the seed for random number generation to ensure reproducibility of results.
+                  \item \texttt{data <- data.frame(x = rnorm(100, mean = 5, sd = 2), y = rnorm(100, mean = 6, sd = 2)}: Generates 100 random numbers from a normal distribution with specified means and standard deviations, and assigns them to variables \texttt{x} and \texttt{y}.
+              \end{itemize}
+
+        \item \textbf{Non-Piping Approach:}
+              \begin{itemize}
+                  \item \texttt{data <- mutate(data, z = x + y)}: Adds a new variable \texttt{z} to the data frame by summing variables \texttt{x} and \texttt{y}.
+                  \item \texttt{data <- filter(data, z > 10)}: Filters the data frame to include only rows where variable \texttt{z} is greater than 10.
+                  \item \texttt{summary(data)}: Displays a summary of the data frame.
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tips for Piping}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Use piping to chain together multiple functions in a single line of code.
+        \item Use piping to break down complex operations into smaller, more manageable steps.
+        \item Use piping to make your code more readable and easier to understand.
+        \item Use piping to improve the efficiency and conciseness of your code.
+    \end{itemize}
+\end{frame}
+
 \section{Hypothesis Testing}
 
 \begin{frame}
@@ -312,24 +429,6 @@ t.test(x, y, paired = TRUE)
     \end{itemize}
 \end{frame}
 
-% \begin{frame}{Regression Analysis}
-%     \begin{itemize}
-%         \setlength{\itemsep}{2em}
-%         \item There are many types of regression models, such as linear regression, logistic regression, and polynomial regression.
-%         \item Linear regression is a regression model that assumes a linear relationship between the dependent variable and the independent variables.
-%         \item Logistic regression is a regression model that is used when the dependent variable is binary.
-%     \end{itemize}
-% \end{frame}
-
-% \begin{frame}{Regression Analysis}
-%     \begin{itemize}
-%         \setlength{\itemsep}{2em}
-%         \item Polynomial regression is a regression model that is used when the relationship between the dependent variable and the independent variables is not linear.
-%         \item The regression model is estimated using the method of least squares, which minimizes the sum of the squared differences between the observed values and the predicted values.
-%         \item The estimated parameters of the regression model are the coefficients of the independent variables.
-%     \end{itemize}
-% \end{frame}
-
 \begin{frame}
     \frametitle{Types of Regression Models}
     \begin{itemize}
@@ -369,15 +468,15 @@ t.test(x, y, paired = TRUE)
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Logistic Regression}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item Logistic regression is a regression model that is used when the dependent variable is binary.
-        \item The logistic regression model is a mathematical equation that describes the relationship between the dependent variable and the independent variables.
-        \item The logistic regression model is estimated using the method of maximum likelihood, which maximizes the likelihood of the observed data given the model.
-    \end{itemize}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Logistic Regression}
+%     \begin{itemize}
+%         \setlength{\itemsep}{2em}
+%         \item Logistic regression is a regression model that is used when the dependent variable is binary.
+%         \item The logistic regression model is a mathematical equation that describes the relationship between the dependent variable and the independent variables.
+%         \item The logistic regression model is estimated using the method of maximum likelihood, which maximizes the likelihood of the observed data given the model.
+%     \end{itemize}
+% \end{frame}
 
 \begin{frame}
     \frametitle{Ordinary Least Squares}
@@ -400,14 +499,14 @@ t.test(x, y, paired = TRUE)
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Logistic Regression}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item The logistic regression model is specified by the equation $p = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n)}}$, where $p$ is the probability of the dependent variable being 1, $x_1, x_2, \ldots, x_n$ are the independent variables, $\beta_0, \beta_1, \beta_2, \ldots, \beta_n$ are the coefficients of the independent variables, and $e$ is the base of the natural logarithm.
-        \item The coefficients of the independent variables are estimated using the method of maximum likelihood, which maximizes the likelihood of the observed data given the model.
-    \end{itemize}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Logistic Regression}
+%     \begin{itemize}
+%         \setlength{\itemsep}{2em}
+%         \item The logistic regression model is specified by the equation $p = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n)}}$, where $p$ is the probability of the dependent variable being 1, $x_1, x_2, \ldots, x_n$ are the independent variables, $\beta_0, \beta_1, \beta_2, \ldots, \beta_n$ are the coefficients of the independent variables, and $e$ is the base of the natural logarithm.
+%         \item The coefficients of the independent variables are estimated using the method of maximum likelihood, which maximizes the likelihood of the observed data given the model.
+%     \end{itemize}
+% \end{frame}
 
 \begin{frame}
     \frametitle{Polynomial Regression}
@@ -425,6 +524,7 @@ t.test(x, y, paired = TRUE)
         \setlength{\itemsep}{2em}
         \item The polynomial regression model is specified by the equation $y = \beta_0 + \beta_1 x + \beta_2 x^2 + \ldots + \beta_n x^n + \epsilon$, where $y$ is the dependent variable, $x$ is the independent variable, $\beta_0, \beta_1, \beta_2, \ldots, \beta_n$ are the coefficients of the independent variables, and $\epsilon$ is the error term.
         \item The coefficients of the independent variables are estimated using the method of least squares, which minimizes the sum of the squared differences between the observed values and the predicted values.
+        \item Having a polynomial of degree $n - 1$ would mean that the model wll perfectly fit the data. So, be careful of overfitting.
     \end{itemize}
 \end{frame}
 
@@ -432,7 +532,11 @@ t.test(x, y, paired = TRUE)
     \begin{itemize}
         \setlength{\itemsep}{2em}
         \item The goodness of fit of the regression model is measured using the coefficient of determination, which is the proportion of the variance in the dependent variable that is explained by the independent variables.
-        \item The coefficient of determination ranges from 0 to 1, with higher values indicating a better fit.
+        \item The coefficient of determination ranges from 0 to 1, with higher values indicating a better fit. (This is your $R^2$ value)
+              \begin{itemize}
+                  \item A higher $R^2$ does not mean your regression is better. It just means that your model explains more of the variance in the dependent variable.
+                  \item It could also be an indication of overfitting.
+              \end{itemize}
         \item The significance of the regression model is tested using the F-test, which tests whether the regression model is a better fit than a model with no independent variables.
     \end{itemize}
 \end{frame}
@@ -607,41 +711,45 @@ summary(model)
     \tableofcontents[currentsection]
 \end{frame}
 
-\begin{frame}{Instrumental Variables}
+\begin{frame}
+    \frametitle{IV in a Nutshell}
+    \begin{align}
+        y = \beta_0 + \beta_1 x + \epsilon
+    \end{align}
     \begin{itemize}
         \setlength{\itemsep}{2em}
-        \item Instrumental variables are used in econometrics to estimate the causal effect of an independent variable on a dependent variable.
-        \item Instrumental variables are used when the independent variable is correlated with the error term in the regression model.
-        \item Instrumental variables are used to identify the causal effect of the independent variable by removing the correlation between the independent variable and the error term.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Instrumental Variables}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item Instrumental variables are variables that are correlated with the independent variable but are uncorrelated with the error term.
-        \item Instrumental variables are used to estimate the causal effect of the independent variable by using the variation in the instrumental variables to identify the causal effect.
-        \item Instrumental variables are used in regression analysis to estimate the parameters of the regression model that best fit the data.
+        \item \(x_1\) is not randomly assigned in general (\(\text{cov}(x_1, \epsilon) \neq 0\)), but \dots
+        \item Some small part of the variation in \(x_1\) is idiosyncratic
+        \item If you could identify and isolate that idiosyncratic variance, you could use it to estimate the causal effect of \(x_1\) on \(y\)
+        \item This is the basic idea behind instrumental variables
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Assumptions of Instrumental Variables}
+    \frametitle{Two Stage Least Squares}
+    \begin{align}
+        x_1 & = \pi_1 z + \pi_2 X_2 + \nu                  \\
+        y   & = \beta_1 \hat{x}_1 + \beta_2 X_2 + \epsilon
+    \end{align}
     \begin{itemize}
         \setlength{\itemsep}{2em}
-        \item Relevance: The instrumental variables are correlated with the independent variable.
-        \item Exogeneity: The instrumental variables are uncorrelated with the error term.
-        \item Exclusion: The instrumental variables are not correlated with the dependent variable.
+        \item Regress \(x_1\) on the instrument \(z\) to get \(\hat{x}_1\), be sure to add any additional controls in the regression.
+        \item Use the predicted values of \(x_1\) in the second stage regression along with any other controls.
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Checking Assumptions}
+    \frametitle{What Makes a Good Instrument}
     \begin{itemize}
         \setlength{\itemsep}{2em}
-        \item The relevance assumption can be checked by testing the correlation between the instrumental variables and the independent variable.
-        \item Exogeneity however has to be argued, since it is not testable.
-        \item Exclusion can be checked by testing the correlation between the instrumental variables and the dependent variable.
+        \item Exogeneity: cov(\(z, \epsilon\)) = 0
+              \begin{itemize}
+                  \item The instrument is uncorrelated with the error term
+                  \item You can test this using observables
+                  \item But this is necessary and not sufficient, you would have to argue this. There may be unobservables that are correlated with the instrument and the error term.
+              \end{itemize}
+        \item Excludability: The instrument is not correlated with the dependent variable ( The only way the instrument affects the dependent variable is through the independent variable. )
+        \item Relevance: The instrument is correlated with the independent variable ( This is testable )
     \end{itemize}
 \end{frame}
 
@@ -649,63 +757,35 @@ summary(model)
     \frametitle{Local Average Treatment Effect}
     \begin{itemize}
         \setlength{\itemsep}{2em}
-        \item The local average treatment effect (LATE) is the causal effect of the independent variable on the dependent variable for the subpopulation of individuals who are affected by the instrumental variables.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Wald Estimator}
-    \begin{align}
-        \hat{\beta}_{\text{IV}} = \frac{\text{Cov}(z, y)}{\text{Cov}(z, x)}
-    \end{align}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item The Wald estimator is a method that is used to estimate the parameters of the instrumental variables regression model.
-        \item The Wald estimator is calculated as the ratio of the covariance between the instrumental variables and the dependent variable to the covariance between the instrumental variables and the independent variable.
-        \item The Wald estimator is used to estimate the causal effect of the independent variable on the dependent variable by removing the correlation between the independent variable and the error term.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Instrumental Variables}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item The instrumental variables regression model is specified by the equation $y = \beta_0 + \beta_1 x + \epsilon$, where $y$ is the dependent variable, $x$ is the independent variable, $\beta_0$ and $\beta_1$ are the coefficients of the independent variable, and $\epsilon$ is the error term.
-        \item The instrumental variables regression model is estimated using the method of instrumental variables, which removes the correlation between the independent variable and the error term.
-        \item The instrumental variables regression model is used to estimate the causal effect of the independent variable on the dependent variable.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{2 Stage Least Squares}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item The two-stage least squares (2SLS) method is a method that is used to estimate the parameters of the instrumental variables regression model.
-        \item The 2SLS method is a two-stage procedure that first estimates the parameters of the instrumental variables regression model and then uses the estimated parameters to estimate the causal effect of the independent variable on the dependent variable.
-        \item The 2SLS method is used to estimate the causal effect of the independent variable by removing the correlation between the independent variable and the error term.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{2 Stage Least Squares}
-    \begin{itemize}
-        \setlength{\itemsep}{2em}
-        \item The 2SLS method is specified by the following steps:
+        \item Homogenous Treatment Effects
               \begin{itemize}
-                  \item Step 1: Estimate the parameters of the instrumental variables regression model using the instrumental variables.
-                  \item Step 2: Use the estimated parameters to estimate the causal effect of the independent variable on the dependent variable.
+                  \item This means that the treatment effect is the same for everyone
               \end{itemize}
-        \item The 2SLS method is used to estimate the causal effect of the independent variable by removing the correlation between the independent variable and the error term.
+        \item If we assume that the treatment effect is homogenous for everyone, then the instrumental variable estimates the local average treatment effect (LATE)
+        \item This means the average treatment effect for the subpopulation of individuals who are affected by the instrument
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Examples of IV}
+\begin{frame}
+    \frametitle{Subgroups}
     \begin{itemize}
         \setlength{\itemsep}{2em}
-        \item The effect of education on income can be estimated using the number of years of schooling as an instrumental variable.
-        \item Education is correlated with income, but it is also correlated with other factors that affect income, such as ability and motivation.
-        \item The number of years of schooling is correlated with education, but it is not correlated with ability and motivation, making it a good instrumental variable.
-        \item The effect of education on income can be estimated using the number of years of schooling as an instrumental variable to remove the correlation between education and ability and motivation.
+        \item Always takers: People who would take the treatment regardless of the instrument
+        \item Never takers: People who would never take the treatment regardless of the instrument
+        \item Compliers: People who would take the treatment if the instrument is high or low enough
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{LATE Assumptions}
+    \begin{itemize}
+        \setlength{\itemsep}{2em}
+        \item Independence: The instrument is as good as randomly assigned
+        \item Exclusion restriction: The instrument only affects the dependent variable through the independent variable
+        \item Monotonicity: There are no defiers (non compliers)
+              \begin{itemize}
+                  \item Either $\pi_{1i} \geq 0 \forall i$ or $\pi_{1i} \leq 0 \forall i$
+              \end{itemize}
     \end{itemize}
 \end{frame}
 
