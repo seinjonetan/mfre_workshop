@@ -5,3 +5,4 @@
 5. Do a linear regression of total pollution levels on temperature levels. Plot the regression line on a scatter plot of total pollution levels and temperature levels.
 
 Recommended Packages: ggplot2, dplyr, tidyr
+Dependencies: pollution_missing.csv, temperature.csv, province_names.csv
