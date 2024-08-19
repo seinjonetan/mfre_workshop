@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1721085887 "/home/sjone9/school/mfre_workshop/python/slides/intro_afternoon/intro_afternoon.tex" "intro_afternoon.pdf" "intro_afternoon" 1721085888
+["pdflatex"] 1724078245 "/home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro_afternoon/intro_afternoon.tex" "intro_afternoon.pdf" "intro_afternoon" 1724078248
   "/etc/texmf/web2c/texmf.cnf" 1695173623 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/sjone9/school/mfre_workshop/python/slides/intro_afternoon/intro_afternoon.tex" 1721085885 6852 288f4930f2caa8fb0c7a4c6590f16790 ""
+  "/home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro_afternoon/intro_afternoon.tex" 1724078242 7165 6f0fc46a7b6e9663c4fb50baa08dd8de ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1136768653 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm" 1136768653 1328 5442e22a7072966dbaf88ca900acf3f0 ""
@@ -263,12 +263,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1708461188 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1716345046 2800201 cddebe4358212a15764e55ccdc48a1b1 ""
-  "intro_afternoon.aux" 1721085888 4814 e8a45a79d597df42f83a8d42fcb2e75e "pdflatex"
-  "intro_afternoon.nav" 1721085888 2826 5be82a533054d7510f8a6a4890cb71ad "pdflatex"
-  "intro_afternoon.out" 1721085888 432 9951cdc6e405786a9e866af3bea191ba "pdflatex"
-  "intro_afternoon.tex" 1721085885 6852 288f4930f2caa8fb0c7a4c6590f16790 ""
-  "intro_afternoon.toc" 1721085888 167 6c1b6f0b16bafae46146f9ffab2c6256 "pdflatex"
-  "intro_afternoon.vrb" 1721085888 320 8ac791b0ffe2f6058bb4357b12e40de9 "pdflatex"
+  "intro_afternoon.aux" 1724078248 4943 6a446791086ac3af10d88eb7af44737e "pdflatex"
+  "intro_afternoon.nav" 1724078248 2919 f8de810e89f62ea699bfc05c36a81bf4 "pdflatex"
+  "intro_afternoon.out" 1724078248 432 9951cdc6e405786a9e866af3bea191ba "pdflatex"
+  "intro_afternoon.tex" 1724078242 7165 6f0fc46a7b6e9663c4fb50baa08dd8de ""
+  "intro_afternoon.toc" 1724078248 167 b8d53f2e643272103338e0f794942d8f "pdflatex"
+  "intro_afternoon.vrb" 1724078248 320 8ac791b0ffe2f6058bb4357b12e40de9 "pdflatex"
   (generated)
   "intro_afternoon.aux"
   "intro_afternoon.log"

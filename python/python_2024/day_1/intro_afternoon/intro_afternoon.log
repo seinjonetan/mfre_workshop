@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  15 JUL 2024 23:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.5.22)  19 AUG 2024 14:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/sjone9/school/mfre_workshop/python/slides/intro_afternoon/intro_afternoon.tex
-(/home/sjone9/school/mfre_workshop/python/slides/intro_afternoon/intro_afternoon.tex
+**/home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro_afternoon/intro_afternoon.tex
+(/home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro_afternoon/intro_afternoon.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2022/01/21 v3.65 A class for typesetting presentations
@@ -861,40 +861,45 @@ Overfull \hbox (0.24437pt too wide) in paragraph at lines 3--4
 
 ) [10
 
-] [11
+]
+\openout4 = `intro_afternoon.vrb'.
+
+ (./intro_afternoon.vrb) [11
 
 ] [12
 
 ] [13
 
-] (./intro_afternoon.toc) [14
+] [14
 
-] [15
+] (./intro_afternoon.toc) [15
 
-]
-\openout4 = `intro_afternoon.vrb'.
-
- (./intro_afternoon.vrb) [16
-
-] [17
+] [16
 
 ]
 \openout4 = `intro_afternoon.vrb'.
 
- (./intro_afternoon.vrb) [18
+ (./intro_afternoon.vrb) [17
 
-] [19
-
-] (./intro_afternoon.toc) [20
-
-] [21
+] [18
 
 ]
 \openout4 = `intro_afternoon.vrb'.
 
- (./intro_afternoon.vrb) [22
+ (./intro_afternoon.vrb) [19
 
-] [23
+] [20
+
+] (./intro_afternoon.toc) [21
+
+] [22
+
+]
+\openout4 = `intro_afternoon.vrb'.
+
+ (./intro_afternoon.vrb) [23
+
+] [24
 
 ]
 \tf@nav=\write6
@@ -911,18 +916,18 @@ Package rerunfilecheck Info: File `intro_afternoon.out' has not changed.
 (rerunfilecheck)             Checksum: 9951CDC6E405786A9E866AF3BEA191BA;432.
  ) 
 Here is how much of TeX's memory you used:
- 39386 strings out of 478287
- 938549 string characters out of 5849289
- 1502378 words of memory out of 5000000
- 56810 multiletter control sequences out of 15000+600000
+ 39396 strings out of 478287
+ 938712 string characters out of 5849289
+ 1503720 words of memory out of 5000000
+ 56816 multiletter control sequences out of 15000+600000
  471430 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,20n,104p,804b,1330s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,20n,104p,815b,1330s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb>
-Output written on intro_afternoon.pdf (23 pages, 158165 bytes).
+Output written on intro_afternoon.pdf (24 pages, 162120 bytes).
 PDF statistics:
- 1280 PDF objects out of 1440 (max. 8388607)
- 1187 compressed objects within 12 object streams
- 50 named destinations out of 1000 (max. 500000)
+ 1355 PDF objects out of 1440 (max. 8388607)
+ 1259 compressed objects within 13 object streams
+ 52 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 

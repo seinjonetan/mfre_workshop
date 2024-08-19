@@ -1,9 +1,9 @@
-PWD /home/sjone9/school/mfre_workshop/python/slides/intro_afternoon
+PWD /home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro_afternoon
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/sjone9/school/mfre_workshop/python/slides/intro_afternoon/intro_afternoon.tex
+INPUT /home/sjone9/school/mfre_workshop/python/python_2024/day_1/intro_afternoon/intro_afternoon.tex
 OUTPUT intro_afternoon.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -1494,6 +1494,11 @@ INPUT intro_afternoon.vrb
 INPUT ./intro_afternoon.vrb
 INPUT intro_afternoon.vrb
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
+OUTPUT intro_afternoon.vrb
+INPUT ./intro_afternoon.vrb
+INPUT intro_afternoon.vrb
+INPUT ./intro_afternoon.vrb
+INPUT intro_afternoon.vrb
 INPUT ./intro_afternoon.toc
 INPUT intro_afternoon.toc
 INPUT intro_afternoon.toc
